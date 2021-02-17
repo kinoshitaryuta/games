@@ -3,16 +3,21 @@ body{
     width: 100%;
     margin: 0;
     padding: 0;
-    font-size: 18px;
+    font-size: 16px;
     font-family: Helvetica Neue,Arial,Hiragino Kaku Gothic ProN,Hiragino Sans,Meiryo,sans-serif;
     background: #f8f7f7;
+    color: #4d5156;
 }
 a{
-    color: black;
+    color: #4d5156;
 }
 a:hover {
     color: #146dac;
     cursor: pointer;
+}
+/*ハンバーガーメニュー*/
+header{
+    margin-bottom: 30px;
 }
 #base_nav{
     height: auto;
@@ -25,6 +30,7 @@ a:hover {
     margin: 10px auto 10px 60px;
     text-align: center;
     font-weight: bolder;
+    color: black;
 }
 .navbar-toggler{
     padding: 0;
@@ -42,4 +48,56 @@ a:hover {
 }
 .dropdown-menu{
      border: none;
+}
+/*ナビメニュー*/
+footer{
+    margin-top: 70px;
+}
+.nav{
+    background: #ffffff;
+    padding-top:5px;
+    padding-bottom:5px;
+    box-shadow: 0 0px 10px rgba(0,0,0,0.2);
+    justify-content: space-around;
+}
+#nav_login,
+#nav_add,
+#nav_home {
+    padding: 0;
+    border-style: none;
+    text-align: center;
+}
+.fa-smile,
+.fa-door-open,
+.fa-home{
+    font-size: 22px;
+    color: #666565;
+}
+.footer_nav_base{
+    margin: 0;
+    font-size: 14px;
+}
+
+
+/*app/home.html*/
+.event_title{
+    font-size: 20px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    color: black;
+}
+.card-img-top{
+    height: 180px;
+    filter: blur(1px);
+}
+.card{
+    margin-bottom: 25px;
+}
+.event_list{
+    font-weight: bolder;
+    font-size: 20px;
+    color: black;
+}
+.card-text{
+    font-size: 14px;
 }

@@ -3,4 +3,43 @@
 
 
 {% block body %}
+    <section class="home_card">
+        <h2 class="event_title">イベント一覧</h2>
+        <div class="card">
+            <img src="{% static 'img/work.jpg' %}" class="card-img-top" alt="仕事に関するイベント">
+            <div class="card-body">
+                <a class="card_link" href="#">
+                    <h3 class="event_list">Workイベント</h3>
+                </a>
+                <p class="card-text">仕事に関する様々なオンライン・オフラインイベントのページです。</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'img/sport.jpg' %}" class="card-img-top" alt="スポーツに関するイベント">
+            <div class="card-body">
+                <a class="card_link" href="#">
+                    <h3 class="event_list">Sportイベント</h3>
+                </a>
+                <p class="card-text">スポーツに関する様々なオンライン・オフラインイベントのページです。</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'img/e-sport.jpg' %}"  class="card-img-top" alt="e-sportに関するイベント">
+            <div class="card-body">
+                <a class="card_link" href="#">
+                    <h3 class="event_list">E-sportイベント</h3>
+                </a>
+                <p class="card-text">e-スポーツに関する様々なオンライン・オフラインイベントのページです。</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'img/hobby.jpg' %}"  class="card-img-top" alt="趣味に関するイベント">
+            <div class="card-body">
+                <a class="card_link" href="#">
+                    <h3 class="event_list">Hobbyイベント</h3>
+                </a>
+                <p class="card-text">趣味に関する様々なオンライン・オフラインイベントのページです。</p>
+            </div>
+        </div>
+    </section>
 {% endblock body %}
