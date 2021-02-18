@@ -101,3 +101,14 @@ footer{
 .card-text{
     font-size: 14px;
 }
+
+/*login.html*/
+.card-body input{
+    width: 90%;
+}
+.card-body{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin: 0 auto;
+
+}

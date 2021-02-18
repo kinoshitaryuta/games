@@ -1,15 +1,18 @@
 {% extends 'account/base.html' %}
 {% load static %}
-
+{% load widget_tweaks %}
 
 {% block body %}
-  <form class="signup" id="signup_form" method="post" >
-            {% csrf_token %}
-            <hr class="login_hr">
-            <table class="login_table">{{ form.as_table }}</table>
-            <hr class="login_hr">
-            <div class="text-right">
-                <button type="submit" class="btn btn-outline-primary" id="login_button">ログイン</button>
-            </div>
-        </form>
+    <form action="{% url 'login' %}" method="POST">
+    {% csrf_token %}
+        <div class="login_email">
+            <label for="email" class="login_email">E-mail</label>
+            <table class="table">{% render_field form.username class="login_form_email" placeholder="メールアドレスを入力してください。" %}</table>
+        </div>
+        <div class="login_password">
+            <label for="password" class="login_password">Password</label>
+            <table class="table">{% render_field form.password class="login_form_password" placeholder="パスワードを入力してください。" %}</table>
+        </div>
+      <button type="submit" class="btn btn-outline-danger" id="signup_button">登録</button>
+    </form>
 {% endblock body %}
