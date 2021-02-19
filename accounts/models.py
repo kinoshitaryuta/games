@@ -35,9 +35,6 @@ class UserManager(BaseUserManager):
 class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(max_length=100, unique=True)
     username=models.CharField(max_length=30, null=True, blank=True)
-    user_id=models.CharField(max_length=30,null=False, blank=True)
-    profession=models.CharField(max_length=30, null=True, blank=True)
-    profile_img=models.ImageField(upload_to='media',null=True)
     self_introduction = models.TextField(max_length=300, null=False, blank=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)

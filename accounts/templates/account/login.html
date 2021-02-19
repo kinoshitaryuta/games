@@ -3,16 +3,28 @@
 {% load widget_tweaks %}
 
 {% block body %}
-    <form action="{% url 'login' %}" method="POST">
-    {% csrf_token %}
-        <div class="login_email">
-            <label for="email" class="login_email">E-mail</label>
-            <table class="table">{% render_field form.username class="login_form_email" placeholder="メールアドレスを入力してください。" %}</table>
-        </div>
-        <div class="login_password">
-            <label for="password" class="login_password">Password</label>
-            <table class="table">{% render_field form.password class="login_form_password" placeholder="パスワードを入力してください。" %}</table>
-        </div>
-      <button type="submit" class="btn btn-outline-danger" id="signup_button">登録</button>
-    </form>
+    <h1 class="site_account_title">WSEH</h1>
+    <section class="login">
+        <h3 class="login_text">LOGIN</h3>
+        <form action="{% url 'login' %}" method="POST">
+        {% csrf_token %}
+            <div class="login_email">
+                <table class="table">{% render_field form.username class="login_form_email" placeholder="E-mail" %}</table>
+            </div>
+            <div class="login_password">
+                <table class="table">{% render_field form.password class="login_form_password" placeholder="password" %}</table>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-success" id="login_button">LOGIN</button>
+            </div>
+            <div class="login_link_group">
+                <a class="login_link" href="#">
+                    <p class="login_link_text">パスワードをお忘れの方</p>
+                </a>
+                <a class="login_link" href="{% url 'signup' %}">
+                     <p class="login_link_text">新規登録</p>
+                </a>
+            </div>
+        </form>
+    </section>
 {% endblock body %}

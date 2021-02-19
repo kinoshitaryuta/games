@@ -1,0 +1,16 @@
+{% extends 'account/base.html' %}
+{% load static %}
+
+{% block body %}
+     <header class="signup_text_header">
+         <h1 class="signup_text_title">WSEH</h1>
+     </header>
+    <h4 class="thank_you_text">Thank you for Sign up!</h4>
+     <P class="welcome">welcome to WSEH</P>
+    <P class="please_continue">Please continue to Log in.</P>
+    <div class="text-center">
+        <a class="next_link" href="{% url 'login' %}">
+           <button type="submit" class="btn btn-success" id="next_login">LOGIN</button>
+        </a>
+    </div>
+{% endblock body %}

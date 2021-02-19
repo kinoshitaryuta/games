@@ -103,12 +103,137 @@ footer{
 }
 
 /*login.html*/
-.card-body input{
-    width: 90%;
+.site_account_title{
+    margin-top: 70px;
+    text-align: center;
+    color: black;
+    font-size: 35px;
+    font-weight: bolder;
 }
-.card-body{
-    padding-top: 30px;
-    padding-bottom: 30px;
-    margin: 0 auto;
+.login{
+    margin-top: 20px;
+    width: 85%;
+    background: #ffffff;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 7px;
+    box-shadow: 0 0px 10px rgba(0,0,0,0.2);
+}
+.login_text{
+    font-size: 22px;
+    text-align: center;
+    color: black;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.login_email,
+.login_password{
+   text-align: center;
+}
+.login_form_email,
+.login_form_password
+{
+  width: 70%;
+}
+#login_button{
+    margin-top: 5px;
+    text-align: center;
+    width: 70%;
+}
+.login_link_group{
+    margin-top: 10px;
+    padding-bottom: 10px;
 
+}
+.login_link_text{
+    margin: 0;
+    text-align: center;
+    font-size: 12px;
+    color: #838383;
+}
+
+/*signup.html*/
+.site_account_sign_title{
+    margin-top: 40px;
+    text-align: center;
+    color: black;
+    font-size: 35px;
+    font-weight: bolder;
+}
+.signup{
+    margin-top: 20px;
+    width: 85%;
+    background: #ffffff;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 7px;
+    box-shadow: 0 0px 10px rgba(0,0,0,0.2);
+}
+.signup_text{
+    font-size: 22px;
+    text-align: center;
+    color: black;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.username,
+.self_introduction,
+.email,
+.password1,
+.password2{
+  text-align: center;
+}
+.form_self_introduction{
+    width: 80%;
+    height: 90px;
+    resize: none;
+}
+.form_username,
+.form_email,
+.form_password {
+    width: 80%;
+}
+.any_text{
+    padding-left:15px;
+    font-size: 12px;
+    margin: 0;
+}
+#signup_button{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    width: 50%;
+}
+
+/*signup_text.html*/
+.signup_text_header{
+    height: auto;
+    padding: 0;
+    background: #ffffff;
+    box-shadow: 0 0px 10px rgba(0,0,0,0.2);
+}
+.signup_text_title{
+    font-size: 25px;
+    margin: 0 auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    font-weight: bolder;
+    color: black;
+}
+
+.thank_you_text{
+    margin-top: 70px;
+    text-align: center;
+    color: black;
+}
+.welcome,
+.please_continue{
+    text-align: center;
+    margin: 10px;
+}
+
+#next_login{
+    margin-top:10px;
+    margin-bottom: 10px;
 }
