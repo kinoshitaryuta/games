@@ -3,5 +3,11 @@
 
 
 {% block body %}
-
+     <h4 class="contact_thank_you_text">ご回答ありがとうございます。</h4>
+     <P class="contact_result_text">入力されたメールアドレス宛に確認メールを送信しました。</P>
+    <div class="text-center">
+        <a class="next_link" href="{% url 'home' %}">
+           <button type="submit" class="btn btn-success" id="contact_home">HOME</button>
+        </a>
+    </div>
 {% endblock body %}

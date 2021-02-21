@@ -14,8 +14,8 @@ CHOICES =(
 
 
 class Contact(models.Model):
+    username=models.CharField(max_length=30, null=True, blank=True)
     contact_us=models.CharField(max_length=20,choices=CHOICES)
-    username=models.ForeignKey(User,on_delete=models.CASCADE)
     email=models.EmailField(max_length=100,null=False, blank=True)
     message=models.TextField(max_length=1000,null=False, blank=True)
 

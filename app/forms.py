@@ -11,7 +11,7 @@ class ContactForm(ModelForm):
         model = Contact
         fields = [
 
-       'contact_us','email','message'
+       'contact_us','email','message','username'
         ]
 
     def send_email(self):

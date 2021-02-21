@@ -237,3 +237,59 @@ footer{
     margin-top:10px;
     margin-bottom: 10px;
 }
+
+/*contact_form.html*/
+.contact_form_text{
+    font-size: 25px;
+    margin: 0 auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    font-weight: bolder;
+    color: black;
+}
+.contact_detail_text{
+    font-size: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.contact_username,
+.contact_us,
+.contact_message,
+.contact_email{
+    margin-left: 30px;
+}
+.form-contact_message{
+    width: 90%;
+    height: 200px;
+    resize: none;
+}
+.form-contact_us,
+.form-contact_email,
+form-contact_username{
+      width: 90%;
+}
+#contact_form_button{
+    margin-top: 30px;
+}
+#cancel_button{
+    margin-left: 80px;
+}
+#send_form_button{
+    margin-left: 15px;
+}
+
+
+
+/*contact_result.html*/
+.contact_result_text{
+    font-size: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+.contact_thank_you_text{
+    margin-top: 90px;
+    text-align: center;
+    color: black;
+}
