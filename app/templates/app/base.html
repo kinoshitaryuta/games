@@ -32,8 +32,9 @@
                                     設定の変更
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="#">E-mail・パスワードの変更</a>
-                                    <a class="dropdown-item" href="#">ユーザー情報の変更</a>
+                                    <a class="dropdown-item" href="{% url 'email_change' %}">E-mailの変更</a>
+                                    <a class="dropdown-item" href="#">パスワードの変更</a>
+                                    <a class="dropdown-item" href="#">プロフィールの変更</a>
                                 </div>
                             </li>
                           {% else %}
