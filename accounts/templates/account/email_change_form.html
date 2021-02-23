@@ -7,15 +7,17 @@
     <section class="email_change">
         <h1 class="email_change_form_text">メールアドレスを変更する</h1>
         <p class="email_now_detail_text">現在のメールアドレス</p>
-        <p class="email_change_detail_text">{{user.email}}</p>
+        <hr class="separate_hr">
+        <p class="email_now">{{user.email}}</p>
         <form class="email_change_form"  method="POST" >
             <p class="email_new_detail_text">新しいメールアドレス</p>
+            <hr class="separate_hr">
             <div class="form_email">
                 <table class="table">{% render_field form.email class="form_email_change" placeholder="E-mail" %}</table>
             </div>
             {% csrf_token %}
             <div class="text-center">
-                <button type="submit" class="btn btn-success" id="email_change_form_button">変更する</button>
+                <button type="submit" class="btn btn-success email_change_form_button" >変更する</button>
             </div>
         </form>
     </section>

@@ -3,6 +3,9 @@ from accounts.models import User
 from django.contrib.auth.forms import(
 UserCreationForm,
 AuthenticationForm,
+PasswordChangeForm,
+PasswordResetForm,
+SetPasswordForm
 )
 
 class UserLoginForm(AuthenticationForm):
@@ -37,3 +40,29 @@ class EmailChangeForm(forms.ModelForm):
         email = self.cleaned_data['email']
         User.objects.filter(email=email, is_active=False).delete()
         return email
+
+class PasswordChangeForm(PasswordChangeForm):
+    class Meta:
+        model = User
+        fields = [
+            'old_password','new_password1','new_password2'
+        ]
+
+class PasswordResetForm(PasswordResetForm):
+    class Meta:
+        model = User
+        fields = [
+            'email',
+        ]
+
+
+
+
+class SetPasswordForm(SetPasswordForm):
+    class Meta:
+        model = User
+        fields = [
+            'password1','password2'
+        ]
+
+

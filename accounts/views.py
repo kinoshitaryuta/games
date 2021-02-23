@@ -10,13 +10,17 @@ from django.core.signing import BadSignature, SignatureExpired, dumps, loads
 from django.contrib.auth import get_user_model, login
 from django.http import HttpResponseBadRequest
 from django.contrib.auth.views import (
-LoginView,
-LogoutView,
+    LoginView,
+    LogoutView,
+    PasswordChangeView,
+    PasswordChangeDoneView,
+    PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView,
 )
 from .forms import (
-UserLoginForm,
-UserCreateForm,
-EmailChangeForm,
+    UserLoginForm,
+    UserCreateForm,
+    EmailChangeForm,
+    PasswordChangeForm, PasswordResetForm, SetPasswordForm,
 )
 
 User = get_user_model()
@@ -66,8 +70,8 @@ class EmailChangeView(LoginRequiredMixin, generic.FormView):
             'user': user,
         }
 
-        subject = render_to_string('account/mails/subject.txt', context)
-        message = render_to_string('account/mails/message.txt', context)
+        subject = render_to_string('account/mails/E-mail_change_subject.txt', context)
+        message = render_to_string('account/mails/E-mail_change_message.txt', context)
         send_mail(subject, message, None, [new_email])
 
         return redirect('email_change_done')
@@ -80,24 +84,59 @@ class EmailChangeDoneView(LoginRequiredMixin, generic.TemplateView):
 
 class EmailChangeCompleteView(LoginRequiredMixin, generic.TemplateView):
     template_name = 'account/email_change_complete.html'
-    timeout_seconds = getattr(settings, 'ACTIVATION_TIMEOUT_SECONDS', 60*60*24)  # デフォルトでは1日以内
+    timeout_seconds = getattr(settings, 'ACTIVATION_TIMEOUT_SECONDS', 60*60*24)
 
     def get(self, request, **kwargs):
         token = kwargs.get('token')
         try:
             new_email = loads(token, max_age=self.timeout_seconds)
 
-        # 期限切れ
         except SignatureExpired:
             return HttpResponseBadRequest()
 
-        # tokenが間違っている
+
         except BadSignature:
             return HttpResponseBadRequest()
 
-        # tokenは問題なし
+
         else:
             User.objects.filter(email=new_email, is_active=False).delete()
             request.user.email = new_email
             request.user.save()
             return super().get(request, **kwargs)
+
+
+class PasswordChangeView(PasswordChangeView):
+    """パスワード変更"""
+    form_class = PasswordChangeForm
+    success_url = reverse_lazy('password_change_done')
+    template_name = 'account/password_change.html'
+
+
+class PasswordChangeDoneView(PasswordChangeDoneView):
+    template_name = 'account/password_change_done.html'
+
+
+
+class PasswordResetView(PasswordResetView):
+    """パスワード再設定"""
+    subject_template_name = 'account/mails/password_reset_subject.txt'
+    email_template_name = 'account/mails/password_reset_message.txt'
+    template_name = 'account/password_reset_form.html'
+    form_class = PasswordResetForm
+    success_url = reverse_lazy('password_reset_done')
+
+
+class PasswordResetDoneView(PasswordResetDoneView):
+    template_name = 'account/password_reset_done.html'
+
+
+class PasswordResetConfirmView(PasswordResetConfirmView):
+    """新パスワード入力ページ"""
+    form_class = SetPasswordForm
+    success_url = reverse_lazy('password_reset_complete')
+    template_name = 'account/password_reset_confirm.html'
+
+
+class PasswordResetCompleteView(PasswordResetCompleteView):
+    template_name = 'account/password_reset_complete.html'
