@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'posts.apps.PostsConfig',
+    'django_summernote',
     'accounts.apps.AccountsConfig',
     'allauth',
     'allauth.account',
@@ -135,6 +137,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
 
+IMAGE_ROOT = os.path.join(BASE_DIR, 'images')
+IMAGE_URL = '/images/'
+
 # Default logging for Django. This sends an email to the site admins on every
 # HTTP 500 error. Depending on DEBUG, all other log records are either sent to
 # the console (DEBUG=True) or discarded (DEBUG=False) by means of the
@@ -205,3 +210,6 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = "kinoshitaryuta@gmail.com"
 EMAIL_HOST_PASSWORD = "05ryuta59"
 DEFAULT_FROM_EMAIL="kinoshitaryuta@gmail.com"
+
+SUMMERNOTE_THEME = 'bs4'
+X_FRAME_OPTOPNS = 'SAMEORIGIN'
