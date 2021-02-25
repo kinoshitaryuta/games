@@ -16,9 +16,7 @@ a:hover {
     cursor: pointer;
 }
 /*ハンバーガーメニュー*/
-header{
-    margin-bottom: 30px;
-}
+
 #base_nav{
     height: auto;
     padding: 0;
@@ -80,6 +78,9 @@ footer{
 
 
 /*app/home.html*/
+.home_card{
+    margin-top: 30px;
+}
 .event_title{
     font-size: 20px;
     margin-left: 10px;
@@ -266,7 +267,7 @@ footer{
 }
 .form-contact_us,
 .form-contact_email,
-form-contact_username{
+.form-contact_username{
       width: 90%;
 }
 #contact_form_button{
@@ -434,4 +435,49 @@ form-contact_username{
     font-size: 15px;
     padding-left: 10px;
     padding-right: 10px;
+}
+
+
+/*post_create.html*/
+/*ログインしていない場合*/
+.please_login{
+    background: #a5a5a5;
+    height: 100vh;
+
+}
+.login_link_div{
+    padding-top: 400px;
+}
+.fa-sign-in-alt{
+    padding-bottom: 20px;
+    font-size: 30px;
+    color: #ffffff;
+}
+.login_link_post{
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+}
+/*ログインしている場合*/
+.post_button{
+    margin-top: 10px;
+    margin-right: 5px;
+    margin-bottom: 15px;
+    font-family: 'Shippori Mincho', serif;
+}
+
+.event_text_title{
+    font-size: 14px;
+    font-weight: bolder;
+    margin-bottom: 5px;
+    padding-left: 10px;
+}
+
+.form_event_title{
+    text-align: center;
+    width: 100%;
+    height: 30px;
+    border: none;
+    outline: none;
+    box-shadow: 0 0px 10px rgba(0,0,0,0.2);
 }

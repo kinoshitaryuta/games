@@ -16,7 +16,6 @@ Including another URLconf
 
 from . import settings
 from django.contrib.staticfiles.urls import static
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib import admin
 from django.urls import path,include
 urlpatterns = [
@@ -27,4 +26,4 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
 ]
 if settings.DEBUG:
-    urlpatterns += static(settings.IMAGE_URL, document_root=settings.IMAGE_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

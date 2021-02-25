@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'app.apps.AppConfig',
+    'posts.apps.PostsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,14 +40,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    'posts.apps.PostsConfig',
-    'django_summernote',
     'accounts.apps.AccountsConfig',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'bootstrap4',
     'widget_tweaks',
+    'django_summernote',
 ]
 
 MIDDLEWARE = [
@@ -137,8 +137,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
 
-IMAGE_ROOT = os.path.join(BASE_DIR, 'images')
-IMAGE_URL = '/images/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # Default logging for Django. This sends an email to the site admins on every
 # HTTP 500 error. Depending on DEBUG, all other log records are either sent to
@@ -212,4 +212,13 @@ EMAIL_HOST_PASSWORD = "05ryuta59"
 DEFAULT_FROM_EMAIL="kinoshitaryuta@gmail.com"
 
 SUMMERNOTE_THEME = 'bs4'
-X_FRAME_OPTOPNS = 'SAMEORIGIN'
+X_FRAME_OPTIONS = "SAMEORIGIN"
+SUMMERNOTE_CONFIG = {
+    'summernote': {
+        'height':'1500px',
+        'width':'100%'
+    },
+}
+
+LOGIN_REDIRECT_URL = 'home'
+ACCOUNT_LOGOUT_REDIRECT_URL = 'login'
