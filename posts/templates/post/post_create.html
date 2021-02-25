@@ -1,0 +1,72 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+
+{% block body %}
+    {% if user.is_authenticated %}
+        <section class="create_post">
+            <form  class="post_form"  method="POST">
+                <div class="text-right">
+                    <button type="submit" class="btn btn-success post_button py-0">投稿</button>
+                </div>
+                {% csrf_token %}
+                <p class="event_text_title">Title</p>
+                <div class="event_post_title">
+                    <table class="table">
+                        {% render_field form.title class="form_event_title" placeholder="タイトルを入力してください。" %}
+                    </table>
+                </div>
+                <div class="event_type">
+                    <p class="event_text_title">Event Type</p>
+                    <table class="table">
+                            {% render_field form.event_type class="form_event_type" %}
+                    </table>
+                </div>
+                <div class="work_detail">
+                    <table class="table">
+                            {% render_field form.work_detail class="form_work_detail" %}
+                    </table>
+                </div>
+                <div class="sport_detail">
+                    <table class="table">
+                            {% render_field form.sport_detail class="form_sport_detail " %}
+                    </table>
+                </div>
+                <div class="e_sport_detail">
+                    <table class="table">
+                            {% render_field form.e_sport_detail class="form_e_sport_detail" %}
+                    </table>
+                </div>
+
+                <div class="hobby_detail">
+                    <table class="table">
+                            {% render_field form.hobby_detail class="form_hobby_detail" %}
+                    </table>
+                </div>
+                <div class="event_holding_method">
+                    <table class="table">
+                            {% render_field form.holding_method class="form_holding_method"%}
+                    </table>
+                </div>
+                <div class="event_text">
+                     <p class="event_text_title">Event Contents</p>
+                    <table class="table">
+                        {% render_field form.text class="form_event_text"  %}
+                    </table>
+                </div>
+            </form>
+        </section>
+    {% else %}
+        <section class="please_login">
+        <div class="login_link_div">
+            <div class="text-center">
+                <a class="nav-link" href="{% url 'login' %}">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <p class="login_link_post">投稿するにはログインが必要です</p>
+                </a>
+            </div>
+        </div>
+        </section>
+    {% endif %}
+{% endblock body %}
