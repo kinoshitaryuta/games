@@ -472,7 +472,6 @@ footer{
     margin-bottom: 5px;
     padding-left: 10px;
 }
-
 .form_event_title{
     text-align: center;
     width: 100%;
@@ -480,4 +479,30 @@ footer{
     border: none;
     outline: none;
     box-shadow: 0 0px 10px rgba(0,0,0,0.2);
+}
+ul {
+    list-style: none;
+    margin: 0;
+
+}
+.form_event_type{
+   display:inline-block;
+    padding: 10px;
+    margin: 0;
+}
+.form_work_detail,
+.form_sport_detail,
+.form_e_sport_detail,
+.form_hobby_detail{
+    display:inline-block;
+    padding: 10px;
+    margin: 0;
+}
+.form_holding_method{
+    display:inline-block;
+    padding: 10px;
+    margin: 0;
+}
+.post_table{
+    margin: 0;
 }
