@@ -1,0 +1,33 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block body %}
+    <div class="detail_images">
+        <img src="{% static 'img/e-sport.jpg' %}" class="card-img-top detail_img" alt="仕事に関するイベント">
+        <p class="detail_text">E-SPORT</p>
+    </div>
+    <section class="post_list">
+    <h6 class="event_detail_text">イベント一覧</h6>
+        <div class="post_individual">
+            {% for Post in posts %}
+                <div class="card-detail">
+                    <h5 class="card-header post_day">(日付・場所)開催予定</h5>
+                    <div class="card-body detail_body">
+                        <p class="post_title_text">Title</p>
+                        <h5 class="card-title post_title">{{ Post.title}}</h5>
+                            <p class="card-text post_username">{{ Post.username }}</p>
+                           <div class="text-right link_detail">
+                                <a href="#" class="post_detail_next">
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                           </div>
+                            <div class="card-footer">
+                                <p class="post_event_type">{{ Post.get_work_detail_display }}</p>
+                                <p class="post_holding_method">{{ Post.get_holding_method_display }}</p>
+                            </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock body %}
