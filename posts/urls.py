@@ -8,4 +8,6 @@ urlpatterns=[
     path('sport/', views.SportDetailView.as_view(), name='sport'),
     path('e-sport/', views.ESportDetailView.as_view(), name='e-sport'),
     path('hobby/', views.HobbyDetailView.as_view(), name='hobby'),
+    path('post/<int:pk>/',views.PostDetailView.as_view(),name='post_detail'),
+
 ]

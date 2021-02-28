@@ -71,6 +71,9 @@ class Post(models.Model):
     e_sport_detail = models.CharField(max_length=100,choices=E_SPORT_DETAIL,blank=True, null=False)
     hobby_detail = models.CharField(max_length=100,choices=HOBBY_DETAIL, blank=True, null=False)
     holding_method = models.CharField(max_length=100,choices=TYPE, blank=False, null=False)
+    event_date= models.DateField(blank=True,null=True)
+    start_application_date= models.DateField(blank=True,null=True)
+    finish_application_date= models.DateField(blank=True,null=True)
 
 
     def __str__(self):

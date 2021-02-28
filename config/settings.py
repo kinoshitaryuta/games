@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     'widget_tweaks',
     'django_summernote',
+    'bootstrap_datepicker_plus',
 ]
 
 MIDDLEWARE = [

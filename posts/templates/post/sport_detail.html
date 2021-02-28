@@ -10,23 +10,23 @@
     <h6 class="event_detail_text">イベント一覧</h6>
         <div class="post_individual">
             {% for Post in posts %}
-                <div class="card-detail">
-                    <h5 class="card-header post_day">(日付・場所)開催予定</h5>
-                    <div class="card-body detail_body">
-                        <p class="post_title_text">Title</p>
-                        <h5 class="card-title post_title">{{ Post.title}}</h5>
-                            <p class="card-text post_username">{{ Post.username }}</p>
-                           <div class="text-right link_detail">
-                                <a href="#" class="post_detail_next">
-                                    <i class="fas fa-arrow-right"></i>
-                                </a>
-                           </div>
+                <a href="{% url 'post_detail' Post.id %}" class="post_detail_next">
+                    <div class="card-detail">
+                        <h5 class="card-header post_day">(日付・場所)開催予定</h5>
+                        <div class="card-body detail_body">
+                            <p class="post_title_text">Title</p>
+                            <h5 class="card-title post_title">{{ Post.title}}</h5>
+                            <p class="card-text post_username">{{ Post.master_username  }}</p>
+                            <div class="text-right link_detail">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
                             <div class="card-footer">
                                 <p class="post_event_type">{{ Post.get_work_detail_display }}</p>
                                 <p class="post_holding_method">{{ Post.get_holding_method_display }}</p>
                             </div>
+                        </div>
                     </div>
-                </div>
+                </a>
             {% endfor %}
         </div>
     </section>

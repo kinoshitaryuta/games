@@ -1,0 +1,56 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block body %}
+    <section class="post_detail">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a href="#photo1" class="nav-link active" data-toggle="tab">申し込み</a>
+            </li>
+            <li class="nav-item">
+              <a href="#photo2" class="nav-link" data-toggle="tab">お問い合わせ</a>
+            </li>
+        </ul>
+        <div class="main_detail">
+            <P class="detail_title_text">タイトル</P>
+            <hr class="detail_hr">
+            <h5 class="post_title_detail">{{ post.title}}</h5>
+            <P class="detail_title_text">イベント詳細</P>
+            <hr class="detail_hr">
+            <div class="detail_descriptions">
+                <div class="event_description_div">
+                    <p class="event_detail_description_text">応募期間</p>
+                    <p class="event_date_detail">{{ post.start_application_date}}~{{ post.finish_application_date}}</p>
+                </div>
+                <div class="event_description_div">
+                    <i class="fas fa-calendar-day event_detail_description"></i>
+                    <p class="event_date_detail">{{ post.event_date}}</p>
+                </div>
+                <div class="event_description_div">
+                    <i class="fas fa-clock event_detail_description"></i>
+                    <p class="event_date_detail">17：00~19:00</p>
+                </div>
+                <div class="event_description_div">
+                    <i class="fas fa-map-marker-alt event_detail_description"></i>
+                    <p class="event_place_detail">zoom</p>
+                </div>
+                <div class="event_description_div">
+                    <i class="fas fa-user event_detail_description"></i>
+                    <p class="card-text detail_username">{{ post.master_username  }}</p>
+                </div>
+            </div>
+            <P class="detail_title_text">タイプ</P>
+            <hr class="detail_hr">
+            <div class="event_tag">
+                <p class="post_event_detail">{{ post.get_event_type_display }}</p>
+                <p class="post_event_type_detail">{{ post.get_work_detail_display }}</p>
+                <p class="post_holding_method_detail">{{ post.get_holding_method_display }}</p>
+            </div>
+            <P class="detail_title_text">イベント内容</P>
+            <hr class="detail_hr">
+            <div class="post_detail_individual">
+                <p class="card-text detail_text">{{ post.text | safe }}</p>
+            </div>
+        </div>
+    </section>
+{% endblock body %}

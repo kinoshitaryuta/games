@@ -12,14 +12,35 @@
                 </div>
                 {% csrf_token %}
                 <p class="event_text_title">Title</p>
+                <hr class="post_create_hr">
                 <div class="event_post_title">
                     <table class="table">
                         {% render_field form.title class="form_event_title"  placeholder="タイトルを入力してください。" %}
                     </table>
                 </div>
+                <p class="event_text_title">Days</p>
+                <hr class="post_create_hr">
+                <div class="event_days">
+                    <div class="event_event_date">
+                        <table class="table">
+                            {% render_field form.event_date class="form_event_date"  placeholder="開催日" %}
+                        </table>
+                    </div>
+                    <div class="event_start_application_date">
+                        <table class="table">
+                            {% render_field form.start_application_date class="form_start_application_date"  placeholder="応募開始日" %}
+                        </table>
+                    </div>
+                    <div class="event_finish_application_date">
+                        <table class="table">
+                            {% render_field form.finish_application_date class="form_finish_application_date"  placeholder="応募締切日" %}
+                        </table>
+                    </div>
+                </div>
                 <div class="event_type" id="firstList">
                     <p class="event_text_title">Event Type</p>
-                    <table class="post_table">
+                    <hr class="post_create_hr">
+                    <table class="post_table event_table">
                             {% render_field form.event_type name="firstList" class="form_event_type"  onclick="formSwitch()"  %}
                     </table>
                 </div>
