@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'django_summernote',
     'bootstrap_datepicker_plus',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -77,6 +78,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -198,6 +201,7 @@ DEFAULT_LOGGING = {
 }
 
 AUTHENTICATION_BACKENDS = [
+    # 'social_core.backends.twitter.TwitterOAuth',
     'django.contrib.auth.backends.ModelBackend',
 ]
 
@@ -223,3 +227,7 @@ SUMMERNOTE_CONFIG = {
 
 LOGIN_REDIRECT_URL = 'home'
 ACCOUNT_LOGOUT_REDIRECT_URL = 'login'
+
+SOCIAL_AUTH_TWITTER_KEY = 'qClbbM8cGfEC2DMkFCI2euU0I'
+SOCIAL_AUTH_TWITTER_SECRET = 'uczM3Jr8gSiOL8qXuhJW9TXG6eHrZJ2wCdSCZgUzepvnjRRfh0'
+# SOCIAL_AUTH_LOGIN_REDIRECT_URL ='home'

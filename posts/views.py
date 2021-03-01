@@ -1,5 +1,6 @@
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from posts.forms import PostCreateForm
+from django.shortcuts import resolve_url
+from posts.forms import PostCreateForm,PostUpdateForm
 from posts.models import Post
 from django.urls import reverse_lazy
 from django.views import generic
@@ -13,7 +14,7 @@ class PostCreateView(generic.CreateView,LoginRequiredMixin):#投稿機能
     success_url = reverse_lazy('home')
 
     def form_valid(self, form):
-        form.instance.username=self.request.user
+        form.instance.master_username=self.request.user
         return super().form_valid(form)
 
 
@@ -47,3 +48,23 @@ class PostDetailView(generic.DetailView):
     template_name = 'post/detail.html'
 
 
+class OnlyYouMixin(UserPassesTestMixin):
+    raise_exception = True
+
+    def test_func(self):
+        user = self.request.user
+        return user.pk == self.kwargs['pk'] or user.is_superuser
+
+
+class PostUpdateView(OnlyYouMixin, generic.UpdateView):
+    model = Post
+    form_class = PostUpdateForm
+    template_name = 'post/post_edit.html'
+
+    def get_success_url(self):
+        return resolve_url('post_detail', pk=self.kwargs['pk'])
+
+class PostDeleteView(OnlyYouMixin,generic.DeleteView):
+    model = Post
+    template_name = 'post/post_delete.html'
+    success_url = '/'

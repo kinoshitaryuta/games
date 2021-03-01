@@ -28,3 +28,17 @@ class PostCreateForm(ModelForm):
             'finish_application_date': datetimepicker.DatePickerInput(format='%Y-%m-%d',options={'locale': 'ja','dayViewHeaderFormat': 'YYYY年 MMMM',}).end_of('期間'),
         }
 
+class PostUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = [
+            'title','text','event_date','start_application_date','finish_application_date','holding_method',
+        ]
+
+        widgets = {
+            'text': SummernoteWidget(),
+            'holding_method': forms.RadioSelect(),
+            'event_date': datetimepicker.DatePickerInput(format='%Y-%m-%d', options={'locale': 'ja', 'dayViewHeaderFormat': 'YYYY年 MMMM', }),
+            'start_application_date': datetimepicker.DatePickerInput(format='%Y-%m-%d', options={'locale': 'ja','dayViewHeaderFormat': 'YYYY年 MMMM', }).start_of('期間'),
+            'finish_application_date': datetimepicker.DatePickerInput(format='%Y-%m-%d', options={'locale': 'ja','dayViewHeaderFormat': 'YYYY年 MMMM', }).end_of('期間'),
+        }

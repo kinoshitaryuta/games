@@ -25,6 +25,10 @@ from .forms import (
 
 User = get_user_model()
 
+
+
+
+
 class LoginView(LoginView):
     """ログイン機能"""
     form_class = UserLoginForm
@@ -140,3 +144,4 @@ class PasswordResetConfirmView(PasswordResetConfirmView):
 
 class PasswordResetCompleteView(PasswordResetCompleteView):
     template_name = 'account/password_reset_complete.html'
+
