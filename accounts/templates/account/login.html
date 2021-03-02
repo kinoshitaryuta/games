@@ -15,20 +15,21 @@
                 <table class="table">{% render_field form.password class="login_form_password" placeholder="password" %}</table>
             </div>
             <div class="text-center">
-                <button type="submit" class="btn btn-success" id="login_button">LOGIN</button>
+                <button type="submit" class="btn btn-success login_button" >LOGIN</button>
             </div>
             <div class="login_link_group">
-                <a class="login_link" href="#">
                     <p class="login_link_text">パスワードをお忘れの方</p>
-                </a>
+
+                <a class="login_link" href="#"></a>
                 <a class="login_link" href="{% url 'signup' %}">
                      <p class="login_link_text">新規登録</p>
                 </a>
             </div>
         </form>
-{#                <button type="button" class="button"#}
-{#    onclick="location.href='{% url 'social:begin' 'twitter' %}?next={{ next }}'">#}
-{#    Twitter でログイン#}
-</button>
+        <div class="twitter">
+            <a class="btn btn-block btn-social btn-twitter" onclick="location.href='{% url 'social:begin' 'twitter' %}?next={{ next }}'">
+            <i class="fa fa-twitter"></i>Twitter でログイン
+            </a>
+        </div>
     </section>
 {% endblock body %}

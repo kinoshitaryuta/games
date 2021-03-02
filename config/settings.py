@@ -41,14 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'accounts.apps.AccountsConfig',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
+    'social_django',
     'bootstrap4',
     'widget_tweaks',
     'django_summernote',
     'bootstrap_datepicker_plus',
-    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -201,8 +198,8 @@ DEFAULT_LOGGING = {
 }
 
 AUTHENTICATION_BACKENDS = [
-    # 'social_core.backends.twitter.TwitterOAuth',
     'django.contrib.auth.backends.ModelBackend',
+    'social_core.backends.twitter.TwitterOAuth',
 ]
 
 AUTH_USER_MODEL = 'accounts.User'
@@ -228,6 +225,7 @@ SUMMERNOTE_CONFIG = {
 LOGIN_REDIRECT_URL = 'home'
 ACCOUNT_LOGOUT_REDIRECT_URL = 'login'
 
-SOCIAL_AUTH_TWITTER_KEY = 'qClbbM8cGfEC2DMkFCI2euU0I'
-SOCIAL_AUTH_TWITTER_SECRET = 'uczM3Jr8gSiOL8qXuhJW9TXG6eHrZJ2wCdSCZgUzepvnjRRfh0'
-# SOCIAL_AUTH_LOGIN_REDIRECT_URL ='home'
+SOCIAL_AUTH_TWITTER_KEY = 'EIHgOyR712E7u8bHip79vL6Me'
+SOCIAL_AUTH_TWITTER_SECRET = 'YsjuqHlQHjScjm5YzB6gVdk4pUO9oG6Dy6ltwdKPnoiPHOgBo8'
+SOCIAL_AUTH_LOGIN_REDIRECT_URL ='home'
+SOCIAL_AUTH_URL_NAMESPACE = 'social'
