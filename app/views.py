@@ -1,7 +1,12 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.shortcuts import resolve_url
 from django.urls import reverse_lazy
 from django.views import generic
-from app.forms import ContactForm
+from accounts.models import User
+from app.forms import (
+    ContactForm,
+    UserUpdateForm,
+)
 
 
 
@@ -23,7 +28,7 @@ class ContactView(generic.CreateView, LoginRequiredMixin):
         return super().form_valid(form)
 
 
-class ContactResultView(generic.TemplateView, LoginRequiredMixin):
+class ContactResultView(generic.TemplateView,LoginRequiredMixin):
     template_name = 'app/contact_result.html'
 
     def get_context_data(self, **kwargs):
@@ -32,3 +37,23 @@ class ContactResultView(generic.TemplateView, LoginRequiredMixin):
         return context
 
 
+class MyPageView(LoginRequiredMixin,generic.DetailView,):
+    template_name = 'app/my_page.html'
+    model = User
+
+
+class OnlyYouMixin(UserPassesTestMixin):
+    raise_exception = True
+
+    def test_func(self):
+        user = self.request.user
+        return user.pk == self.kwargs['pk'] or user.is_superuser
+
+
+class UserUpdateView(OnlyYouMixin, generic.UpdateView):
+    model = User
+    form_class = UserUpdateForm
+    template_name = 'app/my_page_edit.html'
+
+    def get_success_url(self):
+        return resolve_url('my_page', pk=self.kwargs['pk'])

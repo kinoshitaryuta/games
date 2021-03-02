@@ -43,7 +43,7 @@ class SignupView(generic.CreateView):
 
     def form_valid(self,form):
         user = form.save()
-        login(self.request, user)
+        login(self.request, user,backend='django.contrib.auth.backends.ModelBackend')
         return super().form_valid(form)
 
 
@@ -144,4 +144,6 @@ class PasswordResetConfirmView(PasswordResetConfirmView):
 
 class PasswordResetCompleteView(PasswordResetCompleteView):
     template_name = 'account/password_reset_complete.html'
+
+
 

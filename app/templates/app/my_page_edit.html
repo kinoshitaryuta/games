@@ -1,0 +1,26 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+
+{% block body %}
+    <section class="my_page_edit">
+        <h5 class="my_page_text">プロフィールの変更</h5><hr class="my_page_hr">
+        <form  class="post_form"  method="POST">
+            <div class="text-right">
+                <button type="submit" class="btn btn-success post_button py-0">POST</button>
+            </div>
+            {% csrf_token %}
+            <p class="event_text_title">username</p>
+            <hr class="post_create_hr">
+            <div class="username_edit">
+                <table class="table">{% render_field form.username class="form_edit_username" placeholder="ユーザー名" %}</table>
+            </div>
+            <p class="event_text_title">Self-introduction</p>
+            <hr class="post_create_hr">
+            <div class="self_introduction_edit">
+                <table class="table">{% render_field form.self_introduction　class="form_edit_self_introduction" placeholder="※プロフィール" %}</table>
+            </div>
+        </form>
+    </section>
+{% endblock body %}

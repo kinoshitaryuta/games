@@ -1,5 +1,7 @@
 from django import forms
 from django.forms import ModelForm
+
+from accounts.models import User
 from app.models import Contact
 from django.conf import settings
 from django.core.mail import BadHeaderError, send_mail
@@ -24,3 +26,10 @@ class ContactForm(ModelForm):
             send_mail(subject, message, from_email, recipient_list)
         except BadHeaderError:
             return HttpResponse("無効なヘッダが検出されました。")
+
+class UserUpdateForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = [
+            'username','self_introduction'
+        ]

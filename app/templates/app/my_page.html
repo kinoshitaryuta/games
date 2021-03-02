@@ -1,0 +1,73 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block body %}
+    <section class="my_page">
+        <h5 class="my_page_text">WSEHプロフィール</h5>
+        <hr class="my_page_hr">
+        <div class="text-right">
+            <button class="edit_button" title="編集">
+                <a href="{% url 'user_update' user.id %}" class="post_detail_next">
+                    <i class="fas fa-edit"></i>
+                </a>
+            </button>
+        </div>
+        <div class="my_username">
+            <i class="fas fa-grin my_page_icon"></i>
+            <p class="my_page_username">{{ user.username }}</p>
+        </div>
+        <div class="my_self_introduction">
+            <i class="fas fa-comment-dots my_page_icon_2"></i>
+            <p class="my_page_self_introduction">{{ user.self_introduction}}</p>
+        </div>
+    </section>
+    <section class="my_page_post">
+        <h5 class="my_post_text">主催したイベント</h5>
+        {% for Post in object.post_set.all %}
+            <div class="card-detail">
+                <h5 class="card-header post_day">{{ Post.event_date}}開催予定</h5>
+                <div class="card-body detail_body">
+                    <div class="text-right">
+                        <div class="post_edit_delete">
+                            <button class="edit_button" title="編集">
+                                <a href="{% url 'post_update' Post.id %}" class="post_detail_next">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </button>
+                            <button class="delete_button" title="削除">
+                                <a href="{% url 'post_delete' Post.id %}" class="post_detail_next">
+                                    <i class="fas fa-trash-alt" title="削除"></i>
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                    <a href="{% url 'post_detail' Post.id %}" class="post_detail_next">
+                        <p class="my_page_title_text">Title</p>
+                        <h5 class="card-title post_title">{{ Post.title}}</h5>
+                         <div class="event_detail_div">
+                            <i class="fas fa-user event_detail_icon"></i>
+                            <p class="card-text master_username">{{ Post.master_username  }}</p>
+                        </div>
+                        <div class="text-right link_detail">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="card-footer">
+                            <p class="post_event_type">{{ Post.get_e_sport_detail_display }}</p>
+                            <p class="post_holding_method">{{ Post.get_holding_method_display }}</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+
+
+    </section>
+<script>
+  tippy('.btn', {
+  placement: 'right',
+  animation: 'scale',
+  duration: 1000,
+  arrow: true
+})
+</script>
+{% endblock body %}
