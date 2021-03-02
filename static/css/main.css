@@ -16,8 +16,7 @@ a:hover {
     cursor: pointer;
 }
 /*ハンバーガーメニュー*/
-
-#base_nav{
+.base_nav{
     height: auto;
     padding: 0;
     background: #ffffff;
@@ -58,9 +57,9 @@ footer{
     box-shadow: 0 0px 10px rgba(0,0,0,0.2);
     justify-content: space-around;
 }
-#nav_login,
-#nav_add,
-#nav_home {
+.nav_login,
+.nav_add,
+.nav_home {
     padding: 0;
     border-style: none;
     text-align: center;
@@ -103,6 +102,8 @@ footer{
     font-size: 14px;
 }
 
+
+
 /*login.html*/
 .site_account_title{
     margin-top: 70px;
@@ -136,14 +137,13 @@ footer{
 {
   width: 70%;
 }
-#login_button{
+.login_button{
     margin-top: 5px;
     text-align: center;
     width: 70%;
 }
 .login_link_group{
     margin-top: 10px;
-    padding-bottom: 10px;
 
 }
 .login_link_text{
@@ -152,6 +152,25 @@ footer{
     font-size: 12px;
     color: #838383;
 }
+.twitter{
+    margin-top: 40px;
+    padding-bottom: 40px;
+}
+
+.fa-twitter{
+
+    color: white;
+    padding-right: 10px;
+}
+.btn-twitter{
+    font-size: 15px;
+    margin-right:auto;
+    margin-left: auto;
+    width: 70%;
+    background:#55ACEE ;
+}
+
+
 
 /*signup.html*/
 .site_account_sign_title{
@@ -199,12 +218,14 @@ footer{
     font-size: 12px;
     margin: 0;
 }
-#signup_button{
+.signup_button{
     margin-top: 15px;
     margin-bottom: 15px;
     text-align: center;
     width: 50%;
 }
+
+
 
 /*signup_text.html*/
 .signup_text_header{
@@ -234,10 +255,12 @@ footer{
     margin: 10px;
 }
 
-#next_login{
+.next_login{
     margin-top:10px;
     margin-bottom: 10px;
 }
+
+
 
 /*contact_form.html*/
 .contact_form_text{
@@ -283,7 +306,6 @@ footer{
 
 
 /*contact_result.html*/
-
 .contact_result_text{
     font-size: 15px;
     padding-left: 10px;
@@ -295,6 +317,8 @@ footer{
     text-align: center;
     color: black;
 }
+
+
 
 /*email_change_form.html*/
 .email_change_form_text{
@@ -332,6 +356,8 @@ footer{
     margin-top: 0;
     margin-bottom: 10px;
 }
+
+
 
 /*email_change_done.html*/
 .email_change_thank_you_text{
@@ -413,6 +439,9 @@ footer{
 .password_change_form_button{
     margin-top: 30px;
 }
+
+
+
 
 /*password_reset_done.html*/
 .password_reset_thank_you_text{
@@ -530,11 +559,9 @@ ul {
     padding: 10px;
     margin: 0;
 }
-
 .post_table{
     margin: 0;
 }
-
 label {
     display: inline-block;
     border-radius: 20px;
@@ -568,7 +595,6 @@ label {
     background: #a7d9fc;
     font-weight: bold;
     font-size: 20px;
-
 }
 .detail_body{
     padding: 0;
@@ -648,6 +674,8 @@ label {
     font-size: 16px;
 }
 
+
+
 /*detail.html*/
 .post_detail{
     margin-top: 40px;
@@ -703,24 +731,7 @@ label {
     margin-bottom: 30px;
     display: flex;
 }
-.post_event_detail{
-    margin: 0 0 0 10px;
-    width: 100px;
-    font-size: 16px;
-    text-align: center;
-    color: #ffffff;
-    background: #73c6d9;
-    border-radius: 20px;
-}
-.post_event_type_detail{
-    margin: 0 0 0 10px;
-    width: 100px;
-    font-size: 16px;
-    text-align: center;
-    color: #ffffff;
-    background: #75ae75;
-    border-radius: 20px;
-}
+
 .post_holding_method_detail{
     margin: 0 0 0 10px;
     width: 100px;
@@ -746,5 +757,121 @@ label {
 .nav-tabs:hover {
     color: #053d64;
     cursor: pointer;
+}
 
+
+
+/*my_page.html*/
+.my_page{
+    height: 200px;
+    background: #ffffff;
+    box-shadow: 0 0px 10px rgba(0,0,0,0.2);
+}
+.my_page_text{
+    padding-top: 10px;
+    padding-left: 10px;
+    font-size: 18px;
+}
+.my_page_hr{
+    margin: 0;
+}
+.my_username,
+.my_self_introduction{
+    display: flex;
+}
+.my_page_icon{
+    padding-top: 5px;
+    padding-left: 10px;
+    margin: 0;
+    font-size: 20px;
+}
+.my_page_username{
+    padding-top: 5px;
+    padding-left: 10px;
+    margin: 0;
+    font-size: 20px;
+    font-weight: bolder;
+    color: black;
+}
+.my_page_icon_2{
+    padding-top: 20px;
+    padding-left: 10px;
+    font-size: 14px;
+}
+.my_page_self_introduction{
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0;
+    font-size: 14px;
+}
+.my_page_post{
+    margin-top: 40px;
+}
+.my_post_text{
+    padding-left: 10px;
+    font-weight: bold;
+    color: #807e7e;
+}
+.my_page_title_text{
+    font-size: 12px;
+    margin: 0;
+    padding-left: 10px;
+}
+/*ツールチップ*/
+.delete_button,
+.edit_button{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    appearance: none;
+}
+.fa-trash-alt{
+    padding-top: 10px;
+    padding-right: 10px;
+    font-size: 18px;
+    color: #f68686;
+}
+.fa-edit{
+    padding-top: 10px;
+    padding-right: 5px;
+    font-size: 18px;
+    color: #6cab96;
+}
+
+
+
+/*my_page_edit.html*/
+.my_page_edit{
+    margin-top: 30px;
+    height: auto;
+    background: #ffffff;
+    box-shadow: 0 0px 10px rgba(0,0,0,0.2);
+}
+.username_edit{
+    margin-bottom: 100px;
+}
+.self_introduction_edit{
+    padding-bottom: 100px;
+}
+.form_edit_self_introduction {
+    font-weight: bold;
+    padding-top: 20px;
+    margin-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+    height: 100px;
+    resize: none;
+    border-style: none;
+    outline: none;
+}
+.form_edit_username{
+    font-weight: bold;
+    width: 100%;
+    border-style: none;
+    outline: none;
+    padding-top: 20px;
+    margin-left: 10px;
+    padding-right: 10px;
 }
