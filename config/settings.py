@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'django_summernote',
     'bootstrap_datepicker_plus',
+    'django_cleanup',
 ]
 
 MIDDLEWARE = [
