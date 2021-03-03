@@ -47,6 +47,7 @@ class SignupView(generic.CreateView):
         return super().form_valid(form)
 
 
+
 class SignupTextView(generic.TemplateView):
     template_name = 'account/signup_text.html'
 

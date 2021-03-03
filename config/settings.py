@@ -82,6 +82,7 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database
@@ -189,7 +190,7 @@ DEFAULT_LOGGING = {
             'level': 'INFO',
             'propagate': False,
         },
-        'PIB': {
+        'WSEH': {
             'handlers': ['console'],
             'level': 'INFO',
             'propagate': False,
@@ -229,3 +230,4 @@ SOCIAL_AUTH_TWITTER_KEY = 'EIHgOyR712E7u8bHip79vL6Me'
 SOCIAL_AUTH_TWITTER_SECRET = 'YsjuqHlQHjScjm5YzB6gVdk4pUO9oG6Dy6ltwdKPnoiPHOgBo8'
 SOCIAL_AUTH_LOGIN_REDIRECT_URL ='home'
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
+

@@ -9,18 +9,33 @@
         <h3 class="signup_text">SIGNUP</h3>
         <form class="signup_form"  method="post" enctype="multipart/form-data" action="">
             {% csrf_token %}
+            <p class="signup_text_detail">Icon</p>
+            <hr class="signup_hr">
+            <div class="profile_image">
+                <table class="table">{% render_field form.profile_image class="form_profile_image"  %}</table>
+            </div>
+            <p class="signup_text_detail">username</p>
+            <hr class="signup_hr">
             <div class="username">
                 <table class="table">{% render_field form.username class="form_username" placeholder="ユーザー名" %}</table>
             </div>
+            <p class="signup_text_detail">Self-introduction</p>
+            <hr class="signup_hr">
             <div class="self_introduction">
                 <table class="table">{% render_field form.self_introduction　class="form_self_introduction" placeholder="※プロフィール" %}</table>
             </div>
+            <p class="signup_text_detail">E-mail</p>
+            <hr class="signup_hr">
             <div class="email">
                 <table class="table">{% render_field form.email class="form_email" placeholder="E-mail" %}</table>
             </div>
+            <p class="signup_text_detail">password</p>
+            <hr class="signup_hr">
             <div class="password1">
                 <table class="table">{% render_field form.password1 class="form_password" placeholder="password" %}</table>
             </div>
+            <p class="signup_text_detail">again password</p>
+            <hr class="signup_hr">
             <div class="password2">
                 <table class="table">{% render_field form.password2 class="form_password" placeholder="password確認用" %}</table>
             </div>
@@ -34,3 +49,5 @@
         </form>
     </section>
 {% endblock body %}
+
+

@@ -31,12 +31,13 @@
                     {% render_field form.email class="form-contact_email" placeholder="返信用E-mail" %}
                 </table>
             </div>
-
-            <div class="btn-group" id="contact_form_button">
-                <a class="nav-link" id="nav_home" href="{% url 'home' %}" >
-                    <button type="button" class="btn  btn-info" id="cancel_button">キャンセル</button>
-                </a>
-                <button type="submit" class="btn btn-success" id="send_form_button">送信</button>
+            <div class="text-center">
+                <div class="btn-group contact_form_button" >
+                    <a class="nav-link nav_home"  href="{% url 'home' %}" >
+                        <button type="button" class="btn  btn-info cancel_button" >キャンセル</button>
+                    </a>
+                    <button type="submit" class="btn btn-success send_form_button" >送信</button>
+                </div>
             </div>
         </form>
     </section>

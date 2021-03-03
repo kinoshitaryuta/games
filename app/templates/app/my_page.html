@@ -12,12 +12,14 @@
                 </a>
             </button>
         </div>
+        {% if  user.profile_image %}
+        <img src="{{ user.profile_image.url }}" class="user-icon">
+        {% endif %}
         <div class="my_username">
-            <i class="fas fa-grin my_page_icon"></i>
             <p class="my_page_username">{{ user.username }}</p>
         </div>
+        <hr class="my_page_hr">
         <div class="my_self_introduction">
-            <i class="fas fa-comment-dots my_page_icon_2"></i>
             <p class="my_page_self_introduction">{{ user.self_introduction}}</p>
         </div>
     </section>

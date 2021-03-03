@@ -6,11 +6,19 @@
 {% block body %}
     <section class="my_page_edit">
         <h5 class="my_page_text">プロフィールの変更</h5><hr class="my_page_hr">
-        <form  class="post_form"  method="POST">
+        <form  class="post_form" enctype="multipart/form-data" method="POST">
             <div class="text-right">
                 <button type="submit" class="btn btn-success post_button py-0">POST</button>
             </div>
             {% csrf_token %}
+            <p class="event_text_title">Icon</p>
+            <hr class="post_create_hr">
+            {% if  user.profile_image %}
+             <img src="{{ user.profile_image.url }}" class="user-icon">
+            {% endif %}
+            <div class="profile_image_edit">
+                <table class="table">{% render_field form.profile_image class="form_edit_profile_image"%}</table>
+            </div>
             <p class="event_text_title">username</p>
             <hr class="post_create_hr">
             <div class="username_edit">

@@ -174,7 +174,7 @@ footer{
 
 /*signup.html*/
 .site_account_sign_title{
-    margin-top: 40px;
+    margin-top: 20px;
     text-align: center;
     color: black;
     font-size: 35px;
@@ -193,25 +193,42 @@ footer{
     font-size: 22px;
     text-align: center;
     color: black;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0;
 }
-.username,
-.self_introduction,
-.email,
-.password1,
-.password2{
-  text-align: center;
+.signup_hr{
+    margin: 0 auto;
+    text-align: center;
+    width: 90%;
 }
-.form_self_introduction{
-    width: 80%;
-    height: 90px;
-    resize: none;
+.signup_text_detail{
+    font-size: 14px;
+    font-weight: bolder;
+    margin-bottom: 5px;
+    padding-left: 10px;
 }
 .form_username,
 .form_email,
-.form_password {
-    width: 80%;
+.form_password{
+    width: 100%;
+    border-style: none;
+    outline: none;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 20px;
+}
+.form_self_introduction{
+    resize: none;
+    height: 60px;
+    width: 100%;
+    border-style: none;
+    outline: none;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 20px;
 }
 .any_text{
     padding-left:15px;
@@ -219,8 +236,8 @@ footer{
     margin: 0;
 }
 .signup_button{
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     text-align: center;
     width: 50%;
 }
@@ -293,16 +310,15 @@ footer{
 .form-contact_username{
       width: 90%;
 }
-#contact_form_button{
+.contact_form_button{
     margin-top: 30px;
 }
-#cancel_button{
-    margin-left: 80px;
+.cancel_button{
+    margin-right: 10px;
 }
-#send_form_button{
-    margin-left: 15px;
+.send_form_button{
+    margin-left: 10px;
 }
-
 
 
 /*contact_result.html*/
@@ -763,7 +779,7 @@ label {
 
 /*my_page.html*/
 .my_page{
-    height: 200px;
+    height: auto;
     background: #ffffff;
     box-shadow: 0 0px 10px rgba(0,0,0,0.2);
 }
@@ -775,19 +791,11 @@ label {
 .my_page_hr{
     margin: 0;
 }
-.my_username,
-.my_self_introduction{
-    display: flex;
-}
-.my_page_icon{
-    padding-top: 5px;
-    padding-left: 10px;
-    margin: 0;
-    font-size: 20px;
-}
+
 .my_page_username{
-    padding-top: 5px;
+    padding-top: 10px;
     padding-left: 10px;
+    padding-bottom: 20px;
     margin: 0;
     font-size: 20px;
     font-weight: bolder;
@@ -796,12 +804,10 @@ label {
 .my_page_icon_2{
     padding-top: 20px;
     padding-left: 10px;
-    font-size: 14px;
+    font-size: 16px;
 }
 .my_page_self_introduction{
-    padding-top: 15px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 5px 10px 40px;
     margin: 0;
     font-size: 14px;
 }
@@ -817,6 +823,15 @@ label {
     font-size: 12px;
     margin: 0;
     padding-left: 10px;
+}
+.user-icon {
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    border-style: none;
 }
 /*ツールチップ*/
 .delete_button,
@@ -875,3 +890,4 @@ label {
     margin-left: 10px;
     padding-right: 10px;
 }
+

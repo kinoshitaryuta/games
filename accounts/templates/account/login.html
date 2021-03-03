@@ -18,16 +18,16 @@
                 <button type="submit" class="btn btn-success login_button" >LOGIN</button>
             </div>
             <div class="login_link_group">
+                <a class="login_link" href="{% url 'password_reset' %}">
                     <p class="login_link_text">パスワードをお忘れの方</p>
-
-                <a class="login_link" href="#"></a>
+                </a>
                 <a class="login_link" href="{% url 'signup' %}">
                      <p class="login_link_text">新規登録</p>
                 </a>
             </div>
         </form>
         <div class="twitter">
-            <a class="btn btn-block btn-social btn-twitter" onclick="location.href='{% url 'social:begin' 'twitter' %}?next={{ next }}'">
+            <a class="btn btn-block btn-social btn-twitter" enctype="multipart/form-data" onclick="location.href='{% url 'social:begin' 'twitter' %}?next={{ next }}'">
             <i class="fa fa-twitter"></i>Twitter でログイン
             </a>
         </div>
