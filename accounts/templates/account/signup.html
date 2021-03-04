@@ -11,8 +11,17 @@
             {% csrf_token %}
             <p class="signup_text_detail">Icon</p>
             <hr class="signup_hr">
+            <div class="signup_images">
+                  <div id="preview"></div>
+            </div>
             <div class="profile_image">
-                <table class="table">{% render_field form.profile_image class="form_profile_image"  %}</table>
+                <div class="text-center">
+                    <label class="image_label">
+                    <i class="fas fa-plus"></i>
+                        アイコンを選択して下さい
+                        <table class="table">{% render_field form.profile_image class="form_profile_image" onChange="imgPreView(event)"%}</table>
+                    </label>
+                </div>
             </div>
             <p class="signup_text_detail">username</p>
             <hr class="signup_hr">

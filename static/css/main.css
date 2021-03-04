@@ -241,7 +241,26 @@ footer{
     text-align: center;
     width: 50%;
 }
-
+.signup_images{
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.image_label{
+    font-size: 15px;
+    height: auto;
+    margin: 15px auto 30px;
+    padding:10px 10px;
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 20px;
+    text-decoration: none;
+    border: solid 1px #ccc;
+    transition: 0.25s;
+}
+input[type="file"] .form_profile_image{
+    display: none;
+}
 
 
 /*signup_text.html*/
@@ -578,7 +597,49 @@ ul {
 .post_table{
     margin: 0;
 }
-label {
+label[for=id_event_type_0],
+label[for=id_event_type_1],
+label[for=id_event_type_2],
+label[for=id_event_type_3],
+label[for=id_event_type_4],
+label[for=workList_0],
+label[for=workList_1],
+label[for=workList_2],
+label[for=workList_3],
+label[for=workList_4],
+label[for=workList_5],
+label[for=workList_6],
+label[for=sportList_0],
+label[for=sportList_1],
+label[for=sportList_2],
+label[for=sportList_3],
+label[for=sportList_4],
+label[for=e-sportList_0],
+label[for=e-sportList_1],
+label[for=e-sportList_2],
+label[for=e-sportList_3],
+label[for=e-sportList_4],
+label[for=e-sportList_5],
+label[for=e-sportList_6],
+label[for=e-sportList_7],
+label[for=e-sportList_8],
+label[for=e-sportList_9],
+label[for=e-sportList_10],
+label[for=e-sportList_11],
+label[for=e-sportList_12],
+label[for=e-sportList_13],
+label[for=e-sportList_14],
+label[for=hobbyList_0],
+label[for=hobbyList_1],
+label[for=hobbyList_2],
+label[for=hobbyList_3],
+label[for=hobbyList_4],
+label[for=hobbyList_5],
+label[for=hobbyList_6],
+label[for=id_holding_method_0],
+label[for=id_holding_method_1],
+label[for=id_holding_method_2]
+ {
     display: inline-block;
     border-radius: 20px;
     text-align: center;
@@ -827,8 +888,8 @@ label {
 .user-icon {
     margin-top: 10px;
     margin-left: 10px;
-    height: 60px;
-    width: 60px;
+    height: 70px;
+    width: 70px;
     object-fit: cover;
     border-radius: 50%;
     border-style: none;
@@ -890,4 +951,28 @@ label {
     margin-left: 10px;
     padding-right: 10px;
 }
+#previewImage{
+    margin-top: 10px;
+    height: 70px;
+    width: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    border-style: none;
+}
+.edit_images{
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.fa-arrow-circle-right{
+    padding-top: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 20px;
+}
 
+label[for=profile_image-clear_id],
+input[type=checkbox]{
+    display: none;
+
+}

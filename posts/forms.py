@@ -41,4 +41,5 @@ class PostUpdateForm(forms.ModelForm):
             'event_date': datetimepicker.DatePickerInput(format='%Y-%m-%d', options={'locale': 'ja', 'dayViewHeaderFormat': 'YYYY年 MMMM', }),
             'start_application_date': datetimepicker.DatePickerInput(format='%Y-%m-%d', options={'locale': 'ja','dayViewHeaderFormat': 'YYYY年 MMMM', }).start_of('期間'),
             'finish_application_date': datetimepicker.DatePickerInput(format='%Y-%m-%d', options={'locale': 'ja','dayViewHeaderFormat': 'YYYY年 MMMM', }).end_of('期間'),
+
         }

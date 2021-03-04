@@ -33,3 +33,4 @@ class UserUpdateForm(forms.ModelForm):
         fields = [
             'username','profile_image','self_introduction'
         ]
+

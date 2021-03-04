@@ -13,11 +13,15 @@
             {% csrf_token %}
             <p class="event_text_title">Icon</p>
             <hr class="post_create_hr">
-            {% if  user.profile_image %}
-             <img src="{{ user.profile_image.url }}" class="user-icon">
-            {% endif %}
+            <div class="edit_images">
+                {% if  user.profile_image %}
+                 <img src="{{ user.profile_image.url }}" class="user-icon">
+                {% endif %}
+                <i class="fas fa-arrow-circle-right"></i>
+                <div id="preview"></div>
+            </div>
             <div class="profile_image_edit">
-                <table class="table">{% render_field form.profile_image class="form_edit_profile_image"%}</table>
+                <table class="table">{% render_field form.profile_image class="form_edit_profile_image" onChange="imgPreView(event)"%}</table>
             </div>
             <p class="event_text_title">username</p>
             <hr class="post_create_hr">
@@ -31,4 +35,7 @@
             </div>
         </form>
     </section>
+
+
 {% endblock body %}
+

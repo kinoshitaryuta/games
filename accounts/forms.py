@@ -59,7 +59,6 @@ class PasswordResetForm(PasswordResetForm):
 
 
 
-
 class SetPasswordForm(SetPasswordForm):
     class Meta:
         model = User
