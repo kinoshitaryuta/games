@@ -1,6 +1,6 @@
 import bootstrap_datepicker_plus as datetimepicker
 from django.forms import ModelForm, forms
-from posts.models import Post
+from posts.models import Post, Tag
 from django_summernote.widgets import SummernoteWidget
 from django import forms
 from django.contrib.admin import widgets
@@ -28,7 +28,7 @@ class PostCreateForm(ModelForm):
             'finish_application_date': datetimepicker.DatePickerInput(format='%Y-%m-%d',options={'locale': 'ja','dayViewHeaderFormat': 'YYYY年 MMMM',}).end_of('期間'),
         }
 
-class PostUpdateForm(forms.ModelForm):
+class PostUpdateForm(ModelForm):
     class Meta:
         model = Post
         fields = [
@@ -43,3 +43,5 @@ class PostUpdateForm(forms.ModelForm):
             'finish_application_date': datetimepicker.DatePickerInput(format='%Y-%m-%d', options={'locale': 'ja','dayViewHeaderFormat': 'YYYY年 MMMM', }).end_of('期間'),
 
         }
+
+

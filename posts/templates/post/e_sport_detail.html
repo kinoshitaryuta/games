@@ -2,35 +2,62 @@
 {% load static %}
 
 {% block body %}
-    <div class="detail_images">
-        <img src="{% static 'img/e-sport.jpg' %}" class="card-img-top detail_img" alt="仕事に関するイベント">
-        <p class="detail_text">E-SPORT</p>
-    </div>
-    <section class="post_list">
-    <h6 class="event_detail_text">イベント一覧</h6>
-        <div class="post_individual">
-            {% for Post in posts %}
-                <a href="{% url 'post_detail' Post.id %}" class="post_detail_next">
-                    <div class="card-detail">
-                        <h5 class="card-header post_day">{{ Post.event_date}}開催予定</h5>
-                        <div class="card-body detail_body">
-                            <p class="post_title_text">Title</p>
-                            <h5 class="card-title post_title">{{ Post.title}}</h5>
-                             <div class="event_detail_div">
-                                <i class="fas fa-user event_detail_icon"></i>
-                                <p class="card-text master_username">{{ Post.master_username  }}</p>
-                            </div>
-                            <div class="text-right link_detail">
-                                <i class="fas fa-arrow-right"></i>
-                            </div>
-                            <div class="card-footer">
-                                <p class="post_event_type">{{ Post.get_e_sport_detail_display }}</p>
-                                <p class="post_holding_method">{{ Post.get_holding_method_display }}</p>
-                            </div>
-                        </div>
-                    </div>
+<section class="home_card">
+        <h6 class="event_detail_text">イベント一覧</h6>
+        <div class="card">
+            <img src="{% static 'img/Fortnite.jpg' %}" class="card-img-top" alt="FORTNITEに関するイベント">
+            <div class="card-body">
+                <a class="card_link" href="{% url 'fortnite' %}">
+                    <h3 class="event_list">FORTNITE</h3>
                 </a>
-            {% endfor %}
+                <p class="card-text">フォートナイトに関する様々なオンライン・オフラインイベントのページです。</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'img/Pubg.jpg' %}" class="card-img-top" alt="PUBGに関するイベント">
+            <div class="card-body">
+                <a class="card_link" href="{% url 'pubg' %}">
+                    <h3 class="event_list">PUBG</h3>
+                </a>
+                <p class="card-text">PUBGに関する様々なオンライン・オフラインイベントのページです。</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'img/Apex.jpg' %}"  class="card-img-top" alt="APEXに関するイベント">
+            <div class="card-body">
+                <a class="card_link" href="{% url 'apex' %}">
+                    <h3 class="event_list">APEX</h3>
+                </a>
+                <p class="card-text">APEXに関する様々なオンライン・オフラインイベントのページです。</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'img/Minecraft.jpg' %}"  class="card-img-top" alt="MINECRAFTに関するイベント">
+            <div class="card-body">
+                <a class="card_link" href="{% url 'minecraft' %}">
+                    <h3 class="event_list">MINECRAFT</h3>
+                </a>
+                <p class="card-text">MINECRAFTに関する様々なオンライン・オフラインイベントのページです。</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'img/League.jpg' %}"  class="card-img-top" alt="League of Legendsに関するイベント">
+            <div class="card-body">
+                <a class="card_link" href="{% url 'league' %}">
+                    <h3 class="event_list">League of Legends</h3>
+                </a>
+                <p class="card-text">League of Legendsに関する様々なオンライン・オフラインイベントのページです。</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'img/OtherESport.jpg' %}"  class="card-img-top" alt="その他に関するイベント">
+            <div class="card-body">
+                <a class="card_link" href="{% url 'other_e_sport' %}">
+                    <h3 class="event_list">その他</h3>
+                </a>
+                <p class="card-text">その他のE-Sportのオンライン・オフラインイベントのページです。</p>
+            </div>
         </div>
     </section>
+
 {% endblock body %}
