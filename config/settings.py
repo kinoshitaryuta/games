@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
+from django.utils import timezone
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -47,6 +48,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'bootstrap_datepicker_plus',
     'django_cleanup',
+    'daterange_filter'
 ]
 
 MIDDLEWARE = [
@@ -232,3 +234,4 @@ SOCIAL_AUTH_TWITTER_SECRET = 'YsjuqHlQHjScjm5YzB6gVdk4pUO9oG6Dy6ltwdKPnoiPHOgBo8
 SOCIAL_AUTH_LOGIN_REDIRECT_URL ='home'
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
+now = timezone.localtime(timezone.now())

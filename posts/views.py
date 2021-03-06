@@ -1,6 +1,9 @@
+import datetime
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import resolve_url
 from django.db.models import Q
+from django.views.generic.edit import ModelFormMixin
+
 from posts.models import Post
 from django.urls import reverse_lazy
 from django.views import generic
@@ -46,40 +49,102 @@ class PostDetailView(generic.DetailView):
     model = Post
     template_name = 'post/detail.html'
 
+
+
+
 #work関係
 class WorkDetailView(generic.TemplateView):
     template_name = 'post/work_detail.html'
+
+
+
 
 
 class SeminarDetailView(generic.ListView):
     model = Post
     template_name = 'post/work/Seminar_detail.html'
     context_object_name = 'posts'
-    queryset = Post.objects.filter(work_detail="10")
+
+
+
+
+    def get_queryset(self):
+        q_word = self.request.GET.get('query')
+        if q_word:
+            object_list = Post.objects.filter(
+                Q(title__icontains=q_word) | Q(title__icontains=q_word)
+            )
+        else:
+            object_list = Post.objects.filter(work_detail="10").order_by('event_date')
+        return object_list.filter(work_detail="10").order_by('event_date')
+
+
 
 class ExchangeDetailView(generic.ListView):
     model = Post
     template_name = 'post/work/Exchange_detail.html'
     context_object_name = 'posts'
-    queryset = Post.objects.filter(work_detail="20")
+
+
+    def get_queryset(self):
+        q_word = self.request.GET.get('query')
+        if q_word:
+            object_list = Post.objects.filter(
+                Q(title__icontains=q_word) | Q(title__icontains=q_word)
+            )
+        else:
+            object_list = Post.objects.filter(work_detail="20").order_by('event_date')
+        return object_list.filter(work_detail="20").order_by('event_date')
+
 
 class BusinessCardDetailView(generic.ListView):
     model = Post
     template_name = 'post/work/business_card_detail.html'
     context_object_name = 'posts'
-    queryset = Post.objects.filter(work_detail="30")
+
+    def get_queryset(self):
+        q_word = self.request.GET.get('query')
+        if q_word:
+            object_list = Post.objects.filter(
+                Q(title__icontains=q_word) | Q(title__icontains=q_word)
+            )
+        else:
+            object_list = Post.objects.filter(work_detail="30").order_by('event_date')
+        return object_list.filter(work_detail="30").order_by('event_date')
+
 
 class StudentsDetailView(generic.ListView):
     model = Post
     template_name = 'post/work/students_detail.html'
     context_object_name = 'posts'
-    queryset = Post.objects.filter(work_detail="40")
+
+
+    def get_queryset(self):
+        q_word = self.request.GET.get('query')
+        if q_word:
+            object_list = Post.objects.filter(
+                Q(title__icontains=q_word) | Q(title__icontains=q_word)
+            )
+        else:
+            object_list = Post.objects.filter(work_detail="40").order_by('event_date')
+        return object_list.filter(work_detail="40").order_by('event_date')
+
 
 class OtherWorkDetailView(generic.ListView):
     model = Post
     template_name = 'post/work/other_work_detail.html'
     context_object_name = 'posts'
-    queryset = Post.objects.filter(work_detail="50")
+
+
+    def get_queryset(self):
+        q_word = self.request.GET.get('query')
+        if q_word:
+            object_list = Post.objects.filter(
+                Q(title__icontains=q_word) | Q(title__icontains=q_word)
+            )
+        else:
+            object_list = Post.objects.filter(work_detail="50").order_by('event_date')
+        return object_list.filter(work_detail="50").order_by('event_date')
 
 
 
@@ -92,26 +157,69 @@ class BeginnerDetailView(generic.ListView):
     model = Post
     template_name = 'post/sport/beginner_detail.html'
     context_object_name = 'posts'
-    queryset = Post.objects.filter(sport_detail="10")
+
+
+    def get_queryset(self):
+        q_word = self.request.GET.get('query')
+        if q_word:
+            object_list = Post.objects.filter(
+                Q(title__icontains=q_word) | Q(title__icontains=q_word)
+            )
+        else:
+            object_list = Post.objects.filter(sport_detail="10").order_by('event_date')
+        return object_list.filter(sport_detail="10").order_by('event_date')
 
 class ExperiencedDetailView(generic.ListView):
     model = Post
     template_name = 'post/sport/experienced_detail.html'
     context_object_name = 'posts'
-    queryset = Post.objects.filter(sport_detail="20")
+
+
+    def get_queryset(self):
+        q_word = self.request.GET.get('query')
+        if q_word:
+            object_list = Post.objects.filter(
+                Q(title__icontains=q_word) | Q(title__icontains=q_word)
+            )
+        else:
+            object_list = Post.objects.filter(sport_detail="20").order_by('event_date')
+        return object_list.filter(sport_detail="20").order_by('event_date')
+
 
 class WatchingGamesDetailView(generic.ListView):
     model = Post
     template_name = 'post/sport/watching_detail.html'
     context_object_name = 'posts'
-    queryset = Post.objects.filter(sport_detail="30")
+
+
+    def get_queryset(self):
+        q_word = self.request.GET.get('query')
+        if q_word:
+            object_list = Post.objects.filter(
+                Q(title__icontains=q_word) | Q(title__icontains=q_word)
+            )
+        else:
+            object_list = Post.objects.filter(sport_detail="30").order_by('event_date')
+        return object_list.filter(sport_detail="30").order_by('event_date')
+
 
 
 class OtherSportDetailView(generic.ListView):
     model = Post
     template_name = 'post/sport/other_sport_detail.html'
     context_object_name = 'posts'
-    queryset = Post.objects.filter(sport_detail="40")
+
+
+
+    def get_queryset(self):
+        q_word = self.request.GET.get('query')
+        if q_word:
+            object_list = Post.objects.filter(
+                Q(title__icontains=q_word) | Q(title__icontains=q_word)
+            )
+        else:
+            object_list = Post.objects.filter(sport_detail="40").order_by('event_date')
+        return object_list.filter(sport_detail="40").order_by('event_date')
 
 
 
@@ -124,40 +232,102 @@ class FortniteDetailView(generic.ListView):
     model = Post
     template_name = 'post/e_sport/fortnite_detail.html'
     context_object_name = 'posts'
-    queryset = Post.objects.filter(e_sport_detail="10")
+
+
+    def get_queryset(self):
+        q_word = self.request.GET.get('query')
+        if q_word:
+            object_list = Post.objects.filter(
+                Q(title__icontains=q_word) | Q(title__icontains=q_word)
+            )
+        else:
+            object_list = Post.objects.filter(e_sport_detail="10").order_by('event_date')
+        return object_list.filter(e_sport_detail="10").order_by('event_date')
+
+
 
 class PubgDetailView(generic.ListView):
     model = Post
     template_name = 'post/e_sport/pubg_detail.html'
     context_object_name = 'posts'
-    queryset = Post.objects.filter(e_sport_detail="20")
+
+
+    def get_queryset(self):
+        q_word = self.request.GET.get('query')
+        if q_word:
+            object_list = Post.objects.filter(
+                Q(title__icontains=q_word) | Q(title__icontains=q_word)
+            )
+        else:
+            object_list = Post.objects.filter(e_sport_detail="20").order_by('event_date')
+        return object_list.filter(e_sport_detail="20").order_by('event_date')
 
 class ApexDetailView(generic.ListView):
     model = Post
     template_name = 'post/e_sport/apex_detail.html'
     context_object_name = 'posts'
-    queryset = Post.objects.filter(e_sport_detail="30")
+
+
+    def get_queryset(self):
+        q_word = self.request.GET.get('query')
+        if q_word:
+            object_list = Post.objects.filter(
+                Q(title__icontains=q_word) | Q(title__icontains=q_word)
+            )
+        else:
+            object_list = Post.objects.filter(e_sport_detail="30").order_by('event_date')
+        return object_list.filter(e_sport_detail="30").order_by('event_date')
 
 
 class MinecraftDetailView(generic.ListView):
     model = Post
     template_name = 'post/e_sport/minecraft_detail.html'
     context_object_name = 'posts'
-    queryset = Post.objects.filter(e_sport_detail="40")
+
+
+    def get_queryset(self):
+        q_word = self.request.GET.get('query')
+        if q_word:
+            object_list = Post.objects.filter(
+                Q(title__icontains=q_word) | Q(title__icontains=q_word)
+            )
+        else:
+            object_list = Post.objects.filter(e_sport_detail="40").order_by('event_date')
+        return object_list.filter(e_sport_detail="40").order_by('event_date')
 
 
 class LeagueDetailView(generic.ListView):
     model = Post
     template_name = 'post/e_sport/league_detail.html'
     context_object_name = 'posts'
-    queryset = Post.objects.filter(e_sport_detail="50")
+
+
+    def get_queryset(self):
+        q_word = self.request.GET.get('query')
+        if q_word:
+            object_list = Post.objects.filter(
+                Q(title__icontains=q_word) | Q(title__icontains=q_word)
+            )
+        else:
+            object_list = Post.objects.filter(e_sport_detail="50").order_by('event_date')
+        return object_list.filter(e_sport_detail="50").order_by('event_date')
 
 
 class OtherESportDetailView(generic.ListView):
     model = Post
     template_name = 'post/e_sport/other_e_sport_detail.html'
     context_object_name = 'posts'
-    queryset = Post.objects.filter(e_sport_detail="60")
+
+
+    def get_queryset(self):
+        q_word = self.request.GET.get('query')
+        if q_word:
+            object_list = Post.objects.filter(
+                Q(title__icontains=q_word) | Q(title__icontains=q_word)
+            )
+        else:
+            object_list = Post.objects.filter(e_sport_detail="60").order_by('event_date')
+        return object_list.filter(e_sport_detail="60").order_by('event_date')
 
 
 #趣味関係
@@ -168,22 +338,61 @@ class ReadBookDetailView(generic.ListView):
     model = Post
     template_name = 'post/hobby/read_book_detail.html'
     context_object_name = 'posts'
-    queryset = Post.objects.filter(hobby_detail="10")
+
+
+    def get_queryset(self):
+        q_word = self.request.GET.get('query')
+        if q_word:
+            object_list = Post.objects.filter(
+                Q(title__icontains=q_word) | Q(title__icontains=q_word)
+            )
+        else:
+            object_list = Post.objects.filter(hobby_detail="10").order_by('event_date')
+        return object_list.filter(hobby_detail="10").order_by('event_date')
 
 class SocialGatheringDetailView(generic.ListView):
     model = Post
     template_name = 'post/hobby/social_detail.html'
     context_object_name = 'posts'
-    queryset = Post.objects.filter(hobby_detail="20")
+
+
+    def get_queryset(self):
+        q_word = self.request.GET.get('query')
+        if q_word:
+            object_list = Post.objects.filter(
+                Q(title__icontains=q_word) | Q(title__icontains=q_word)
+            )
+        else:
+            object_list = Post.objects.filter(hobby_detail="20").order_by('event_date')
+        return object_list.filter(hobby_detail="20").order_by('event_date')
 
 class MorningActivityView(generic.ListView):
     model = Post
     template_name = 'post/hobby/morning_detail.html'
     context_object_name = 'posts'
-    queryset = Post.objects.filter(hobby_detail="30")
+
+
+    def get_queryset(self):
+        q_word = self.request.GET.get('query')
+        if q_word:
+            object_list = Post.objects.filter(
+                Q(title__icontains=q_word) | Q(title__icontains=q_word)
+            )
+        else:
+            object_list = Post.objects.filter(hobby_detail="30").order_by('event_date')
+        return object_list.filter(hobby_detail="30").order_by('event_date')
 
 class OtherHobbyDetailView(generic.ListView):
     model = Post
     template_name = 'post/hobby/other_hobby_detail.html'
     context_object_name = 'posts'
-    queryset = Post.objects.filter(hobby_detail="40")
+
+    def get_queryset(self):
+        q_word = self.request.GET.get('query')
+        if q_word:
+            object_list = Post.objects.filter(
+                Q(title__icontains=q_word) | Q(title__icontains=q_word)
+            )
+        else:
+            object_list = Post.objects.filter(hobby_detail="40").order_by('event_date')
+        return object_list.filter(hobby_detail="40").order_by('event_date')

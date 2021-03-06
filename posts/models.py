@@ -3,6 +3,7 @@ from accounts.models import User
 from django.utils import timezone
 
 
+
 class Tag(models.Model):
     EVENT=(
         ("10","キャリア"),
@@ -73,5 +74,6 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return f"/posts/{self.id}"
+
 
 

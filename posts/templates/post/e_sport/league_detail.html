@@ -3,6 +3,12 @@
 {% load widget_tweaks %}
 
 {% block body %}
+     <section class="search">
+        <form id="form3" action="{% url 'league' %}" method="get" class="search_container">
+            <input  type="text" name="query" placeholder="フリーワード検索" aria-label="Search">
+            <input type="submit" value="&#xf002">
+        </form>
+    </section>
     <section class="post_list">
     <h6 class="event_detail_text">イベント一覧</h6>
         <div class="post_individual">
