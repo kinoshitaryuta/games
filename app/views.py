@@ -6,6 +6,7 @@ from accounts.models import User
 from app.forms import (
     ContactForm,
     UserUpdateForm,
+
 )
 
 
@@ -27,7 +28,6 @@ class ContactView(generic.CreateView, LoginRequiredMixin):
         form.send_email()
         return super().form_valid(form)
 
-
 class ContactResultView(generic.TemplateView,LoginRequiredMixin):
     template_name = 'app/contact_result.html'
 
@@ -35,6 +35,9 @@ class ContactResultView(generic.TemplateView,LoginRequiredMixin):
         context = super().get_context_data(**kwargs)
         context['success'] = "お問い合わせは正常に送信されました。"
         return context
+
+
+
 
 
 class MyPageView(LoginRequiredMixin,generic.DetailView,):

@@ -54,6 +54,7 @@ class Tag(models.Model):
 
 
 class Post(models.Model):
+
     master_username = models.ForeignKey(User,on_delete=models.CASCADE)
     text = models.TextField(max_length=5000, blank=False, null=False)
     title = models.CharField(max_length=100, blank=False, null=False)
@@ -67,6 +68,10 @@ class Post(models.Model):
     event_date= models.DateField(blank=True,null=True)
     start_application_date= models.DateField(blank=True,null=True)
     finish_application_date= models.DateField(blank=True,null=True)
+    start_time = models.TimeField(blank=True, null=True)
+    end_time = models.TimeField(blank=True, null=True)
+    link_url=models.URLField(max_length=1000,blank=True,null=True)
+    sns_url=models.URLField(max_length=1000,blank=True,null=True)
 
 
     def __str__(self):

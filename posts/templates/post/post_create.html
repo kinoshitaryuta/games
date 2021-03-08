@@ -37,6 +37,18 @@
                         </table>
                     </div>
                 </div>
+                <p class="event_text_title">Time</p>
+                <hr class="post_create_hr">
+                <div class="event_start_time">
+                    <table class="post_table">
+                            {% render_field form.start_time class="form_start_time" type="time" placeholder="開始予定時間" %}
+                    </table>
+                </div>
+                <div class="event_end_time">
+                    <table class="post_table">
+                            {% render_field form.end_time  class="form_end_time"  type="time" placeholder="終了予定時間" %}
+                    </table>
+                </div>
                 <div class="event_type" id="firstList">
                     <p class="event_text_title">Event Type</p>
                     <hr class="post_create_hr">
@@ -71,6 +83,19 @@
                             {% render_field form.holding_method class="form_holding_method" %}
                     </table>
                 </div>
+                <p class="event_text_title">Application URL</p>
+                <hr class="post_create_hr">
+                <div class="event_link_url">
+                    <table class="post_table">
+                            {% render_field form.link_url class="form_link_url"  placeholder="申し込みURL"%}
+                    </table>
+                </div>
+                <div class="event_sns_url">
+                    <table class="post_table">
+                            {% render_field form.sns_url class="form_sns_url"  placeholder="TwitterURL"%}
+                    </table>
+                </div>
+
                 <div class="event_text">
                      <p class="event_text_title">Event Contents</p>
                     <table class="table">
@@ -91,4 +116,7 @@
         </div>
         </section>
     {% endif %}
+    <script>
+        $( "#id_start_time" ).timeDropper();
+        </script>
 {% endblock body %}

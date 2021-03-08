@@ -2,15 +2,8 @@
 {% load static %}
 
 {% block body %}
+
     <section class="post_detail">
-        <ul class="nav nav-tabs">
-            <li class="nav-item">
-              <a href="#photo1" class="nav-link active" data-toggle="tab">申し込み</a>
-            </li>
-            <li class="nav-item">
-              <a href="#photo2" class="nav-link" data-toggle="tab">お問い合わせ</a>
-            </li>
-        </ul>
         <div class="main_detail">
             <P class="detail_title_text">タイトル</P>
             <hr class="detail_hr">
@@ -28,7 +21,7 @@
                 </div>
                 <div class="event_description_div">
                     <i class="fas fa-clock event_detail_description"></i>
-                    <p class="event_date_detail">17：00~19:00</p>
+                    <p class="event_date_detail">{{ post.start_time  }}~{{ post.end_time  }}</p>
                 </div>
                 <div class="event_description_div">
                     <i class="fas fa-map-marker-alt event_detail_description"></i>
@@ -48,6 +41,18 @@
             <hr class="detail_hr">
             <div class="post_detail_individual">
                 <p class="card-text detail_text">{{ post.text | safe }}</p>
+            </div>
+            <P class="detail_title_text">イベント申し込み</P>
+            <hr class="detail_hr">
+            <div class="site_application">
+                <div class="site">
+                    <i class="fas fa-sitemap"></i>
+                    <a class="site_link" href="{{ post.link_url }}">申し込みページ</a>
+                </div>
+                <div class="sns">
+                    <i class="fab fa-twitter sns_icon"></i>
+                    <a class="sns_link" href="{{ post.sns_url }}">Twitter</a>
+                </div>
             </div>
         </div>
     </section>

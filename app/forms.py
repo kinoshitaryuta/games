@@ -7,6 +7,8 @@ from django.conf import settings
 from django.core.mail import BadHeaderError, send_mail
 from django.http import HttpResponse
 
+from posts.models import Post
+
 
 class ContactForm(ModelForm):
     class Meta:
@@ -33,4 +35,5 @@ class UserUpdateForm(forms.ModelForm):
         fields = [
             'username','profile_image','self_introduction'
         ]
+
 

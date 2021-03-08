@@ -12,6 +12,7 @@ urlpatterns=[
     path('post/update/<int:pk>/', views.PostUpdateView.as_view(), name='post_update'),
     path('post/<int:pk>/delete/', views.PostDeleteView.as_view(), name='post_delete'),
 
+
     path('seminar/', views.SeminarDetailView.as_view(), name='seminar'),
     path('exchange/', views.ExchangeDetailView.as_view(), name='exchange'),
     path('business/', views.BusinessCardDetailView.as_view(), name='business'),
