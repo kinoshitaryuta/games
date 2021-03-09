@@ -70,6 +70,9 @@ class Post(models.Model):
     finish_application_date= models.DateField(blank=True,null=True)
     start_time = models.TimeField(blank=True, null=True)
     end_time = models.TimeField(blank=True, null=True)
+    address = models.CharField(max_length=150,blank=True, null=True)
+    lat = models.DecimalField( max_digits=8, decimal_places=6,blank=True, null=True)
+    lng = models.DecimalField( max_digits=9, decimal_places=6,blank=True, null=True)
     link_url=models.URLField(max_length=1000,blank=True,null=True)
     sns_url=models.URLField(max_length=1000,blank=True,null=True)
 

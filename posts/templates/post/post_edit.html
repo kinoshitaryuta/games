@@ -11,6 +11,11 @@
                     <button type="submit" class="btn btn-success post_button py-0">POST</button>
                 </div>
                 {% csrf_token %}
+                                  <div class="event_start_application_date">
+                        <table class="table">
+                            {% render_field form.address class="form_start_application_date"  placeholder="応募開始日" %}
+                        </table>
+                    </div>
                 <p class="event_text_title">Title</p>
                 <hr class="post_create_hr">
                 <div class="event_post_title">
@@ -48,6 +53,11 @@
                                 {% render_field form.end_time  class="form_end_time"  type="time" placeholder="終了予定時間" %}
                         </table>
                     </div>
+                    <div class="event_address">
+                    <table class="table">
+                        {% render_field form.address class="form_address"  placeholder="開催場所" %}
+                    </table>
+                </div>
                 </div>
                 <p class="event_text_title">Holding Method</p>
                 <hr class="post_create_hr">

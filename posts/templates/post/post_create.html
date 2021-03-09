@@ -18,6 +18,7 @@
                         {% render_field form.title class="form_event_title"  placeholder="タイトルを入力してください。" %}
                     </table>
                 </div>
+
                 <p class="event_text_title">Days</p>
                 <hr class="post_create_hr">
                 <div class="event_days">
@@ -47,6 +48,13 @@
                 <div class="event_end_time">
                     <table class="post_table">
                             {% render_field form.end_time  class="form_end_time"  type="time" placeholder="終了予定時間" %}
+                    </table>
+                </div>
+                <p class="event_text_title">Place</p>
+                <hr class="post_create_hr">
+                <div class="event_address">
+                    <table class="table">
+                        {% render_field form.address class="form_address"  placeholder="開催場所" %}
                     </table>
                 </div>
                 <div class="event_type" id="firstList">
@@ -114,9 +122,7 @@
                 </a>
             </div>
         </div>
+
         </section>
     {% endif %}
-    <script>
-        $( "#id_start_time" ).timeDropper();
-        </script>
 {% endblock body %}

@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'bootstrap_datepicker_plus',
     'django_cleanup',
-    'daterange_filter'
+
 ]
 
 MIDDLEWARE = [
@@ -234,4 +234,3 @@ SOCIAL_AUTH_TWITTER_SECRET = 'YsjuqHlQHjScjm5YzB6gVdk4pUO9oG6Dy6ltwdKPnoiPHOgBo8
 SOCIAL_AUTH_LOGIN_REDIRECT_URL ='home'
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
-now = timezone.localtime(timezone.now())
