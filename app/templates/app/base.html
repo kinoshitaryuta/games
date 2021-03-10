@@ -37,17 +37,15 @@
                                     <a class="dropdown-item" href="{% url 'password_change' %}">パスワードの変更</a>
                                 </div>
                             </li>
-                          {% else %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">WSEHとは？</a>
-                            </li>
                           {% endif %}
-
                         <li class="nav-item">
-                                <a class="nav-link" href="{% url 'contact' %}">お問い合わせ・ヘルプ</a>
+                                <a class="nav-link" href="{% url 'help' %}">WSEHとは？</a>
                         </li>
                         <li class="nav-item">
-                                <a class="nav-link" href="#">利用規約</a>
+                                <a class="nav-link" href="{% url 'terms' %}">利用規約</a>
+                        </li>
+                        <li class="nav-item">
+                                <a class="nav-link" href="{% url 'privacy' %}">プライバシー・ポリシー</a>
                         </li>
                     </ul>
                 </div>

@@ -4,39 +4,48 @@
 
 
 {% block body %}
+    <h1 class="contact_form_text">お問い合わせフォーム</h1>
+    <p class="contact_detail_text">下記にてお問い合わせの種類を選択し詳細を記入してください。</p>
+    <p class="contact_detail_text">※ご回答には3-4日頂く場合がございます。</p>
     <section class="contact">
-        <h1 class="contact_form_text">お問い合わせフォーム</h1>
-        <p class="contact_detail_text">下記にてお問い合わせの種類を選択し詳細を記入してください。</p>
-        <p class="contact_detail_text">※ご回答には3-4日頂く場合がございます。</p>
         <form class="contact_form"  method="POST" >
             {% csrf_token %}
-            <hr>
-            <div class="contact_username">
-                <table class="table">
-                        {% render_field form.username class="form-contact_username" placeholder="ユーザー名" %}
-                </table>
-            </div>
-            <div class="contact_us">
-                <table class="table">
-                        {% render_field form.contact_us class="form-contact_us"%}
-                </table>
-            </div>
-            <div class="contact_message">
-                <table class="table">
-                    {% render_field form.message class="form-contact_message" placeholder="お問い合わせ内容" %}
-                </table>
-            </div>
-            <div class="contact_email">
-                <table class="table">
-                    {% render_field form.email class="form-contact_email" placeholder="返信用E-mail" %}
-                </table>
-            </div>
-            <div class="text-center">
-                <div class="btn-group contact_form_button" >
-                    <a class="nav-link nav_home"  href="{% url 'home' %}" >
-                        <button type="button" class="btn  btn-info cancel_button" >キャンセル</button>
-                    </a>
-                    <button type="submit" class="btn btn-success send_form_button" >送信</button>
+            <div class="contact_form">
+                <p class="contact_text_title">username</p>
+                <hr class="contact_hr">
+                <div class="contact_username">
+                    <table class="table">
+                            {% render_field form.username class="form-contact_username"  %}
+                    </table>
+                </div>
+                <p class="contact_text_title">Choice Contact type</p>
+                <hr class="contact_hr">
+                <div class="contact_us">
+                    <table class="table">
+                            {% render_field form.contact_us class="form-contact_us"%}
+                    </table>
+                </div>
+                <p class="contact_text_title">free</p>
+                <hr class="contact_hr">
+                <div class="contact_message">
+                    <table class="table">
+                        {% render_field form.message class="form-contact_message" placeholder="お問い合わせ内容" %}
+                    </table>
+                </div>
+                <p class="contact_text_title">E-mail</p>
+                <hr class="contact_hr">
+                <div class="contact_email">
+                    <table class="table">
+                        {% render_field form.email class="form-contact_email" placeholder="返信用E-mail" %}
+                    </table>
+                </div>
+                <div class="text-center">
+                    <div class="btn-group contact_form_button" >
+                        <a class="nav-link nav_home"  href="{% url 'home' %}" >
+                            <button type="button" class="btn  btn-info cancel_button" >キャンセル</button>
+                        </a>
+                        <button type="submit" class="btn btn-success send_form_button" >送信</button>
+                    </div>
                 </div>
             </div>
         </form>

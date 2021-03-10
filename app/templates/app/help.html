@@ -1,8 +1,18 @@
 {% extends 'app/base.html' %}
 {% load static %}
-{% load widget_tweaks %}
+
 
 {% block body %}
-
+    <section class="help">
+        <div class="WSEH">
+            <h2 class="help_title">WSEHとは？</h2>
+            <p class="help_text">仕事、スポーツ、E-sport、趣味に特化したイベント開催、参加アプリケーションです。</p>
+            <p class="help_text">オンライン・オンラインイベントなどで分類されており、４つのテーマの中様々なイベントが開催されています。</p>
+            <p class="help_text">誰でも簡単にイベント開催、集客を行えるアプリケーションです。</p>
+        </div>
+        <div class="contact">
+            <a class="nav-link" href="{% url 'contact' %}">お問い合わせはこちら</a>
+        </div>
+    </section>
 
 {% endblock body %}

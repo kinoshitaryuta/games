@@ -17,6 +17,13 @@ class HomeView(generic.TemplateView):
 class HelpView(generic.TemplateView):
     template_name = 'app/help.html'
 
+class TermsOfServiceView(generic.TemplateView):
+    template_name = 'app/terms.html'
+
+class PrivacyView(generic.TemplateView):
+    template_name = 'app/privacy.html'
+
+
 
 class ContactView(generic.CreateView, LoginRequiredMixin):
     template_name = 'app/contact_form.html'
@@ -35,8 +42,6 @@ class ContactResultView(generic.TemplateView,LoginRequiredMixin):
         context = super().get_context_data(**kwargs)
         context['success'] = "お問い合わせは正常に送信されました。"
         return context
-
-
 
 
 

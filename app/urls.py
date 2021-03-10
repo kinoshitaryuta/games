@@ -9,5 +9,7 @@ urlpatterns=[
     path('contact/result/', views.ContactResultView.as_view(), name='contact_result'),
     path('my_page/<int:pk>/', views.MyPageView.as_view(), name='my_page'),
     path('user/update/<int:pk>/', views.UserUpdateView.as_view(), name='user_update'),
+    path('terms/', views.TermsOfServiceView.as_view(), name='terms'),
+    path('privacy/', views.PrivacyView.as_view(), name='privacy'),
 
 ]

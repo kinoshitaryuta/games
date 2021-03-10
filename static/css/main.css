@@ -350,28 +350,54 @@
         padding-left: 10px;
         padding-right: 10px;
     }
-
-    .contact_username,
-    .contact_us,
-    .contact_message,
-    .contact_email {
-        margin-left: 30px;
+    .contact_form{
+        margin-top: 20px;
+        background: #ffffff;
+        margin-right: auto;
+        margin-left: auto;
+        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
     }
 
     .form-contact_message {
-        width: 90%;
+        margin-top: 10px;
+        margin-left:10px;
+        margin-bottom: 30px;
+        width: 70%;
         height: 200px;
         resize: none;
+        outline: none;
+        border-style: none;
+    }
+    .contact_text_title{
+        font-size: 14px;
+        font-weight: bolder;
+        margin-bottom: 5px;
+        padding-left: 10px;
+        padding-top: 10px;
+    }
+    .contact_hr{
+        margin: 0;
     }
 
-    .form-contact_us,
+    .form-contact_us{
+        margin-top: 10px;
+        margin-left:10px ;
+        width: 70%;
+        margin-bottom: 30px;
+    }
     .form-contact_email,
     .form-contact_username {
-        width: 90%;
+        margin-top: 10px;
+        margin-left:10px ;
+        width: 70%;
+        outline: none;
+        border-style: none;
+        margin-bottom: 30px;
     }
 
     .contact_form_button {
         margin-top: 30px;
+        margin-bottom: 30px;
     }
 
     .cancel_button {
@@ -1196,7 +1222,70 @@
     }
 
 
-    #map{
-        height: 200px;
-        width: 200px;
+
+    /*terms.html*&privacy.html*/
+    .terms{
+        height: auto;
+        background: #ffffff;
+        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
+    }
+    .terms_title_h1{
+        padding-top: 20px;
+        padding-left: 10px;
+        font-size: 24px;
+        font-weight: bolder;
+
+    }
+    .terms_title_h2{
+        padding: 15px 10px;
+        font-size: 22px;
+        font-weight: bolder;
+
+    }
+    .terms_text_big,
+    .terms_text{
+        padding-left: 15px;
+        padding-right: 10px;
+        font-size: 16px;
+        line-height: 2em
+    }
+    .terms_text_small{
+        padding-left: 20px;
+        padding-right: 10px;
+        font-size: 14px;
+        line-height: 2em
+    }
+    .last_text{
+        padding-top: 10px;
+        padding-bottom: 20px;
+    }
+    .terms_text_more_small{
+         padding-left: 25px;
+        padding-right: 10px;
+        font-size: 13px;
+        line-height: 2em
+    }
+
+    /*help_html*/
+    .help{
+        margin-top: 30px;
+        height: auto;
+        background: #ffffff;
+        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
+    }
+    .help_title{
+        padding-left: 10px;
+        padding-top: 20px;
+    }
+    .help_text{
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 16px;
+        line-height: 2em;
+        font-weight: 600;
+    }
+
+    .contact{
+        margin-top: 30px;
+        padding-bottom: 30px;
     }
