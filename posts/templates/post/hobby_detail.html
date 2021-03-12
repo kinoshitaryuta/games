@@ -2,42 +2,46 @@
 {% load static %}
 
 {% block body %}
-<section class="home_card">
+    <section class="home_card">
         <h6 class="event_detail_text">イベント一覧</h6>
-        <div class="card">
-            <img src="{% static 'img/ReadBook.jpg' %}" class="card-img-top" alt="読書会に関するイベント">
-            <div class="card-body">
-                <a class="card_link" href="{% url 'read_book' %}">
-                    <h3 class="event_list">読書会</h3>
-                </a>
-                <p class="card-text">読書会に関する様々なオンライン・オフラインイベントのページです。</p>
+         <div class="sub_css_flex">
+            <div class="card">
+                <img src="{% static 'img/ReadBook.jpg' %}" class="card-img-top" alt="読書会に関するイベント">
+                <div class="card-body">
+                    <a class="card_link" href="{% url 'read_book' %}">
+                        <h3 class="event_list">読書会</h3>
+                    </a>
+                    <p class="card-text">読書会に関する様々なオンライン・オフラインイベントのページです。</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'img/SocialGathering.jpg' %}" class="card-img-top" alt="懇親会に関するイベント">
+                <div class="card-body">
+                    <a class="card_link" href="{% url 'social_gathering' %}">
+                        <h3 class="event_list">懇親会</h3>
+                    </a>
+                    <p class="card-text">懇親会に関する様々なオンライン・オフラインイベントのページです。</p>
+                </div>
             </div>
         </div>
-        <div class="card">
-            <img src="{% static 'img/SocialGathering.jpg' %}" class="card-img-top" alt="懇親会に関するイベント">
-            <div class="card-body">
-                <a class="card_link" href="{% url 'social_gathering' %}">
-                    <h3 class="event_list">懇親会</h3>
-                </a>
-                <p class="card-text">懇親会に関する様々なオンライン・オフラインイベントのページです。</p>
+        <div class="sub_css_flex">
+            <div class="card">
+                <img src="{% static 'img/MorningActivity.jpg' %}"  class="card-img-top" alt="朝活に関するイベント">
+                <div class="card-body">
+                    <a class="card_link" href="{% url 'morning' %}">
+                        <h3 class="event_list">朝活</h3>
+                    </a>
+                    <p class="card-text">朝活に関する様々なオンライン・オフラインイベントのページです。</p>
+                </div>
             </div>
-        </div>
-        <div class="card">
-            <img src="{% static 'img/MorningActivity.jpg' %}"  class="card-img-top" alt="朝活に関するイベント">
-            <div class="card-body">
-                <a class="card_link" href="{% url 'morning' %}">
-                    <h3 class="event_list">朝活</h3>
-                </a>
-                <p class="card-text">朝活に関する様々なオンライン・オフラインイベントのページです。</p>
-            </div>
-        </div>
-        <div class="card">
-            <img src="{% static 'img/OtherHobbyDetail.jpg' %}"  class="card-img-top" alt="その他に関するイベント">
-            <div class="card-body">
-                <a class="card_link" href="{% url 'other_hobby' %}">
-                    <h3 class="event_list">その他</h3>
-                </a>
-                <p class="card-text">その他のオンライン・オフラインイベントのページです。</p>
+            <div class="card">
+                <img src="{% static 'img/OtherHobbyDetail.jpg' %}"  class="card-img-top" alt="その他に関するイベント">
+                <div class="card-body">
+                    <a class="card_link" href="{% url 'other_hobby' %}">
+                        <h3 class="event_list">その他</h3>
+                    </a>
+                    <p class="card-text">その他のオンライン・オフラインイベントのページです。</p>
+                </div>
             </div>
         </div>
     </section>

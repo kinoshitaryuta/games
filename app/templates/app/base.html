@@ -15,6 +15,7 @@
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="js/timedropper.css">
         <link rel="stylesheet"type="text/css" href="{% static 'css/main.css'%}">
+        <link rel="stylesheet"type="text/css" href="{% static 'css/sub.css'%}">
     </head>
     <body>
         <header class="main_base_header">
@@ -28,6 +29,16 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent" >
                     <ul class="navbar-nav">
                         {% if user.is_authenticated %}
+                            <div class="sub_css">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'my_page'  user.id %}">マイページ</a>
+                                </li>
+                            </div>
+                            <div class="sub_css">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'create' %}">イベント作成</a>
+                                </li>
+                            </div>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     設定の変更
@@ -37,16 +48,24 @@
                                     <a class="dropdown-item" href="{% url 'password_change' %}">パスワードの変更</a>
                                 </div>
                             </li>
+                        {% else %}
+                            <div class="sub_css">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'login' %}">ログイン・登録</a>
+                                </li>
+                            </div>
                           {% endif %}
                         <li class="nav-item">
                                 <a class="nav-link" href="{% url 'help' %}">WSEHとは？</a>
                         </li>
-                        <li class="nav-item">
+                        <div class="main_css">
+                            <li class="nav-item">
                                 <a class="nav-link" href="{% url 'terms' %}">利用規約</a>
-                        </li>
-                        <li class="nav-item">
-                                <a class="nav-link" href="{% url 'privacy' %}">プライバシー・ポリシー</a>
-                        </li>
+                            </li>
+                            <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'privacy' %}">プライバシー・ポリシー</a>
+                            </li>
+                        </div>
                     </ul>
                 </div>
             </nav>
@@ -54,30 +73,39 @@
     {% block body %}
     {% endblock body %}
         <footer>
-            <div class="fixed-bottom">
-                <nav class="footerNav sticky-bottom" >
-                      <div class="nav nav-tabs" id="footer_nav_list" role="tablist">
-                         <a class="nav-link nav_home" href="{% url 'home' %}" >
-                             <i class="fas fa-home"></i>
-                             <p class="footer_nav_base">ホーム</p>
-                         </a>
-                         <a class="nav-link nav_add"   href="{% url 'create' %}">
-                             <i class="fas fa-door-open"></i>
-                             <p class="footer_nav_base">イベント作成</p>
-                         </a>
-                          {% if user.is_authenticated %}
-                              <a class="nav-link nav_login"  href="{% url 'my_page' user.id %}" >
-                                 <i class="fas fa-smile"></i>
-                                 <p class="footer_nav_base">マイページ</p>
+            <div class="main_css">
+                <div class="fixed-bottom">
+                    <nav class="footerNav sticky-bottom" >
+                          <div class="nav nav-tabs" id="footer_nav_list" role="tablist">
+                             <a class="nav-link nav_home" href="{% url 'home' %}" >
+                                 <i class="fas fa-home"></i>
+                                 <p class="footer_nav_base">ホーム</p>
                              </a>
-                          {% else %}
-                             <a class="nav-link nav_login"  href="{% url 'login' %}" >
-                                 <i class="fas fa-smile"></i>
-                                 <p class="footer_nav_base">ログイン・登録</p>
+                             <a class="nav-link nav_add"   href="{% url 'create' %}">
+                                 <i class="fas fa-door-open"></i>
+                                 <p class="footer_nav_base">イベント作成</p>
                              </a>
-                          {% endif %}
-                      </div>
-                </nav>
+                              {% if user.is_authenticated %}
+                                  <a class="nav-link nav_login"  href="{% url 'my_page' user.id %}" >
+                                     <i class="fas fa-smile"></i>
+                                     <p class="footer_nav_base">マイページ</p>
+                                 </a>
+                              {% else %}
+                                 <a class="nav-link nav_login"  href="{% url 'login' %}" >
+                                     <i class="fas fa-smile"></i>
+                                     <p class="footer_nav_base">ログイン・登録</p>
+                                 </a>
+                              {% endif %}
+                          </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="sub_css">
+                <div class="sub_footer" >
+                    <a class="nav-link_sub" href="{% url 'home' %}">ホーム</a>
+                    <a class="nav-link_sub" href="{% url 'terms' %}">利用規約</a>
+                    <a class="nav-link_sub" href="{% url 'privacy' %}">プライバシー・ポリシー</a>
+                </div>
             </div>
         </footer>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>

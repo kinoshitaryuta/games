@@ -18,6 +18,9 @@
         color: #146dac;
         cursor: pointer;
     }
+    .sub_css {
+        display: none;
+    }
 
     /*ハンバーガーメニュー*/
     .base_nav {
@@ -872,20 +875,6 @@
         position: relative;
     }
 
-    .detail_images .detail_text {
-        font-weight: bold;
-        font-size: 28px;
-        color: #ffffff;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        -ms-transform: translate(-50%, -50%);
-        -webkit-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        margin: 0;
-        padding: 0;
-    }
-
     .detail_img {
         margin-top: 1px;
         filter: blur(3px);
@@ -1012,17 +1001,6 @@
     .sns_icon{
         font-size: 20px;
         color: #55ACEE;
-    }
-
-    .nav-tabs {
-        justify-content: space-around;
-        font-size: 16px;
-        color: #61a3d2;
-    }
-
-    .nav-tabs:hover {
-        color: #053d64;
-        cursor: pointer;
     }
 
 
@@ -1181,7 +1159,7 @@
         display: none;
 
     }
-}
+
 
 /*投稿detail*/
     .search{
@@ -1289,3 +1267,22 @@
         margin-top: 30px;
         padding-bottom: 30px;
     }
+
+     /*delete.html*/
+    .delete{
+        margin-top: 100px;
+        text-align: center;
+    }
+    .delete_text{
+        font-size: 30px;
+    }
+    .delete_text_sub{
+        font-size: 18px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .delete_form{
+        margin-bottom: 200px;
+    }
+
+}
