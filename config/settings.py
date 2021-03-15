@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '(vk(zypnu%^mr@9&wxskcglud6(7tg5q_h8u0b1#&f!%n6189i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOSTS')]
 
 
 # Application definition
@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'bootstrap_datepicker_plus',
     'django_cleanup',
+    'django_ses',
 
 ]
 
@@ -139,66 +140,54 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
-
+# STATIC_URL = '/static/'
+# STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
+#
+# MEDIA_URL = '/media/'
+MEDIA_ROOT = 'user/share/nginx/html/static'
+STATIC_ROOT='user/share/nginx/html/media'
 # Default logging for Django. This sends an email to the site admins on every
 # HTTP 500 error. Depending on DEBUG, all other log records are either sent to
 # the console (DEBUG=True) or discarded (DEBUG=False) by means of the
 # require_debug_true filter.
-DEFAULT_LOGGING = {
+
+LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
-    'filters': {
-        'require_debug_false': {
-            '()': 'django.utils.log.RequireDebugFalse',
+
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'INFO',
         },
-        'require_debug_true': {
-            '()': 'django.utils.log.RequireDebugTrue',
+        'WSEH': {
+            'handlers': ['file'],
+            'level': 'INFO',
+
+        },
+    },
+    'handlers':{
+        'file':{
+            'level':'INFO',
+            'class':'logging.handlers.TimedRotatingFileHandler',
+            'filename':os.path.join(BASE_DIR,'logs/django.log'),
+            'formatter':'prod',
+            'when':'D',
+            'interval':1,
+            'backupCount':7,
         },
     },
     'formatters': {
-        'django.server': {
-            '()': 'django.utils.log.ServerFormatter',
-            'format': '[%(server_time)s] %(message)s a',
+        'prod':{
+            'format':'\t'.join([
+                '%(asctime)s',
+                '[%(levelname)s]',
+                '%(pathname)s(Line:%(lineno)d)',
+                '%(message)s'
+            ])
         }
-    },
-    'handlers': {
-        'console': {
-            'level': 'INFO',
-            'filters': ['require_debug_true'],
-            'class': 'logging.StreamHandler',
-        },
-        'django.server': {
-            'level': 'INFO',
-            'class': 'logging.StreamHandler',
-            'formatter': 'django.server',
-        },
-        'mail_admins': {
-            'level': 'ERROR',
-            'filters': ['require_debug_false'],
-            'class': 'django.utils.log.AdminEmailHandler'
-        }
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['console', 'mail_admins'],
-            'level': 'INFO',
-        },
-        'django.server': {
-            'handlers': ['django.server'],
-            'level': 'INFO',
-            'propagate': False,
-        },
-        'WSEH': {
-            'handlers': ['console'],
-            'level': 'INFO',
-            'propagate': False,
-        },
     }
+
 }
 
 AUTHENTICATION_BACKENDS = [
@@ -209,7 +198,9 @@ AUTHENTICATION_BACKENDS = [
 AUTH_USER_MODEL = 'accounts.User'
 SITE_ID = 1
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+AWS_SES_ACCESS_KEY_ID=os.environ.get('AWS_SES_ACCESS_KEY_ID')
+AWS_SES_SECRET_KEY_ID=os.environ.get('AWS_SES_SECRET_KEY_ID')
+EMAIL_BACKEND = 'django_ses.SES.Backend'
 EMAIL_HOST  = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
@@ -233,4 +224,5 @@ SOCIAL_AUTH_TWITTER_KEY = 'EIHgOyR712E7u8bHip79vL6Me'
 SOCIAL_AUTH_TWITTER_SECRET = 'YsjuqHlQHjScjm5YzB6gVdk4pUO9oG6Dy6ltwdKPnoiPHOgBo8'
 SOCIAL_AUTH_LOGIN_REDIRECT_URL ='home'
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
+
 
