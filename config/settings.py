@@ -96,9 +96,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'myapp',
-        'USER': 'ryuta',
-        'PASSWORD': '05ryuta59',
-        'HOST': 'localhost',
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': '',
         'PORT': '',
     }
 }
@@ -220,8 +220,9 @@ SUMMERNOTE_CONFIG = {
 LOGIN_REDIRECT_URL = 'home'
 ACCOUNT_LOGOUT_REDIRECT_URL = 'login'
 
-SOCIAL_AUTH_TWITTER_KEY = 'EIHgOyR712E7u8bHip79vL6Me'
-SOCIAL_AUTH_TWITTER_SECRET = 'YsjuqHlQHjScjm5YzB6gVdk4pUO9oG6Dy6ltwdKPnoiPHOgBo8'
+
+SOCIAL_AUTH_TWITTER_KEY = os.environ.get('SOCIAL_AUTH_TWITTER_KEY')
+SOCIAL_AUTH_TWITTER_SECRET = os.environ.get('SOCIAL_AUTH_TWITTER_SECRET')
 SOCIAL_AUTH_LOGIN_REDIRECT_URL ='home'
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
