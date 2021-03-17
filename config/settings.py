@@ -137,8 +137,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 MEDIA_URL = '/media/'
-MEDIA_ROOT = 'user/share/nginx/html/media'
-STATIC_ROOT = 'user/share/nginx/html/static'
+MEDIA_ROOT = 'usr/share/nginx/html/media'
+STATIC_ROOT = 'usr/share/nginx/html/static'
 # Default logging for Django. This sends an email to the site admins on every
 # HTTP 500 error. Depending on DEBUG, all other log records are either sent to
 # the console (DEBUG=True) or discarded (DEBUG=False) by means of the
