@@ -16,7 +16,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -27,7 +26,6 @@ SECRET_KEY = '(vk(zypnu%^mr@9&wxskcglud6(7tg5q_h8u0b1#&f!%n6189i'
 DEBUG = False
 
 ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOSTS')]
-
 
 # Application definition
 
@@ -86,7 +84,6 @@ TEMPLATES = [
     },
 ]
 
-
 WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database
@@ -102,7 +99,6 @@ DATABASES = {
         'PORT': '',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -122,7 +118,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
@@ -136,15 +131,14 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 MEDIA_URL = '/media/'
-MEDIA_ROOT = 'user/share/nginx/html/static'
-STATIC_ROOT='user/share/nginx/html/media'
+MEDIA_ROOT = 'user/share/nginx/html/media'
+STATIC_ROOT = 'user/share/nginx/html/static'
 # Default logging for Django. This sends an email to the site admins on every
 # HTTP 500 error. Depending on DEBUG, all other log records are either sent to
 # the console (DEBUG=True) or discarded (DEBUG=False) by means of the
@@ -165,20 +159,20 @@ LOGGING = {
 
         },
     },
-    'handlers':{
-        'file':{
-            'level':'INFO',
-            'class':'logging.handlers.TimedRotatingFileHandler',
-            'filename':os.path.join(BASE_DIR,'logs/django.log'),
-            'formatter':'prod',
-            'when':'D',
-            'interval':1,
-            'backupCount':7,
+    'handlers': {
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': os.path.join(BASE_DIR, 'logs/django.log'),
+            'formatter': 'prod',
+            'when': 'D',
+            'interval': 1,
+            'backupCount': 7,
         },
     },
     'formatters': {
-        'prod':{
-            'format':'\t'.join([
+        'prod': {
+            'format': '\t'.join([
                 '%(asctime)s',
                 '[%(levelname)s]',
                 '%(pathname)s(Line:%(lineno)d)',
@@ -197,32 +191,29 @@ AUTHENTICATION_BACKENDS = [
 AUTH_USER_MODEL = 'accounts.User'
 SITE_ID = 1
 
-AWS_SES_ACCESS_KEY_ID=os.environ.get('AWS_SES_ACCESS_KEY_ID')
-AWS_SES_SECRET_KEY_ID=os.environ.get('AWS_SES_SECRET_KEY_ID')
+AWS_SES_ACCESS_KEY_ID = os.environ.get('AWS_SES_ACCESS_KEY_ID')
+AWS_SES_SECRET_KEY_ID = os.environ.get('AWS_SES_SECRET_KEY_ID')
 EMAIL_BACKEND = 'django_ses.SES.Backend'
-EMAIL_HOST  = 'smtp.gmail.com'
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = "kinoshitaryuta@gmail.com"
 EMAIL_HOST_PASSWORD = "05ryuta59"
-DEFAULT_FROM_EMAIL="kinoshitaryuta@gmail.com"
+DEFAULT_FROM_EMAIL = "kinoshitaryuta@gmail.com"
 
 SUMMERNOTE_THEME = 'bs4'
 X_FRAME_OPTIONS = "SAMEORIGIN"
 SUMMERNOTE_CONFIG = {
     'summernote': {
-        'height':'1500px',
-        'width':'100%'
+        'height': '1500px',
+        'width': '100%'
     },
 }
 
 LOGIN_REDIRECT_URL = 'home'
 ACCOUNT_LOGOUT_REDIRECT_URL = 'login'
 
-
 SOCIAL_AUTH_TWITTER_KEY = os.environ.get('SOCIAL_AUTH_TWITTER_KEY')
 SOCIAL_AUTH_TWITTER_SECRET = os.environ.get('SOCIAL_AUTH_TWITTER_SECRET')
-SOCIAL_AUTH_LOGIN_REDIRECT_URL ='home'
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = 'home'
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
-
-
