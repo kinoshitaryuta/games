@@ -14,7 +14,7 @@ from django.utils import timezone
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -212,9 +212,8 @@ SOCIAL_AUTH_TWITTER_KEY = os.environ.get('SOCIAL_AUTH_TWITTER_KEY')
 SOCIAL_AUTH_TWITTER_SECRET = os.environ.get('SOCIAL_AUTH_TWITTER_SECRET')
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = 'home'
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
-BASE_DIR = Path(__file__).resolve().parent.parent
 STATIC_URL = '/static/'
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'))
 MEDIA_URL = '/media/'
 MEDIA_ROOT = 'usr/share/nginx/html/media'
 STATIC_ROOT = 'usr/share/nginx/html/static'
