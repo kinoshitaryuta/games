@@ -12,11 +12,12 @@ class Tag(models.Model):
         ("40","コミニケーション"),
 
     )
-    TYPE = (
+    TYPE= (
         ("10", "オンライン"),
         ("20", "オフライン"),
 
     )
+
     class Detail(models.Model):
         WORK_DETAIL=(
             ("10","セミナー"),

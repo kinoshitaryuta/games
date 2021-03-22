@@ -25,7 +25,7 @@ def tweet_post(sender, instance, **kwargs):
     api = tweepy.API(auth)
 
 
-    tweet = instance.title + '\n' +'\n' +"#WSEH"
+    tweet = instance.title + '\n' +'\n' +"#WSEH"+"https://wewseh.com/"
 
     try:
         api.update_status(tweet)
