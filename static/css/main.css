@@ -738,50 +738,15 @@
     .post_table {
         margin: 0;
     }
-
-    label[for=id_event_type_0],
     label[for=e-sportList_0],
-    label[for=workList_0],
-    label[for=sportList_0],
-    label[for=hobbyList_0],
     label[for=id_holding_method_0]{
         display: none;
     }
-    label[for=id_event_type_1],
-    label[for=id_event_type_2],
-    label[for=id_event_type_3],
-    label[for=id_event_type_4],
-    label[for=workList_1],
-    label[for=workList_2],
-    label[for=workList_3],
-    label[for=workList_4],
-    label[for=workList_5],
-    label[for=workList_6],
-    label[for=sportList_1],
-    label[for=sportList_2],
-    label[for=sportList_3],
-    label[for=sportList_4],
     label[for=e-sportList_1],
     label[for=e-sportList_2],
     label[for=e-sportList_3],
     label[for=e-sportList_4],
     label[for=e-sportList_5],
-    label[for=e-sportList_6],
-    label[for=e-sportList_7],
-    label[for=e-sportList_8],
-    label[for=e-sportList_9],
-    label[for=e-sportList_10],
-    label[for=e-sportList_11],
-    label[for=e-sportList_12],
-    label[for=e-sportList_13],
-    label[for=e-sportList_14],
-    label[for=hobbyList_1],
-    label[for=hobbyList_2],
-    label[for=hobbyList_3],
-    label[for=hobbyList_4],
-    label[for=hobbyList_5],
-    label[for=hobbyList_6],
-
     label[for=id_holding_method_1],
     label[for=id_holding_method_2] {
         display: inline-block;
@@ -1284,5 +1249,55 @@
     .delete_form{
         margin-bottom: 200px;
     }
+    .tab-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  margin:20px 0;
+}
+.tab-wrap:after {
+  content: '';
+  width: 100%;
+  height: 3px;
+  background: #325A8C;
+  display: block;
+  order: -1;
+}
+.tab-label {
+  color: White;
+  background: LightGray;
+  font-weight: bold;
+  white-space: nowrap;
+  text-align: center;
+  padding: 10px .5em;
+  order: -1;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  border-radius: 5px 5px 0 0;
+  flex: 1;
+}
+.tab-label:not(:last-of-type) {
+  margin-right: 5px;
+}
+.tab-content {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+.tab-switch:checked+.tab-label {
+  background: #325A8C;
+}
+.tab-switch:checked+.tab-label+.tab-content {
+  height: auto;
+  overflow: auto;
+  padding: 15px;
+  opacity: 1;
+  transition: .5s opacity;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+.tab-switch {
+  display: none;
+}
 
 }

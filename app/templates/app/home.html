@@ -1,50 +1,58 @@
 {% extends 'app/base.html' %}
 {% load static %}
 
-
 {% block body %}
-
     <section class="home_card">
         <h6 class="event_detail_text">イベント一覧</h6>
         <div class="sub_css_flex">
             <div class="card">
-                <img src="{% static 'img/work.jpg' %}" class="card-img-top" alt="仕事に関するイベント">
+                <img src="{% static 'img/FORTNITE.jpg' %}" class="card-img-top" alt="FORTNITEに関するイベント">
                 <div class="card-body">
-                    <a class="card_link" href="{% url 'work' %}">
-                        <h3 class="event_list">Workイベント</h3>
+                    <a class="card_link" href="{% url 'fortnite' %}">
+                        <h3 class="event_list">FORTNITE</h3>
                     </a>
-                    <p class="card-text">キャリアに関する様々なイベントのページです。</p>
+                    <p class="card-text">フォートナイトに関する様々なオンライン・オフラインイベントのページです。</p>
                 </div>
             </div>
             <div class="card">
-                <img src="{% static 'img/sport.jpg' %}" class="card-img-top" alt="スポーツに関するイベント">
+                <img src="{% static 'img/Apex.jpg' %}"  class="card-img-top" alt="APEXに関するイベント">
                 <div class="card-body">
-                    <a class="card_link" href="{% url 'sport' %}">
-                        <h3 class="event_list">Sportイベント</h3>
+                    <a class="card_link" href="{% url 'apex' %}">
+                        <h3 class="event_list">APEX</h3>
                     </a>
-                    <p class="card-text">スポーツに関するイベントのページです。</p>
+                    <p class="card-text">APEXに関する様々なオンライン・オフラインイベントのページです。</p>
                 </div>
-        </div>
+            </div>
         </div>
         <div class="sub_css_flex">
             <div class="card">
-                <img src="{% static 'img/e-sport.jpg' %}"  class="card-img-top" alt="e-sportに関するイベント">
+                <img src="{% static 'img/Monhan.jpg' %}"  class="card-img-top" alt="モンスターハンターライズに関するイベント">
                 <div class="card-body">
-                    <a class="card_link" href="{% url 'e-sport' %}">
-                        <h3 class="event_list">E-sportイベント</h3>
+                    <a class="card_link" href="{% url 'Monhan' %}">
+                        <h3 class="event_list">MONSTER HUNTER RISE</h3>
                     </a>
-                    <p class="card-text">e-スポーツに関する様々なイベントのページです。</p>
+                    <p class="card-text">モンスターハンターライズに関する様々なオンライン・オフラインイベントのページです。</p>
                 </div>
             </div>
             <div class="card">
-                <img src="{% static 'img/hobby.jpg' %}"  class="card-img-top" alt="趣味に関するイベント">
+                <img src="{% static 'img/Pokemon.jpg' %}"  class="card-img-top" alt="ポケットモンスター ソード&シールド">
                 <div class="card-body">
-                    <a class="card_link" href="{% url 'hobby' %}">
-                        <h3 class="event_list">Hobbyイベント</h3>
+                    <a class="card_link" href="{% url 'Pokemon' %}">
+                        <h3 class="event_list">ポケットモンスター ソード&シールド</h3>
                     </a>
-                    <p class="card-text">コミュニケーションに関する様々なイベントのページです。</p>
+                    <p class="card-text">ポケットモンスター ソード&シールドに関する様々なオンライン・オフラインイベントのページです。</p>
                 </div>
             </div>
         </div>
+            <div class="card">
+                <img src="{% static 'img/Guraburu.jpg' %}"  class="card-img-top" alt="ポケットモンスター ソード&シールド">
+                <div class="card-body">
+                    <a class="card_link" href="{% url 'Guraburu' %}">
+                        <h3 class="event_list">グランブル-ファンタジー</h3>
+                    </a>
+                    <p class="card-text">グランブル-ファンタジーに関する様々なオンライン・オフラインイベントのページです。</p>
+                </div>
+            </div>
     </section>
+
 {% endblock body %}
