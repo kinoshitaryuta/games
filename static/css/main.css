@@ -106,7 +106,6 @@
 
     .card-img-top {
         height: 180px;
-        filter: blur(1px);
     }
 
     .card {

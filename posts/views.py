@@ -4,7 +4,7 @@ from django.shortcuts import resolve_url
 from django.db.models import Q
 from django.views.generic.edit import ModelFormMixin
 
-from posts.models import Post
+from posts.models import Post,EventScheduleApex,EventScheduleMonhan,EventScheduleFortnite,EventScheduleGuraburu
 from django.urls import reverse_lazy
 from django.views import generic
 from posts.forms import (
@@ -77,6 +77,11 @@ class ApexDetailView(generic.ListView):
     template_name = 'post/e_sport/apex_detail.html'
     context_object_name = 'posts'
 
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['EventScheduleApex'] = EventScheduleApex.objects.all
+        return context
+
     def get_queryset(self):
         q_word = self.request.GET.get('query')
         q_data = self.request.GET.get('data')
@@ -112,26 +117,6 @@ class MonhanDetailView(generic.ListView):
                 object_list = Post.objects.filter(e_sport_detail="30").order_by('event_date')
             return object_list.filter(e_sport_detail="30").order_by('event_date')
 
-class PokemonDetailView(generic.ListView):
-        model = Post
-        template_name = 'post/e_sport/Pokemon_detail.html'
-        context_object_name = 'posts'
-
-        def get_queryset(self):
-            q_word = self.request.GET.get('query')
-            q_data = self.request.GET.get('data')
-            if q_word:
-                object_list = Post.objects.filter(
-                    Q(title__icontains=q_word) | Q(title__icontains=q_word)
-                )
-            elif q_data:
-                object_list = Post.objects.filter(
-                    Q(event_date__icontains=q_data)
-                )
-            else:
-                object_list = Post.objects.filter(e_sport_detail="40").order_by('event_date')
-            return object_list.filter(e_sport_detail="40").order_by('event_date')
-
 
 class GuraburuDetailView(generic.ListView):
         model = Post
@@ -150,7 +135,7 @@ class GuraburuDetailView(generic.ListView):
                     Q(event_date__icontains=q_data)
                 )
             else:
-                object_list = Post.objects.filter(e_sport_detail="50").order_by('event_date')
-            return object_list.filter(e_sport_detail="50").order_by('event_date')
+                object_list = Post.objects.filter(e_sport_detail="40").order_by('event_date')
+            return object_list.filter(e_sport_detail="40").order_by('event_date')
 
 

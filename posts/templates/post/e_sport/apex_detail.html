@@ -46,7 +46,14 @@
         </div>
         <input id="tab02" type="radio" name="tab" class="tab-switch"><label class="tab-label" for="tab02">タブ ②</label>
         <div class="tab-content">
-            コンテンツ 2
+            {% for Apex in EventScheduleApex %}
+
+                                <img src="{{ Apex.image }}">
+                                    <h5>{{ Apex.title}}</h5>
+                                        <p>{{ Apex.start_date  }}</p>
+                                        <p>{{ Apex.finish_date }}</p>
+                                        <p>{{ Post.link_url  }}</p>
+                    {% endfor %}
         </div>
         <input id="tab03" type="radio" name="tab" class="tab-switch"><label class="tab-label" for="tab03">タブ ③</label>
         <div class="tab-content">

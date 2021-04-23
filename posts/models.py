@@ -8,7 +8,6 @@ class Tag(models.Model):
     TYPE= (
         ("10", "オンライン"),
         ("20", "オフライン"),
-
     )
 
     class Detail(models.Model):
@@ -16,15 +15,10 @@ class Tag(models.Model):
             ("10", "FORTNITE"),
             ("20", "APEX"),
             ("30", "MONSTER HUNTER RISE"),
-            ("40", "ポケットモンスター ソード&シールド"),
-            ("50", "グランブルーファンタジー"),
+            ("40", "グランブルーファンタジー"),
         )
 
-
-
-
 class Post(models.Model):
-
     master_username = models.ForeignKey(User,on_delete=models.CASCADE)
     text = models.TextField(max_length=2000, blank=False, null=False)
     title = models.CharField(max_length=100, blank=False, null=False)
@@ -37,8 +31,8 @@ class Post(models.Model):
     start_time = models.TimeField(blank=True, null=True)
     end_time = models.TimeField(blank=True, null=True)
     address = models.CharField(max_length=150,blank=True, null=True)
-    lat = models.DecimalField( max_digits=8, decimal_places=6,blank=True, null=True)
-    lng = models.DecimalField( max_digits=9, decimal_places=6,blank=True, null=True)
+    lat = models.DecimalField(max_digits=8, decimal_places=6,blank=True, null=True)
+    lng = models.DecimalField(max_digits=9, decimal_places=6,blank=True, null=True)
     link_url=models.URLField(max_length=1000,blank=True,null=True)
     sns_url=models.URLField(max_length=1000,blank=True,null=True)
 
@@ -50,4 +44,30 @@ class Post(models.Model):
         return f"/posts/{self.id}"
 
 
+class EventScheduleApex(models.Model):
+    image = models.ImageField(upload_to='event_apex', null=True, blank=True)
+    title = models.CharField(max_length=100, blank=False, null=False)
+    start_date= models.DateField(blank=True,null=True)
+    finish_date= models.DateField(blank=True,null=True)
+    link_url = models.URLField(max_length=1000, blank=True, null=True)
 
+class EventScheduleFortnite(models.Model):
+    image = models.ImageField(upload_to='event_fortnite', null=True, blank=True)
+    title = models.CharField(max_length=100, blank=False, null=False)
+    start_date= models.DateField(blank=True,null=True)
+    finish_date= models.DateField(blank=True,null=True)
+    link_url = models.URLField(max_length=1000, blank=True, null=True)
+
+class EventScheduleMonhan(models.Model):
+    image = models.ImageField(upload_to='event_monhan', null=True, blank=True)
+    title = models.CharField(max_length=100, blank=False, null=False)
+    start_date= models.DateField(blank=True,null=True)
+    finish_date= models.DateField(blank=True,null=True)
+    link_url = models.URLField(max_length=1000, blank=True, null=True)
+
+class EventScheduleGuraburu(models.Model):
+    image = models.ImageField(upload_to='event_guraburu', null=True, blank=True)
+    title = models.CharField(max_length=100, blank=False, null=False)
+    start_date= models.DateField(blank=True,null=True)
+    finish_date= models.DateField(blank=True,null=True)
+    link_url = models.URLField(max_length=1000, blank=True, null=True)

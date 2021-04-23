@@ -10,7 +10,6 @@ urlpatterns=[
     path('fortnite', views.FortniteDetailView.as_view(), name='fortnite'),
     path('apex/', views.ApexDetailView.as_view(), name='apex'),
     path('Monhan/', views.MonhanDetailView.as_view(), name='Monhan'),
-    path('Pokemon/', views.PokemonDetailView.as_view(), name='Pokemon'),
     path('Guraburu/', views.GuraburuDetailView.as_view(), name='Guraburu'),
 
 ]
