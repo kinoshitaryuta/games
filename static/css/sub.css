@@ -503,47 +503,14 @@
 
     label[for=id_event_type_0],
     label[for=e-sportList_0],
-    label[for=workList_0],
-    label[for=sportList_0],
-    label[for=hobbyList_0],
     label[for=id_holding_method_0]{
         display: none;
     }
-    label[for=id_event_type_1],
-    label[for=id_event_type_2],
-    label[for=id_event_type_3],
-    label[for=id_event_type_4],
-    label[for=workList_1],
-    label[for=workList_2],
-    label[for=workList_3],
-    label[for=workList_4],
-    label[for=workList_5],
-    label[for=workList_6],
-    label[for=sportList_1],
-    label[for=sportList_2],
-    label[for=sportList_3],
-    label[for=sportList_4],
+
     label[for=e-sportList_1],
     label[for=e-sportList_2],
     label[for=e-sportList_3],
     label[for=e-sportList_4],
-    label[for=e-sportList_5],
-    label[for=e-sportList_6],
-    label[for=e-sportList_7],
-    label[for=e-sportList_8],
-    label[for=e-sportList_9],
-    label[for=e-sportList_10],
-    label[for=e-sportList_11],
-    label[for=e-sportList_12],
-    label[for=e-sportList_13],
-    label[for=e-sportList_14],
-    label[for=hobbyList_1],
-    label[for=hobbyList_2],
-    label[for=hobbyList_3],
-    label[for=hobbyList_4],
-    label[for=hobbyList_5],
-    label[for=hobbyList_6],
-
     label[for=id_holding_method_1],
     label[for=id_holding_method_2] {
         display: inline-block;
@@ -557,100 +524,6 @@
         font-size: 14px;
         margin: 3px;
     }
-
-
-      /*my_page.html*/
-    .my_page {
-        height: auto;
-        background: #ffffff;
-        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .my_page_text {
-        padding-top: 20px;
-        padding-left: 20px;
-        font-size: 20px;
-    }
-
-    .my_page_hr {
-        margin: 0;
-    }
-
-    .my_page_username {
-        padding-top: 20px;
-        padding-left: 20px;
-        padding-bottom: 30px;
-        margin: 0;
-        font-size: 24px;
-        font-weight: bolder;
-        color: black;
-    }
-
-    .my_page_icon_2 {
-        padding-top: 30px;
-        padding-left: 20px;
-        font-size: 18px;
-    }
-
-    .my_page_self_introduction {
-        padding: 15px 20px 50px;
-        margin: 0;
-        font-size: 16px;
-    }
-
-    .my_page_post {
-        margin-top: 50px;
-    }
-
-    .my_post_text {
-        padding-left: 20px;
-        font-weight: bold;
-        color: #807e7e;
-    }
-
-    .my_page_title_text {
-        font-size: 14px;
-        margin: 0;
-        padding-left: 20px;
-    }
-
-    .user-icon {
-        margin-top: 20px;
-        margin-left: 20px;
-        height: 100px;
-        width: 100px;
-        object-fit: cover;
-        border-radius: 50%;
-        border-style: none;
-    }
-
-    /*ツールチップ*/
-    .delete_button,
-    .edit_button {
-        background-color: transparent;
-        border: none;
-        outline: none;
-        padding: 0;
-        appearance: none;
-    }
-
-    .fa-trash-alt {
-        padding-top: 20px;
-        padding-right: 20px;
-        font-size: 20px;
-        color: #f68686;
-    }
-
-    .fa-edit {
-        padding-top: 20px;
-        padding-right: 15px;
-        font-size: 20px;
-        color: #6cab96;
-    }
-
-
-
-
     /*delete.html*/
     .delete{
         margin-top: 100px;
@@ -774,7 +647,7 @@
         font-weight: bolder;
 
     }
-    .terms_title_h2{
+    .terms_title{
         padding: 15px 10px;
         font-size: 26px;
         font-weight: bolder;

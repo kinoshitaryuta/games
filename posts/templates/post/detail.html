@@ -1,60 +1,52 @@
 {% extends 'app/base.html' %}
 {% load static %}
-
 {% block body %}
 
 <body>
-    <section class="post_detail">
-        <div class="main_detail">
-            <P class="detail_title_text">タイトル</P>
-            <hr class="detail_hr">
-            <h5 class="post_title_detail">{{ post.title}}</h5>
-            <P class="detail_title_text">イベント詳細</P>
-            <hr class="detail_hr">
-            <div class="detail_descriptions">
-                <div class="event_description_div">
-                    <p class="event_detail_description_text">応募期間</p>
-                    <p class="event_date_detail">{{ post.start_application_date}}~{{ post.finish_application_date}}</p>
-                </div>
-                <div class="event_description_div">
-                    <i class="fas fa-calendar-day event_detail_description"></i>
-                    <p class="event_date_detail">{{ post.event_date}}</p>
-                </div>
-                <div class="event_description_div">
-                    <i class="fas fa-clock event_detail_description"></i>
-                    <p class="event_date_detail">{{ post.start_time  }}~{{ post.end_time  }}</p>
-                </div>
-                <div class="event_description_div">
-                    <i class="fas fa-map-marker-alt event_detail_description"></i>
-                    <p class="event_place_detail">{{ post.address  }}</p>
-                </div>
-                <div class="event_description_div">
-                    <i class="fas fa-user event_detail_description"></i>
-                    <p class="card-text detail_username">{{ post.master_username  }}</p>
-                </div>
-            </div>
-            <P class="detail_title_text">タイプ</P>
-            <hr class="detail_hr">
-            <div class="event_tag">
-                <p class="post_holding_method_detail">{{ post.get_holding_method_display }}</p>
-            </div>
-            <P class="detail_title_text">イベント内容</P>
-            <hr class="detail_hr">
-            <div class="post_detail_individual">
-                <p class="card-text detail_text">{{ post.text | safe }}</p>
-            </div>
-            <P class="detail_title_text">イベント申し込み</P>
-            <hr class="detail_hr">
-            <div class="site_application">
-                <div class="site">
-                    <i class="fas fa-sitemap"></i>
-                    <a class="site_link" href="{{ post.link_url }}">申し込みページ</a>
-                </div>
-                <div class="sns">
-                    <i class="fab fa-twitter sns_icon"></i>
-                    <a class="sns_link" href="{{ post.sns_url }}">Twitter</a>
-                </div>
-            </div>
+    <section class="post_detail back_base">
+        <p class="detail_title_text font_border pd_l10 mg_0 pd_t20">イベント名</p>
+        <hr class="hr mg_t10 mg_b20 width_95">
+        <h4 class="post_title_detail text_C pd_t20 pd_b20 mg_0 font_border">{{ post.title}}</h4>
+        <p class="detail_title_text font_border pd_l10 mg_0 pd_t20">イベント詳細</p>
+        <hr class="hr mg_t10 mg_b20 width_95">
+        <div class="event_description_div dp_flex">
+            <p class="event_detail_description_text mg_l10 font_border">応募期間</p>
+            <p class="event_date_detail pd_l10 pd_b15">{{ post.start_application_date}} ~ {{ post.finish_application_date}}</p>
         </div>
+        <div class="event_description_div dp_flex">
+            <i class="fas fa-calendar-day pd_l10 pd_b15"></i>
+            <p class="event_date_detail pd_l10 pd_b15">{{ post.event_date}}</p>
+        </div>
+        <div class="event_description_div dp_flex">
+            <i class="fas fa-clock pd_l10 pd_b15"></i>
+            <p class="event_date_detail pd_l10 pd_b15">{{ post.start_time  }} ~ {{ post.end_time  }}</p>
+        </div>
+        <div class="event_description_div dp_flex">
+            <i class="fas fa-map-marker-alt pd_l10 pd_b15"></i>
+            <p class="event_place_detail pd_l10 pd_b15">{{ post.address  }}</p>
+        </div>
+        <div class="event_description_div dp_flex">
+            <i class="fas fa-user pd_l10 pd_b15"></i>
+            <p class="card-text detail_username pd_l10 pd_b20">{{ post.master_username  }}</p>
+        </div>
+            <p class="post_holding_method_detail text_C mg_l10 mg_b40">{{ post.get_holding_method_display }}</p>
+
+        <P class="detail_title_text font_border pd_l10 mg_0 pd_t20">イベント内容</P>
+        <hr class="hr mg_t10 mg_b20 width_95">
+        <div class="post_detail_individual pd_l10 pd_r10 mg_b40">
+            <p class="detail_text">{{ post.text | safe }}</p>
+        </div>
+        <P class="detail_title_text font_border pd_l10 mg_0 pd_t20">イベント申し込み</P>
+        <hr class="hr mg_t10 mg_b20 width_95">
+        <div class="site_application pd_b40">
+            <div class="site pd_l10">
+                <i class="fas fa-sitemap pd_b15"></i>
+                <a class="site_link pd_l10 pd_b15" href="{{ post.link_url }}">申し込みページ</a>
+            </div>
+            <div class="sns pd_l10">
+                <i class="fab fa-twitter pd_b15"></i>
+                <a class="sns_link pd_l10 pd_b15" href="{{ post.sns_url }}">Twitter</a>
+            </div>
+            </div>
     </section>
 {% endblock body %}

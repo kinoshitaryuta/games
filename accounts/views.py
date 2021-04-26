@@ -114,12 +114,12 @@ class EmailChangeCompleteView(LoginRequiredMixin, generic.TemplateView):
 class PasswordChangeView(PasswordChangeView):
     """パスワード変更"""
     form_class = PasswordChangeForm
-    success_url = reverse_lazy('password_change_done')
+    success_url = reverse_lazy('password_done')
     template_name = 'account/password_change.html'
 
 
-class PasswordChangeDoneView(PasswordChangeDoneView):
-    template_name = 'account/password_change_done.html'
+class PasswordDoneView(PasswordChangeDoneView):
+    template_name = 'account/password_done.html'
 
 
 
@@ -139,12 +139,11 @@ class PasswordResetDoneView(PasswordResetDoneView):
 class PasswordResetConfirmView(PasswordResetConfirmView):
     """新パスワード入力ページ"""
     form_class = SetPasswordForm
-    success_url = reverse_lazy('password_reset_complete')
+    success_url = reverse_lazy('password_done')
     template_name = 'account/password_reset_confirm.html'
 
 
-class PasswordResetCompleteView(PasswordResetCompleteView):
-    template_name = 'account/password_reset_complete.html'
+
 
 
 

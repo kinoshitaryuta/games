@@ -2,12 +2,9 @@
 {% load static %}
 
 {% block body %}
-     <header class="signup_text_header">
-         <h1 class="signup_text_title">WSEH</h1>
-     </header>
-    <h4 class="thank_you_text">Thank you for Sign up!</h4>
-     <P class="welcome">welcome to WSEH</P>
-    <P class="please_continue">Please continue to Log in.</P>
+    <h2 class="signup_text_title mg_t40 mg_b40 text_C font_border">WSEH</h2>
+    <h4 class="thank_you_text pd_l20 pd_r20 mg_b20 text_C">ご登録ありがとうございます。</h4>
+    <P class="please_continue pd_l20 pd_r20 mg_b20 text_C">続けてログインを行ってください。</P>
     <div class="text-center">
         <a class="next_link" href="{% url 'login' %}">
            <button type="submit" class="btn btn-success next_login">LOGIN</button>

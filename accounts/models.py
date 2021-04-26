@@ -45,7 +45,6 @@ class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(max_length=100, unique=True)
     username=models.CharField(max_length=30, null=True, blank=True)
     self_introduction = models.TextField(max_length=300, null=False, blank=True)
-    profile_image= models.ImageField(upload_to='profiles',null=True, blank=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)

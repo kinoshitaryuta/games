@@ -4,34 +4,22 @@
 
 
 {% block body %}
-    <section class="my_page_edit">
-        <h5 class="my_page_text">プロフィールの変更</h5><hr class="my_page_hr">
+    <h4 class="my_page_text mg_t40 mg_b20 text_C font_border">プロフィールの変更</h4>
+    <section class="my_page_edit back_base">
         <form  class="post_form" enctype="multipart/form-data" method="POST">
             <div class="text-right">
-                <button type="submit" class="btn btn-success post_button py-0">POST</button>
+                <button type="submit" class="btn btn-success py-0 mg_t20 mg_r10">変更</button>
             </div>
             {% csrf_token %}
-            <p class="event_text_title">Icon</p>
-            <hr class="post_create_hr">
-            <div class="edit_images">
-                {% if  user.profile_image %}
-                 <img src="{{ user.profile_image.url }}" class="user-icon">
-                {% endif %}
-                <i class="fas fa-arrow-circle-right"></i>
-                <div id="preview"></div>
+            <p class="event_text_title mg_b5 pd_l10 pd_t20">username</p>
+            <hr class="hr mg_t10 mg_b20 width_95">
+            <div class="username_edit mg_b40 pd_l10">
+                <table class="table">{% render_field form.username class="form_edit_username line-none width_80" placeholder="ユーザー名" %}</table>
             </div>
-            <div class="profile_image_edit">
-                <table class="table">{% render_field form.profile_image class="form_edit_profile_image" onChange="imgPreView(event)"%}</table>
-            </div>
-            <p class="event_text_title">username</p>
-            <hr class="post_create_hr">
-            <div class="username_edit">
-                <table class="table">{% render_field form.username class="form_edit_username" placeholder="ユーザー名" %}</table>
-            </div>
-            <p class="event_text_title">Self-introduction</p>
-            <hr class="post_create_hr">
-            <div class="self_introduction_edit">
-                <table class="table">{% render_field form.self_introduction　class="form_edit_self_introduction" placeholder="※プロフィール" %}</table>
+            <p class="event_text_title mg_b5 pd_l10 pd_t20">self introduction</p>
+            <hr class="hr mg_t10 mg_b20 width_95">
+            <div class="self_introduction_edit mg_b40 pd_l10">
+                <table class="table">{% render_field form.self_introduction　class="form_edit_self_introductionc line-none" placeholder="※プロフィール" %}</table>
             </div>
         </form>
     </section>

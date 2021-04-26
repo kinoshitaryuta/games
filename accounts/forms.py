@@ -27,7 +27,7 @@ class UserCreateForm(UserCreationForm):
     class Meta:
         model = User
         fields = [
-            'username','email','self_introduction','profile_image', 'password1', 'password2',
+            'username','email','self_introduction', 'password1', 'password2',
         ]
 
 class EmailChangeForm(forms.ModelForm):

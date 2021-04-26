@@ -2,10 +2,10 @@
 {% load static %}
 
 {% block body %}
-    <section class="home_card">
+    <section class="home_card mg_t30">
         <h6 class="event_detail_text">イベント一覧</h6>
         <div class="sub_css_flex">
-            <div class="card">
+            <div class="card mg_b25">
                 <img src="{% static 'img/FORTNITE.jpg' %}" class="card-img-top" alt="FORTNITEに関するイベント">
                 <div class="card-body">
                     <a class="card_link" href="{% url 'fortnite' %}">
@@ -14,7 +14,7 @@
                     <p class="card-text">フォートナイトに関する様々なオンライン・オフラインイベントのページです。</p>
                 </div>
             </div>
-            <div class="card">
+            <div class="card mg_b25">
                 <img src="{% static 'img/Apex.jpg' %}"  class="card-img-top" alt="APEXに関するイベント">
                 <div class="card-body">
                     <a class="card_link" href="{% url 'apex' %}">
@@ -25,7 +25,7 @@
             </div>
         </div>
         <div class="sub_css_flex">
-            <div class="card">
+            <div class="card mg_b25">
                 <img src="{% static 'img/Monhan.jpg' %}"  class="card-img-top" alt="モンスターハンターライズに関するイベント">
                 <div class="card-body">
                     <a class="card_link" href="{% url 'Monhan' %}">
@@ -34,7 +34,7 @@
                     <p class="card-text">モンスターハンターライズに関する様々なオンライン・オフラインイベントのページです。</p>
                 </div>
             </div>
-            <div class="card">
+            <div class="card mg_b25">
                 <img src="{% static 'img/Guraburu.jpg' %}"  class="card-img-top" alt="ポケットモンスター ソード&シールド">
                 <div class="card-body">
                     <a class="card_link" href="{% url 'Guraburu' %}">

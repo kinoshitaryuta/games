@@ -4,56 +4,42 @@
 
 
 {% block body %}
-    <h1 class="site_account_sign_title">WSEH</h1>
-    <section class="signup">
-        <h3 class="signup_text">SIGNUP</h3>
-        <form class="signup_form"  method="post" enctype="multipart/form-data" action="">
+    <h2 class="site_account_sign_title mg_t40 mg_b20 text_C font_border">WSEH</h2>
+    <section class="signup mg_b20 mg_b40 back_base">
+        <h4 class="signup_text pd_t20 text_C">SIGNUP</h4>
+        <form class="signup_form" method="post" enctype="multipart/form-data" action="">
             {% csrf_token %}
-            <p class="signup_text_detail">Icon</p>
-            <hr class="signup_hr">
-            <div class="signup_images">
-                  <div id="preview"></div>
+            <p class="signup_text_detail mg_b5 pd_l10">username</p>
+            <hr class="hr mg_t10 mg_b20 width_95">
+            <div class="username mg_b40 pd_l10">
+                <table class="table">{% render_field form.username class="form_username line-none width_80" placeholder="ユーザー名" %}</table>
             </div>
-            <div class="profile_image">
-                <div class="text-center">
-                    <label class="image_label">
-                    <i class="fas fa-plus"></i>
-                        アイコンを選択して下さい
-                        <table class="table">{% render_field form.profile_image class="form_profile_image" onChange="imgPreView(event)"%}</table>
-                    </label>
-                </div>
+            <p class="signup_text_detail mg_b5 pd_l10">self introduction</p>
+            <hr class="hr mg_t10 mg_b20 width_95">
+            <div class="self_introduction mg_b40 pd_l10">
+                <table class="table">{% render_field form.self_introduction　class="form_self_introduction line-none" placeholder="※プロフィール" %}</table>
             </div>
-            <p class="signup_text_detail">username</p>
-            <hr class="signup_hr">
-            <div class="username">
-                <table class="table">{% render_field form.username class="form_username" placeholder="ユーザー名" %}</table>
+            <p class="signup_text_detail mg_b5  pd_l10">e-mail</p>
+           <hr class="hr mg_t10 mg_b20 width_95">
+            <div class="email mg_b40 pd_l10">
+                <table class="table width_100">{% render_field form.email class="form_email line-none width_80" placeholder="メールアドレス" %}</table>
             </div>
-            <p class="signup_text_detail">Self-introduction</p>
-            <hr class="signup_hr">
-            <div class="self_introduction">
-                <table class="table">{% render_field form.self_introduction　class="form_self_introduction" placeholder="※プロフィール" %}</table>
+            <p class="signup_text_detail mg_b5 pd_l10">password</p>
+            <hr class="hr mg_t10 mg_b20 width_95">
+            <div class="password1 mg_b40 pd_l10">
+                <table class="table">{% render_field form.password1 class="form_password line-none width_80" placeholder="パスワード" %}</table>
             </div>
-            <p class="signup_text_detail">E-mail</p>
-            <hr class="signup_hr">
-            <div class="email">
-                <table class="table">{% render_field form.email class="form_email" placeholder="E-mail" %}</table>
-            </div>
-            <p class="signup_text_detail">password</p>
-            <hr class="signup_hr">
-            <div class="password1">
-                <table class="table">{% render_field form.password1 class="form_password" placeholder="password" %}</table>
-            </div>
-            <p class="signup_text_detail">again password</p>
-            <hr class="signup_hr">
-            <div class="password2">
-                <table class="table">{% render_field form.password2 class="form_password" placeholder="password確認用" %}</table>
+            <p class="signup_text_detail mg_b5 pd_l10">again password</p>
+           <hr class="hr mg_t10 mg_b20 width_95">
+            <div class="password2 mg_b40 pd_l10">
+                <table class="table">{% render_field form.password2 class="form_password line-none width_80" placeholder="パスワードの再入力" %}</table>
             </div>
             {% if redirect_field_value %}
                 <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" >
             {% endif %}
-            <p class="any_text">※の記入は任意です。</p>
+            <p class="any_text mg_t30 pd_l10">※の記入は任意です。</p>
             <div class="text-center">
-                <button type="submit" class="btn btn-danger signup_button" >SIGNUP</button>
+                <button type="submit" class="btn btn-danger signup_button mg_b20" >SIGNUP</button>
             </div>
         </form>
     </section>
