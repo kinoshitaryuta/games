@@ -1,56 +1,71 @@
 {% extends 'app/base.html' %}
-{% load static %}
+{% load static %}<img src="{{ user.profile_image.url }}" class="user-icon">
 {% load widget_tweaks %}
 
 {% block body %}
-    <div class="tab-wrap">
-        <input id="tab01" type="radio" name="tab" class="tab-switch" checked="checked"><label class="tab-label" for="tab01">個人イベント</label>
-        <div class="tab-content">
-            <section class="search">
-                <form id="form3" action="{% url 'fortnite' %}" method="get" class="search_container">
-                    <input  type="text" name="query" placeholder="フリーワード検索" aria-label="Search">
-                    <input type="submit" value="&#xf002">
-                </form>
-            </section>
-                <form id="form3" action="{% url 'fortnite' %}" method="get">
-                     <input type="date" name="data" aria-label="Search"id="date" max="2025-03-31" min="2021-03-01" >
-                      <button type="submit" class="btn btn-success post_button py-0">POST</button>
-                 </form>
-            <section class="post_list">
-            <h6 class="event_detail_text">イベント一覧</h6>
-                <div class="post_individual">
-                    {% for Post in posts %}
-                        <a href="{% url 'post_detail' Post.id %}" class="post_detail_next">
-                            <div class="card-detail">
-                                <h5 class="card-header post_day">{{ Post.event_date}}開催予定</h5>
-                                <div class="card-body detail_body">
-                                    <p class="post_title_text">Title</p>
-                                    <h5 class="card-title post_title">{{ Post.title}}</h5>
-                                    <div class="event_detail_div">
-                                        <i class="fas fa-user event_detail_icon"></i>
-                                        <p class="card-text master_username">{{ Post.master_username  }}</p>
-                                    </div>
-                                    <div class="text-right link_detail">
-                                        <i class="fas fa-arrow-right"></i>
-                                    </div>
-                                    <div class="card-footer">
-                                        <p class="post_holding_method">{{ Post.get_holding_method_display }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    {% endfor %}
+    <section class="post_lists back_base">
+        <div class="tab-wrap">
+            <input id="tab01" type="radio" name="tab" class="tab-switch" checked="checked"><label class="tab-label" for="tab01">イベント</label>
+            <div class="tab-content pd_0">
+                <div class="search text-center mg_t30 mg_b60">
+                    <form  action="{% url 'apex' %}" method="get" class="search_word mg_b40 ">
+                        <button class="search_button line-none mg_0 pd_0 pd_r10">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <input class="width_80 line-none" type="text" name="query" placeholder="フリーワード検索" aria-label="Search">
+                        <hr class="hr mg_t0 mg_b0 width_95">
+                    </form>
+                    <form  action="{% url 'apex' %}" method="get" class="search_day">
+                        <button class="search_button line-none mg_0 pd_0 pd_r10">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <input class="width_80 line-none" type="date" name="data" aria-label="Search"id="date" max="2025-03-31" min="2021-03-01" >
+                        <hr class="hr mg_t0 mg_b0 width_95">
+                    </form>
                 </div>
-            </section>
+                <h5 class="event_detail_text font_border mg_b20 pd_l10">イベント一覧</h5>
+                <section class="post">
+                        {% for Post in posts %}
+                            <div class="card-detail">
+                                <h5 class="card-header post_day font_border">{{ Post.event_date}}開催予定</h5>
+                                <div class="card-body detail_body">
+                                    <div class="event_detail_div dp_flex pd_b15">
+                                        <i class="fas fa-file-signature"></i>
+                                        <p class="post_title pd_l20 ">{{ Post.title}}</p>
+                                    </div>
+                                    <div class="event_detail_div dp_flex pd_b15">
+                                        <i class="fas fa-user"></i>
+                                        <p class="master_username pd_l20">{{ Post.master_username  }}</p>
+                                    </div>
+                                    <p class="post_holding_method_detail text_C">{{ Post.get_holding_method_display }}</p>
+                                </div>
+                                <a href="{% url 'post_detail' Post.id %}" class="post_detail_next">
+                                    <div class="next_post dp_flex ">
+                                        <p class="text_event pd_r10 mg_b10">イベント詳細</p>
+                                        <i class="far fa-arrow-alt-circle-right pd_r10 mg_b10"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endfor %}
+                </section>
+            </div>
+            <input id="tab02" type="radio" name="tab" class="tab-switch"><label class="tab-label" for="tab02">スケジュール</label>
+            <div class="tab-content">
+                {% for Fortnite in EventScheduleMonhan %}
+                    <a class="site_link pd_l10 pd_b15" href="{{ Fortnite.link_url }}">
+                        <div class="card-detail">
+                            <h5 class="card-header  font_border">{{ Fortnite.start_date }}～{{ Fortnite.start_date }}</h5>
+                            <div class="card-body detail_body mg_0 pd_0">
+                                 <img class="event_image" src="{{ MEDIA_URL }}{{ Fortnite.image }}">
+                            </div>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+            <input id="tab03" type="radio" name="tab" class="tab-switch"><label class="tab-label" for="tab03">タブ ③</label>
+            <div class="tab-content">
+                コンテンツ 3
+            </div>
         </div>
-        <input id="tab02" type="radio" name="tab" class="tab-switch"><label class="tab-label" for="tab02">タブ ②</label>
-        <div class="tab-content">
-            コンテンツ 2
-        </div>
-        <input id="tab03" type="radio" name="tab" class="tab-switch"><label class="tab-label" for="tab03">タブ ③</label>
-        <div class="tab-content">
-            コンテンツ 3
-        </div>
-    </div>
-
+    </section>
 {% endblock body %}

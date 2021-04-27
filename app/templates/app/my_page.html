@@ -20,7 +20,7 @@
         <h5 class="my_post_text pd_l20 font_border">主催したイベント</h5>
         {% for Post in object.post_set.all %}
             <div class="card-detail">
-                <h5 class="card-header post_day">{{ Post.event_date}}開催予定</h5>
+                <h5 class="card-header post_day font_border">{{ Post.event_date}}開催予定</h5>
                 <div class="card-body detail_body">
                     <div class="text-right">
                         <div class="post_edit_delete">
@@ -36,22 +36,22 @@
                             </button>
                         </div>
                     </div>
-                    <a href="{% url 'post_detail' Post.id %}" class="post_detail_next">
-                        <p class="my_page_title_text">Title</p>
-                        <h5 class="card-title post_title">{{ Post.title}}</h5>
-                         <div class="event_detail_div">
-                            <i class="fas fa-user event_detail_icon"></i>
-                            <p class="card-text master_username">{{ Post.master_username  }}</p>
-                        </div>
-                        <div class="text-right link_detail">
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                        <div class="card-footer">
-                            <p class="post_event_type">{{ Post.get_event_type_display }}</p>
-                            <p class="post_holding_method">{{ Post.get_holding_method_display }}</p>
-                        </div>
-                    </a>
+                    <div class="event_detail_div dp_flex pd_b15">
+                        <i class="fas fa-file-signature"></i>
+                        <p class="post_title pd_l20 ">{{ Post.title}}</p>
+                    </div>
+                     <div class="event_detail_div dp_flex pd_b15">
+                        <i class="fas fa-user"></i>
+                        <p class="master_username pd_l20">{{ Post.master_username  }}</p>
+                     </div>
+                    <p class="post_holding_method_detail text_C">{{ Post.get_holding_method_display }}</p>
                 </div>
+                <a href="{% url 'post_detail' Post.id %}" class="post_detail_next">
+                    <div class="next_post dp_flex ">
+                        <p class="text_event pd_r10 mg_b10">イベント詳細</p>
+                        <i class="far fa-arrow-alt-circle-right pd_r10 mg_b10"></i>
+                    </div>
+                </a>
             </div>
         {% endfor %}
 

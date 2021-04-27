@@ -56,6 +56,11 @@ class FortniteDetailView(generic.ListView):
     template_name = 'post/e_sport/fortnite_detail.html'
     context_object_name = 'posts'
 
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['EventScheduleFortnite'] = EventScheduleFortnite.objects.all
+        return context
+
     def get_queryset(self):
         q_word = self.request.GET.get('query')
         q_data = self.request.GET.get('data')
@@ -102,6 +107,11 @@ class MonhanDetailView(generic.ListView):
         template_name = 'post/e_sport/Monhan_detail.html'
         context_object_name = 'posts'
 
+        def get_context_data(self, *args, **kwargs):
+            context = super().get_context_data(*args, **kwargs)
+            context['EventScheduleMonhan'] = EventScheduleMonhan.objects.all
+            return context
+
         def get_queryset(self):
             q_word = self.request.GET.get('query')
             q_data = self.request.GET.get('data')
@@ -122,6 +132,11 @@ class GuraburuDetailView(generic.ListView):
         model = Post
         template_name = 'post/e_sport/Guraburu_detail.html'
         context_object_name = 'posts'
+
+        def get_context_data(self, *args, **kwargs):
+            context = super().get_context_data(*args, **kwargs)
+            context['EventScheduleGuraburu'] = EventScheduleGuraburu.objects.all
+            return context
 
         def get_queryset(self):
             q_word = self.request.GET.get('query')

@@ -14,7 +14,7 @@ class PostCreateForm(ModelForm):
         fields=[
             'e_sport_detail','holding_method','title','text',
             'event_date','start_application_date','finish_application_date','sns_url','link_url','start_time','end_time',
-            'address',
+
         ]
         widgets = {
             'text': SummernoteWidget(),
@@ -31,7 +31,7 @@ class PostUpdateForm(ModelForm):
         model = Post
         fields = [
             'title','text','event_date','start_application_date','finish_application_date','holding_method','sns_url','link_url',
-            'start_time','end_time','address',
+            'start_time','end_time',
         ]
 
         widgets = {

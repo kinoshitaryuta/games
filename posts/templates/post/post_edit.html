@@ -5,81 +5,68 @@
 
 {% block body %}
     {% if user.is_authenticated %}
-        <section class="create_post">
+        <section class="create_post mg_auto base_nav">
             <form  class="post_form"  method="POST">
                 <div class="text-right">
-                    <button type="submit" class="btn btn-success post_button py-0">POST</button>
+                    <button type="submit" class="btn btn-success post_button py-0 mg_t10 mg_r10 mg_b10">投稿</button>
                 </div>
                 {% csrf_token %}
-                                  <div class="event_start_application_date">
-                        <table class="table">
-                            {% render_field form.address class="form_start_application_date"  placeholder="応募開始日" %}
-                        </table>
-                    </div>
-                <p class="event_text_title">Title</p>
-                <hr class="post_create_hr">
-                <div class="event_post_title">
+                <p class="event_text_title mg_l10 font_border">イベント名</p>
+                <hr class="hr mg_t10 mg_b20 width_95">
+                <div class="event_post_title pd_l10 mg_b60">
                     <table class="table">
-                        {% render_field form.title class="form_event_title"  placeholder="タイトルを入力してください。" %}
+                        {% render_field form.title class="form_event_title line-none width_80"  placeholder="タイトルを入力してください。" %}
                     </table>
                 </div>
-                <p class="event_text_title">Days</p>
-                <hr class="post_create_hr">
-                <div class="event_days">
-                    <div class="event_event_date">
-                        <table class="table">
-                            {% render_field form.event_date class="form_event_date"  placeholder="開催日" %}
-                        </table>
-                    </div>
-                    <div class="event_start_application_date">
-                        <table class="table">
-                            {% render_field form.start_application_date class="form_start_application_date"  placeholder="応募開始日" %}
-                        </table>
-                    </div>
-                    <div class="event_finish_application_date">
-                        <table class="table">
-                            {% render_field form.finish_application_date class="form_finish_application_date"  placeholder="応募締切日" %}
-                        </table>
-                    </div>
-                     <p class="event_text_title">Time</p>
-                    <hr class="post_create_hr">
-                    <div class="event_start_time">
-                        <table class="post_table">
-                                {% render_field form.start_time class="form_start_time" type="time" placeholder="開始予定時間" %}
-                        </table>
-                    </div>
-                    <div class="event_end_time">
-                        <table class="post_table">
-                                {% render_field form.end_time  class="form_end_time"  type="time" placeholder="終了予定時間" %}
-                        </table>
-                    </div>
-                    <div class="event_address">
-                    <table class="table">
-                        {% render_field form.address class="form_address"  placeholder="開催場所" %}
-                    </table>
-                </div>
-                </div>
-                <p class="event_text_title">Holding Method</p>
-                <hr class="post_create_hr">
-                <div class="event_holding_method">
+                <p class="event_text_title mg_l10 font_border">イベント詳細</p>
+                <hr class="hr mg_t10 mg_b20 width_95">
+                <div class="event_holding_method pd_l10 pd_b30">
                     <table class="post_table">
                             {% render_field form.holding_method class="form_holding_method" %}
                     </table>
                 </div>
-                 <div class="event_link_url">
-                    <table class="post_table">
-                            {% render_field form.link_url class="form_link_url"  placeholder="申し込みURL"%}
+                <div class="event_date pd_l10 pd_b30">
+                    <table class="table">
+                        {% render_field form.event_date class="form_event_date width_80"  placeholder="開催日" %}
+                    </table>
+                    <table class="table">
+                        {% render_field form.start_application_date class="form_start_application_date width_80"  placeholder="応募開始日" %}
+                    </table>
+                    <table class="table">
+                        {% render_field form.finish_application_date class="form_finish_application_date width_80"  placeholder="応募締切日" %}
                     </table>
                 </div>
-                <div class="event_sns_url">
+                <div class="event_start_time pd_l10 pd_b10">
                     <table class="post_table">
-                            {% render_field form.sns_url class="form_sns_url"  placeholder="TwitterURL。"%}
+                            {% render_field form.start_time class="form_start_time width_60 text_c" type="time" placeholder="開始予定時間" %}
+                    </table>
+                </div>
+                <div class="event_end_time pd_l10 pd_b30">
+                    <table class="post_table">
+                            {% render_field form.end_time  class="form_end_time width_60 text_c"  type="time" placeholder="終了予定時間" %}
+                    </table>
+                </div>
+                <div class="e_sport_detail pd_l10 pd_b30" >
+                    <table class="post_table">
+                            {% render_field form.e_sport_detail class="form_e_sport_detail" id="e-sportList" name="place[]" %}
+                    </table>
+                </div>
+                <div class="event_link_url pd_l10 pd_b10">
+                    <i class="fab fa-google pd_b15"></i>
+                    <table class="post_table pd_l10">
+                            {% render_field form.link_url class="form_link_url line-none"  placeholder="申し込み URL"%}
+                    </table>
+                </div>
+                <div class="event_sns_url pd_l10 mg_b60">
+                    <i class="fab fa-twitter pd_b15"></i>
+                    <table class="post_table pd_l10">
+                            {% render_field form.sns_url class="form_sns_url line-none"  placeholder="Twitter URL"%}
                     </table>
                 </div>
                 <div class="event_text">
-                     <p class="event_text_title">Event Contents</p>
+                    <p class="event_text_title mg_l10 font_border">イベント内容</p>
                     <table class="table">
-                        {% render_field form.text class="form_event_text"  %}
+                        {% render_field form.text class="form_event_text" %}
                     </table>
                 </div>
             </form>
@@ -94,7 +81,7 @@
                 </a>
             </div>
         </div>
+
         </section>
     {% endif %}
-
 {% endblock body %}
