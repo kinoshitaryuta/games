@@ -4,22 +4,22 @@
 
 
 {% block body %}
-    <h4 class="my_page_text mg_t40 mg_b20 text_C font_border">プロフィールの変更</h4>
-    <section class="my_page_edit back_base">
+    <h4 class="my_page_text mg_t40 mg_b20 text_C pd_t40_sub text_C_sub mg_b60_sub ">プロフィールの変更</h4>
+    <section class="my_page_edit back_base back_base_sub mg_b60_sub">
         <form  class="post_form" enctype="multipart/form-data" method="POST">
             <div class="text-right">
-                <button type="submit" class="btn btn-success py-0 mg_t20 mg_r10">変更</button>
+                <button type="submit" class="btn btn-success change_btn py-0 mg_t20 mg_r10 mg_t20_sub mg_r20_sub">変更</button>
             </div>
             {% csrf_token %}
-            <p class="event_text_title mg_b5 pd_l10 pd_t20">username</p>
-            <hr class="hr mg_t10 mg_b20 width_95">
-            <div class="username_edit mg_b40 pd_l10">
-                <table class="table">{% render_field form.username class="form_edit_username line-none width_80" placeholder="ユーザー名" %}</table>
+            <p class="user_change_text mg_b5 pd_l10 pd_t20 pd_l25_sub mg_b5_sub pd_t40_sub">username</p>
+            <hr class="hr mg_t10 mg_b20 width_95  mg_b10_sub mg_t0_sub width_95 width_95_sub">
+            <div class="username_edit mg_b40 pd_l10 pd_l25_sub mg_b60_sub">
+                <table class="table">{% render_field form.username class="form_edit_username line-none width_80 line-none_sub width_80_sub" placeholder="ユーザー名" %}</table>
             </div>
-            <p class="event_text_title mg_b5 pd_l10 pd_t20">self introduction</p>
-            <hr class="hr mg_t10 mg_b20 width_95">
-            <div class="self_introduction_edit mg_b40 pd_l10">
-                <table class="table">{% render_field form.self_introduction　class="form_edit_self_introductionc line-none" placeholder="※プロフィール" %}</table>
+            <p class="user_change_text mg_b5 pd_l10 pd_t20 pd_l25_sub mg_b5_sub">self introduction</p>
+            <hr class="hr mg_t10 mg_b20 width_95  mg_b10_sub mg_t0_sub width_95 width_95_sub">
+            <div class="self_introduction_edit mg_b40 pd_l10 pd_l25_sub mg_b60_sub">
+                <table class="table">{% render_field form.self_introduction　class="form_edit_self_introductionc line-none line-none_sub " placeholder="※プロフィール" %}</table>
             </div>
         </form>
     </section>

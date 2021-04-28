@@ -1,48 +1,48 @@
 {% extends 'app/base.html' %}
-{% load static %}<img src="{{ user.profile_image.url }}" class="user-icon">
+{% load static %}
 {% load widget_tweaks %}
 
 {% block body %}
-    <section class="post_lists back_base">
+    <section class="post_lists back_base back_base_sub">
         <div class="tab-wrap">
             <input id="tab01" type="radio" name="tab" class="tab-switch" checked="checked"><label class="tab-label" for="tab01">イベント</label>
             <div class="tab-content pd_0">
-                <div class="search text-center mg_t30 mg_b60">
-                    <form  action="{% url 'apex' %}" method="get" class="search_word mg_b40 ">
-                        <button class="search_button line-none mg_0 pd_0 pd_r10">
+                <div class="search text-center mg_t30 mg_b60  mg_t60_sub mg_b60_sub">
+                    <form  action="{% url 'apex' %}" method="get" class="search_word mg_b40 mg_b60_sub">
+                        <button class="search_button line-none mg_0 pd_0 pd_r10 line-none_sub mg_0_sub pd_0_sub pd_r10_sub">
                             <i class="fas fa-search"></i>
                         </button>
-                        <input class="width_80 line-none" type="text" name="query" placeholder="フリーワード検索" aria-label="Search">
-                        <hr class="hr mg_t0 mg_b0 width_95">
+                        <input class="width_80 line-none width_80_sub line-none_sub" type="text" name="query" placeholder="フリーワード検索" aria-label="Search">
+                         <hr class="hr mg_t10 mg_b20 width_95  mg_b10_sub mg_t0_sub width_95 width_95_sub">
                     </form>
                     <form  action="{% url 'apex' %}" method="get" class="search_day">
-                        <button class="search_button line-none mg_0 pd_0 pd_r10">
+                        <button class="search_button line-none mg_0 pd_0 pd_r10 line-none_sub mg_0_sub pd_0_sub pd_r10_sub">
                             <i class="fas fa-search"></i>
                         </button>
-                        <input class="width_80 line-none" type="date" name="data" aria-label="Search"id="date" max="2025-03-31" min="2021-03-01" >
-                        <hr class="hr mg_t0 mg_b0 width_95">
+                        <input class="width_80 line-none width_80_sub line-none_sub" type="date" name="data" aria-label="Search"id="date" max="2025-03-31" min="2021-03-01" >
+                         <hr class="hr mg_t10 mg_b20 width_95  mg_b10_sub mg_t0_sub width_95 width_95_sub">
                     </form>
                 </div>
-                <h5 class="event_detail_text font_border mg_b20 pd_l10">イベント一覧</h5>
-                <section class="post">
+                <h5 class="event_detail_text font_border mg_b20 pd_l10 pd_l40_sub font_border_sub mg_b20_sub">イベント一覧</h5>
+                <section class="post mg_b60_sub">
                         {% for Post in posts %}
-                            <div class="card-detail">
-                                <h5 class="card-header post_day font_border">{{ Post.event_date}}開催予定</h5>
-                                <div class="card-body detail_body">
-                                    <div class="event_detail_div dp_flex pd_b15">
-                                        <i class="fas fa-file-signature"></i>
-                                        <p class="post_title pd_l20 ">{{ Post.title}}</p>
-                                    </div>
-                                    <div class="event_detail_div dp_flex pd_b15">
-                                        <i class="fas fa-user"></i>
-                                        <p class="master_username pd_l20">{{ Post.master_username }}</p>
-                                    </div>
-                                    <p class="post_holding_method_detail text_C">{{ Post.get_holding_method_display }}</p>
+                            <div class="card-detail mg_l40_sub mg_r40_sub">
+                                <h5 class="card-header post_day font_border font_border_sub text_C_sub">{{ Post.event_date}}開催予定</h5>
+                                <div class="card-body detail_body pd_t40_sub pd_b40_sub pd_l40_sub pd_r40_sub">
+                                <div class="event_detail_div dp_flex pd_b15 dp_flex_sub pd_b30_sub">
+                                    <i class="fas fa-file-signature"></i>
+                                    <p class="post_title pd_l20 pd_l40_sub">{{ Post.title}}</p>
                                 </div>
+                                <div class="event_detail_div dp_flex pd_b15 dp_flex_sub pd_b30_sub">
+                                    <i class="fas fa-user"></i>
+                                    <p class="master_username pd_l20 pd_l40_sub">{{ Post.master_username  }}</p>
+                                </div>
+                                <p class="post_holding_method_detail text_C text_C_sub">{{ Post.get_holding_method_display }}</p>
+                            </div>
                                 <a href="{% url 'post_detail' Post.id %}" class="post_detail_next">
-                                    <div class="next_post dp_flex ">
-                                        <p class="text_event pd_r10 mg_b10">イベント詳細</p>
-                                        <i class="far fa-arrow-alt-circle-right pd_r10 mg_b10"></i>
+                                    <div class="next_post dp_flex dp_flex_sub">
+                                        <p class="text_event pd_r10 mg_b10 pd_r20_sub mg_b20_sub">イベント詳細</p>
+                                        <i class="far fa-arrow-alt-circle-right pd_r10 mg_b10 pd_r20_sub mg_b20_sub"></i>
                                     </div>
                                 </a>
                             </div>
@@ -52,14 +52,16 @@
             <input id="tab02" type="radio" name="tab" class="tab-switch"><label class="tab-label" for="tab02">スケジュール</label>
             <div class="tab-content">
                 {% for Apex in EventScheduleApex %}
-                    <a class="site_link pd_l10 pd_b15" href="{{ Apex.link_url }}">
-                        <div class="card-detail">
-                            <h5 class="card-header  font_border">{{ Apex.start_date }}～{{ Apex.start_date }}</h5>
-                            <div class="card-body detail_body mg_0 pd_0">
-                                 <img class="event_image" src="{{ MEDIA_URL }}{{ Apex.image }}">
+                    <div class="mg_r60_sub mg_l60_sub">
+                        <a class="site_link pd_l10 pd_b15 text_C_sub" href="{{ Apex.link_url }}">
+                            <div class="card-detail">
+                                <h5 class="card-header post_day_event font_border font_border_sub pd_b20_sub">{{ Apex.start_date }}～{{ Apex.start_date }}</h5>
+                                <div class="card-body detail_body mg_0 pd_0 mg_0_sub pd_0_sub">
+                                     <img class="event_image" src="{{ MEDIA_URL }}{{ Apex.image }}">
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 {% endfor %}
             </div>
             <input id="tab03" type="radio" name="tab" class="tab-switch"><label class="tab-label" for="tab03">タブ ③</label>

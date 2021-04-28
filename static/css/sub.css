@@ -1,13 +1,13 @@
 @media screen and (min-width:1024px) {
+   /*app/base.html*/
     body {
-        width: 80%;
-        margin: 0 auto;
-        padding: 0;
-        font-size: 18px;
+        width: 100%;
+        font-size: 20px;
         font-family: Helvetica Neue, Arial, Hiragino Kaku Gothic ProN, Hiragino Sans, Meiryo, sans-serif;
         background: #f8f7f7;
         color: #4d5156;
-        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
+        margin: 0 auto;
+        padding: 0;
     }
 
     a {
@@ -18,489 +18,295 @@
         color: #146dac;
         cursor: pointer;
     }
-    .main_css{
+    .main_css {
         display: none;
     }
-
-    /*app/base.html*/
     .site_title{
-        font-size: 40px;
-        margin: 10px auto 10px 60px;
-        text-align: center;
-        font-weight: bolder;
-        color: black;
+        font-size: 45px;
     }
-
-    .navbar-nav{
-        font-size: 16px;
+    .nav-link{
+        font-size: 15px;
     }
-
-    .nav-item{
-        padding-left: 5px;
-    }
-
     .main_base_header{
         background: #ffffff;
         box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
     }
     .sub_footer{
-        margin-top: 50px;
-        height: 80px;
-        display: flex;
-        background: #302f2f;
-        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
-    }
-    .nav-link_sub{
-        padding-left: 15px;
-        padding-top: 30px;
-        padding-bottom: 30px;
-        color: #bfbdbd;
         font-size: 16px;
+         color: #838383;
     }
 
-    /*home.html*/
+    /*S タブメニュー*/
+    .tab-wrap {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .tab-wrap:after {
+      content: '';
+      width: 100%;
+      height: 3px;
+      background: #325A8C;
+      display: block;
+      order: -1;
+    }
+    .tab-label {
+      color: White;
+      background: LightGray;
+      font-weight: bold;
+      white-space: nowrap;
+      text-align: center;
+      padding: 10px .5em;
+      order: -1;
+      position: relative;
+      z-index: 1;
+      cursor: pointer;
+      border-radius: 5px 5px 0 0;
+      flex: 1;
+    }
+    .tab-label:not(:last-of-type) {
+      margin-right: 5px;
+    }
+    .tab-content {
+      width: 100%;
+      height: 0;
+      overflow: hidden;
+      opacity: 0;
+    }
+    .tab-switch:checked+.tab-label {
+      background: #325A8C;
+    }
+    .tab-switch:checked+.tab-label+.tab-content {
+      height: auto;
+      overflow: auto;
+      opacity: 1;
+      transition: .5s opacity;
+      box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    }
+    .tab-switch {
+      display: none;
+    }
+    /*E タブメニュー*/
+
+
+    /*S app/home.html*/
     .event_detail_text{
-        margin-top: 40px;
-        font-size: 25px;
-        margin-left: 10px;
-        margin-bottom: 5px;
-        color: black;
+        font-size: 24px;
     }
-    .sub_css_flex{
-        display: flex;
-        margin-top: 30px;
-    }
-    .sub_css_center{
-         margin-top: 30px;
-    }
-
     .card{
-        margin-left: 40px;
-        margin-right: 40px;
-        margin-bottom: 20px;
-        width: 400px;
+        width: 550px;
+
     }
     .card-img-top{
         width: 100%;
-        height: 200px;
+        height: 220px;
+    }
+    /*E app/home.html*/
+    /*S login.html*/
+    .site_account_title {
+        color: black;
+        font-size: 45px;
     }
 
-
-
-    /*post.detail*/
-    .post_list {
-        margin-top: 30px;
-        width: 80%;
-        margin-left:auto;
-        margin-right:auto;
+    .login {
+        width: 85%;
+        border-radius: 7px;
     }
 
-    .event_detail_text {
-        font-size: 20px;
-        font-weight: bold;
-        padding-left: 5px;
+    .login_text{
+        font-size: 30px;
+        color: black;
     }
 
-    .card-detail {
-        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
-        margin-top: 30px;
+    .login_form_email,
+    .login_form_password {
+        height: 45px;
+        width: 50%;
     }
-
-    .post_day {
-        background: #a7d9fc;
-        font-weight: bold;
-        font-size: 20px;
-    }
-
-    .detail_body {
-        padding: 0;
-        background: #ffffff;
-    }
-
-    .post_title_text {
-        font-size: 12px;
-        margin: 0;
-        padding-top: 10px;
-        padding-left: 10px;
-    }
-
-    .post_title {
-        margin: 0;
-        padding-left: 10px;
-        font-weight: bolder;
-    }
-
-    .card-footer {
-        background: #ffffff;
-        display: flex;
-    }
-
-    .post_event_type {
-        margin: 0;
-        width: 100px;
-        font-size: 16px;
-        text-align: center;
+    .twitter{
         color: #ffffff;
-        background: #75ae75;
-        border-radius: 10px;
+    }
+    .login_button {
+        width: 40%;
+        height: 45px;
     }
 
-    .post_holding_method {
-        margin: 0 0 0 10px;
-        width: 100px;
-        font-size: 16px;
-        text-align: center;
-        color: #ffffff;
-        background: #c482c4;
-        border-radius: 10px;
+    .login_link_text {
+        font-size: 18px;
+        color: #838383;
     }
 
-    .link_detail {
-        margin-right: 10px;
-        margin-bottom: 5px;
+    .fa-twitter {
+        color: white;
     }
 
-    .fa-arrow-right {
+    .btn-twitter {
+        height: 45px;
+        width: 40%;
+        background: #55ACEE;
+    }
+    /*S signup.html*/
+    .site_account_sign_title {
+        color: black;
+        font-size: 45px;
+    }
+
+    .form_self_introduction{
+        resize: none;
+        height: 150px;
+        width:95%;
+    }
+    .signup_text_detail{
         font-size: 22px;
     }
-
-    .detail_images {
-        position: relative;
+    .any_text{
+        font-size: 18px;
+        color: #838383;
     }
-
-    .detail_img {
-        margin-top: 1px;
-        filter: blur(3px);
+    .signup_button{
+        font-size: 18px;
+        height: 45px;
+        width: 15%;
     }
-
-    .event_detail_div {
-        margin-top: 20px;
-        margin-left: 10px;
-        display: flex;
+    /*E signup.html*/
+    /*S change/contact.html*/
+    .password_reset_form_text,
+    .email_change_form_text,
+    .password_change_text,
+    .change_text,
+    .contact_thank_you_text,
+    .contact_form_text,
+    .my_page_text
+    .delete_text{
+        font-size: 30px;
     }
-
-    .event_detail_icon {
-        font-size: 20px;
-    }
-
-    .master_username {
-        padding-left: 10px;
-        font-size: 16px;
-    }
-
-
-
-    /*detail.html*/
-
-    post_detail {
-        margin: 40px auto 100px;
-        width: 80%;
-        background: #ffffff;
-        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .main_detail {
-        margin-top: 30px;
-    }
-
-    .post_title_detail {
-        text-align: center;
-        padding-top: 40px;
-        padding-bottom: 50px;
-        margin: 0;
-        font-weight: bold;
-        font-size: 25px;
-    }
-
-    .detail_hr {
-        margin: 0 auto;
-        width: 95%;
-    }
-
-    .detail_title_text {
-        margin: 0;
-        font-size: 16px;
-        font-weight: bolder;
-        padding-top: 30px;
-        padding-left: 30px;
-    }
-
-    .detail_descriptions {
-        margin-top: 30px;
-        margin-bottom: 50px;
-    }
-
-    .event_description_div {
-        display: flex;
-    }
-
-    .event_detail_description_text {
-        margin-left: 15px;
-        font-size: 20px;
-        font-weight: bolder;
-    }
-
-    .event_detail_description {
-        margin-left: 30px;
-        font-size: 22px;
-    }
-
-    .event_date_detail,
-    .event_date_detail,
-    .event_place_detail,
-    .detail_username {
-        margin-left: 30px;
-        font-size: 22px;
-    }
-
-    .event_tag {
-        margin-top: 30px;
-        margin-bottom: 40px;
-        display: flex;
-    }
-
-    .post_holding_method_detail {
-        margin: 0 0 0 30px;
-        width: 100px;
-        font-size: 16px;
-        text-align: center;
-        color: #ffffff;
-        background: #c482c4;
-        border-radius: 10px;
-    }
-
-    .post_detail_individual {
-        height: auto;
-        margin-top: 30px;
-        padding-bottom: 50px;
-        padding-left: 30px;
-        padding-right: 30px;
+    .change_text_detail,
+    .contact_result_text{
         font-size: 24px;
     }
-    .site_application{
-        padding-bottom: 50px;
-    }
-    .site,
-    .sns{
-        padding-top: 30px;
-        padding-left: 20px;
-        display: flex;
-    }
-    .fa-sitemap{
+    .password_reset_detail_text,
+    .change_password_text,
+    .email_change_text,
+    .rest_password_text,
+    .delete_text_sub{
         font-size: 22px;
     }
-    .site_link,
-    .sns_link{
-        padding-left: 20px;
-        font-size: 20px;
+    .password_change_form_button,
+    .email_change_form_button,
+    .password_change_form_button,
+    .home_btn,
+    .send_form_button{
+        font-size: 18px;
+        height: 45px;
+        width: 15%;
     }
-    .sns_icon{
-        font-size: 25px;
+
+    /*E change.html*/
+    /*S terms.html*&privacy.html*/
+    .terms_text_big,
+    .terms_text{
+        line-height: 2em
+    }
+    .terms_text_small{
+        font-size:16px ;
+        line-height: 2em
+    }
+    /*E terms.html*&privacy.html*/
+    /*S my_page.html*/
+    .post_detail_change,
+    .user_change_text{
+        font-size: 22px;
+    }
+    .card-detail {
+        border-right:1px solid rgba(0,0,0,.125);
+        border-left:1px solid rgba(0,0,0,.125);
+        border-bottom:1px solid rgba(0,0,0,.125);
+    }
+    .fa-user-cog,
+    .fa-envelope,
+    .fa-lock,
+    .fa-edit,
+    .fa-trash-alt,
+    .fa-google,
+    .fa-calendar-day,
+    .fa-clock,
+    .fa-map-marker-alt,
+    .fa-user,
+    .fa-twitter,
+    .fa-search,
+    .fa-file-signature,
+    .fa-user{
+        font-size: 24px;
+    }
+    .fa-google{
+        color: #4285f4
+    }
+    .my_post_text {
+        font-size: 24px;
+        color: #807e7e;
+    }
+    /*E my_page.html*/
+    .delete_button,
+    .edit_button {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        appearance: none;
+    }
+    .change_btn{
+        font-size: 18px;
+        height: 25px;
+
+    }
+    /*S detail.html*/
+    .post_holding_method_detail {
+        width: 150px;
+        color: #ffffff;
+        background: #c482c4;
+        border-radius: 10px;
+    }
+    .fa-twitter{
         color: #55ACEE;
     }
-
-     .search{
-        margin-top: 30px;
-        margin-bottom: 50px;
+    .post_title_detail{
+        font-size: 45px;
     }
-    .search_container{
-        box-sizing: border-box;
-        position: relative;
-        border: 1px solid #999;
-        padding: 3px 10px;
-        border-radius: 20px;
-        height: 2.3em;
-        width: 250px;
-        overflow: hidden;
-        margin-right: auto;
-        margin-left: auto;
+    .event_content_text{
+        font-size: 22px;
     }
-    .search_container input[type="text"]{
-        border: none;
-        height: 2.0em;
+    .event_detail_text{
+        font-size: 22px;
     }
-    .search_container input[type="text"]:focus {
-        outline: 0;
-    }
-    .search_container input[type="submit"]{
-        cursor: pointer;
-        font-family: FontAwesome;
-        border: none;
-        background: #3879D9;
-        color: #fff;
-        position: absolute;
-        width: 3.5em;
-        height: 3.0em;
-        right:0px;
-        top: -3px;
-        outline : none;
-    }
-
-    /*post_create.html*/
+    /*E detail.html*/
+    /*S post_create.html*/
     /*ログインしていない場合*/
     .please_login {
         background: #a5a5a5;
         height: 100vh;
-
     }
 
     .login_link_div {
-        padding-top: 550px;
+    padding-top: 300px;
     }
 
     .fa-sign-in-alt {
-        padding-bottom: 40px;
+        padding-bottom: 100px;
         font-size: 50px;
         color: #ffffff;
     }
 
     .login_link_post {
+        font-size: 30px;
         color: #ffffff;
-        font-size: 35px;
-        font-weight: bold;
     }
-
-
-/*ログインしている場合*/
-    .create_post{
-        margin-right: auto;
-        margin-left: auto;
-    }
-    .post_button {
-        margin-top: 10px;
-        margin-right: 5px;
-        margin-bottom: 10px;
-        font-family: 'Shippori Mincho', serif;
-    }
-
-    .post_create_hr {
-        margin: 0;
-    }
-
-    .event_post_title,
-    .event_days {
-        margin: 50px auto 70px;
-    }
-
-    .event_type {
-        margin-top: 30px;
-        margin-bottom: 5px;
-    }
-
-    .event_text {
-        margin-top: 20px;
-    }
-    .event_text_title {
+    /*ログインしている場合*/
+    .event_text_title{
         font-size: 18px;
-        font-weight: bolder;
-        margin-bottom: 5px;
-        padding-left: 10px;
     }
-
-    .form_event_title {
-        text-align: center;
-        width: 70%;
-        height: 40px;
-        margin-left: 20px;
-        border: none;
-        outline: none;
-        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
-    }
-
     ul {
         list-style: none;
         margin: 0;
+        padding: 0;
     }
-
-    .form_event_type {
-        display: inline-block;
-        padding: 20px;
-        margin: 0;
-    }
-
-    .event_event_date,
-    .event_start_application_date,
-    .event_finish_application_date {
-        margin-bottom: 20px;
-    }
-
-    .form_event_date,
-    .form_start_application_date,
-    .form_finish_application_date,
-    .form_address{
-        width: 60%;
-        margin-left: 20px;
-        height: 40px;
-        border: none;
-        outline: none;
-        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .datepicker-days th.dow:first-child,
-    .datepicker-days td:first-child {
-        color: #f00;
-    }
-
-    .datepicker-days th.dow:last-child,
-    .datepicker-days td:last-child {
-        color: #00f;
-    }
-
-    .form_work_detail,
-    .form_sport_detail,
-    .form_e_sport_detail,
-    .form_hobby_detail,
-    .form_holding_method {
-        padding: 20px;
-        margin: 0;
-    }
-    .event_holding_method{
-        margin-bottom: 40px;
-    }
-    .form_sns_url,
-    .form_link_url{
-        width: 80%;
-        height: 40px;
-        margin-left: 20px;
-        padding-left: 15px;
-        border: none;
-        outline: none;
-        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
-    }
-    .event_link_url{
-        margin-top: 30px;
-    }
-    .event_sns_url{
-        margin-top: 30px;
-        margin-bottom: 50px;
-    }
-    .event_address{
-        margin-top: 30px;
-        margin-bottom: 50px;
-    }
-    .form_start_time,
-    .form_end_time{
-        background: #ffffff;
-        width: 60%;
-        height: 40px;
-        margin-left: 20px;
-        padding-left: 10px;
-        border: none;
-        outline: none;
-        text-align: center;
-        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
-    }
-    .event_start_time{
-        margin-top: 20px;
-    }
-    .event_end_time{
-        margin-top: 20px;
-        margin-bottom: 40px;
-    }
-    .post_table {
-        margin: 0;
-    }
-
     label[for=id_event_type_0],
     label[for=e-sportList_0],
     label[for=id_holding_method_0]{
@@ -519,632 +325,238 @@
         text-decoration: none;
         border: solid 1px #ccc;
         transition: 0.25s;
-        padding: 6px 18px;
+        padding: 8px 20px;
         cursor: pointer;
-        font-size: 14px;
-        margin: 3px;
-    }
-    /*delete.html*/
-    .delete{
-        margin-top: 100px;
-        text-align: center;
-    }
-    .delete_text{
-        font-size: 30px;
-    }
-    .delete_text_sub{
-        font-size: 22px;
-        margin-top: 30px;
-        margin-bottom: 30px;
-    }
-    .delete_form{
-        margin-bottom: 200px;
-    }
-
-
-
-        /*my_page_edit.html*/
-    .my_page_edit {
-        margin-top: 30px;
-        height: auto;
-        background: #ffffff;
-        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .username_edit {
-        margin-bottom: 100px;
-    }
-
-    .self_introduction_edit {
-        padding-bottom: 100px;
-    }
-
-    .form_edit_self_introduction {
-        font-weight: bold;
-        padding-top: 20px;
-        margin-left: 10px;
-        padding-right: 10px;
-        width: 100%;
-        height: 100px;
-        resize: none;
-        border-style: none;
-        outline: none;
-    }
-
-    .form_edit_username {
-        font-weight: bold;
-        width: 100%;
-        border-style: none;
-        outline: none;
-        padding-top: 20px;
-        margin-left: 10px;
-        padding-right: 10px;
-    }
-
-    #previewImage {
-        margin-top: 10px;
-        height: 100px;
-        width: 100px;
-        object-fit: cover;
-        border-radius: 50%;
-        border-style: none;
-    }
-
-    .edit_images {
-        display: flex;
-        margin-top: 10px;
-        margin-bottom: 20px;
-    }
-
-    .fa-arrow-circle-right {
-        padding-top: 40px;
-        padding-left: 20px;
-        padding-right: 20px;
-        font-size: 20px;
-    }
-
-    label[for=profile_image-clear_id],
-    input[type=checkbox]#profile_image-clear_id{
-        display: none;
-
-    }
-
-
-
-    /*help.html*/
-    .help{
-        height: 100vh;
-        background: #ffffff;
-        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
-    }
-    .help_title{
-        font-size: 40px;
-        padding-left: 20px;
-        padding-top: 40px;
-    }
-    .help_text{
-        padding-top: 30px;
-        padding-left: 20px;
-        padding-right: 20px;
         font-size: 18px;
-        line-height: 2em;
-        font-weight: 600;
+        margin: 6px;
     }
-    .contact{
-        margin-top: 40px;
-    }
-
-    /*terms.html*&privacy.html*/
-    .terms{
-        height: auto;
+    /*E create.html*/
+    /*S post_detail*/
+    .search_button{
         background: #ffffff;
-        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
     }
-    .terms_title_h1{
-        padding-top: 20px;
-        padding-left: 10px;
-        font-size: 30px;
-        font-weight: bolder;
-
-    }
-    .terms_title{
-        padding: 15px 10px;
+    .post_day{
         font-size: 26px;
-        font-weight: bolder;
-
+        background: #baedf3;
+        border: 1px solid rgba(0,0,0,.125);
     }
-    .terms_text_big,
-    .terms_text{
-        padding-left: 15px;
-        padding-right: 10px;
-        font-size: 20px;
-        line-height: 2em
+    .post_title{
+        font-size: 28px;
     }
-    .terms_text_small{
-        padding-left: 20px;
-        padding-right: 10px;
-        font-size: 18px;
-        line-height: 2em
-    }
-    .last_text{
-        padding-top: 10px;
-        padding-bottom: 20px;
-    }
-    .terms_text_more_small{
-         padding-left: 25px;
-        padding-right: 10px;
-        font-size: 16px;
-        line-height: 2em
-    }
-
-
-    /*contact_form.html*/
-  .contact_form_text {
-        font-size: 30px;
-        margin: 20px auto;
-        padding-top: 15px;
-        padding-bottom: 15px;
-        text-align: center;
-        font-weight: bolder;
-        color: black;
-    }
-
-    .contact_detail_text {
-        font-size: 18px;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-    .contact_form{
-        font-size: 20px;
-        margin-top: 20px;
-        background: #ffffff;
-        margin-right: auto;
-        margin-left: auto;
-        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .form-contact_message {
-        margin-top: 10px;
-        margin-left:10px;
-        margin-bottom: 30px;
-        width: 70%;
-        height: 200px;
-        resize: none;
-        outline: none;
-        border-style: none;
-    }
-    .contact_text_title{
-        font-size: 16px;
-        font-weight: bolder;
-        margin-bottom: 5px;
-        padding-left: 10px;
-        padding-top: 10px;
-    }
-    .contact_hr{
-        margin: 0;
-    }
-
-    .form-contact_us{
-        margin-top: 20px;
-        margin-left:20px ;
-        width: 60%;
-        margin-bottom: 30px;
-    }
-    .form-contact_email,
-    .form-contact_username {
-        margin-top: 10px;
-        margin-left:10px ;
-        width: 70%;
-        outline: none;
-        border-style: none;
-        margin-bottom: 30px;
-    }
-
-    .contact_form_button {
-        margin-top: 30px;
-        margin-bottom: 30px;
-    }
-
-    .cancel_button {
-        margin-right: 10px;
-        padding: 8px 16px;
-        width: 120px;
-        height: 40px;
-    }
-
-    .send_form_button {
-        margin-top: 8px;
-        margin-left: 10px;
-        padding: 8px 16px;
-        width: 120px;
-        height: 40px;
-    }
-
-
-    /*contact_result.html*/
-    .contact_result_text {
-        font-size: 15px;
-        padding-left: 10px;
-        padding-right: 10px;
-
-    }
-
-    .contact_thank_you_text {
-        margin-top: 90px;
-        text-align: center;
-        color: black;
-    }
-  .site_account_title {
-        margin-top: 70px;
-        text-align: center;
-        color: black;
-        font-size: 35px;
-        font-weight: bolder;
-    }
- /*login.html*/
-    .site_account_title {
-        margin-top: 70px;
-        text-align: center;
-        color: black;
-        font-size: 35px;
-        font-weight: bolder;
-    }
-
-    .login {
-        width: 50%;
-        height: 500px;
-        background: #ffffff;
-        margin: 60px auto 100px;
-        border-radius: 7px;
-        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .login_text {
-        font-size: 22px;
-        text-align: center;
-        color: black;
-        padding-top: 15px;
-        padding-bottom: 15px;
-    }
-
-    .login_email,
-    .login_password {
-        text-align: center;
-    }
-
-    .login_form_email,
-    .login_form_password {
-        width: 70%;
-    }
-
-    .login_button {
-        margin-top: 5px;
-        text-align: center;
-        width: 70%;
-    }
-
-    .login_link_group {
-        margin-top: 10px;
-
-    }
-
-    .login_link_text {
-        margin: 0;
-        text-align: center;
-        font-size: 12px;
-        color: #838383;
-    }
-
-    .twitter {
-        margin-top: 40px;
-        padding-bottom: 40px;
-    }
-
-    .fa-twitter {
-
-        color: white;
-        padding-right: 10px;
-    }
-
-    .btn-twitter {
-        font-size: 15px;
-        margin-right: auto;
-        margin-left: auto;
-        width: 70%;
-        background: #55ACEE;
-    }
-
-
-    /*signup.html*/
-    .site_account_sign_title {
-        margin-top: 20px;
-        text-align: center;
-        color: black;
-        font-size: 35px;
-        font-weight: bolder;
-    }
-
-    .signup {
-        margin-top: 20px;
-        width: 85%;
-        background: #ffffff;
-        margin-right: auto;
-        margin-left: auto;
-        border-radius: 7px;
-        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .signup_text {
+    .master_username{
         font-size: 24px;
-        text-align: center;
-        color: black;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        margin: 0;
     }
-
-    .signup_hr {
-        margin: 0 auto;
-        text-align: center;
-        width: 90%;
+    .fa-arrow-alt-circle-right{
+        font-size: 20px;
     }
-
-    .signup_text_detail {
-        font-size: 16px;
-        font-weight: bolder;
-        margin-bottom: 15px;
-        padding-left: 20px;
+    .text_event{
+        font-size: 18px;
+        margin-left: auto;
+        margin-right: 0px;
     }
-
-    .form_username,
-    .form_email,
-    .form_password {
+    .event_image{
+        height: 400px;
         width: 100%;
-        border-style: none;
-        outline: none;
-        padding-top: 15px;
-        padding-left: 20px;
-        padding-right: 20px;
-        margin-bottom: 30px;
     }
-
-    .form_self_introduction {
-        resize: none;
-        height: 60px;
-        width: 100%;
-        border-style: none;
-        outline: none;
-        padding-top: 15px;
-        padding-left: 20px;
-        padding-right: 20px;
-        margin-bottom: 30px;
+    .post_day_event{
+        font-size: 26px;
     }
+    /*E post_detail*/
 
-    .any_text {
-        padding-left: 25px;
-        font-size: 14px;
+
+    /*S mg/pd*/
+    .mg_auto_sub{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .mg_0_sub{
         margin: 0;
     }
-
-    .signup_button {
-        margin-top: 20px;
-        margin-bottom: 70px;
-        text-align: center;
-        width: 30%;
-    }
-
-    .signup_images {
-        margin-left: 20px;
-        margin-top: 20px;
-        margin-bottom: 30px;
-    }
-    .image_label {
-        font-size: 15px;
-        height: auto;
-        margin: 15px auto 30px;
-        padding: 10px 10px;
-        cursor: pointer;
-        display: inline-block;
-        border-radius: 20px;
-        text-decoration: none;
-        border: solid 1px #ccc;
-        transition: 0.25s;
-    }
-
-    input[type="file"] .form_profile_image {
-        display: none;
-    }
-  /*signup_text.html*/
-    .signup_text_header {
-        height: auto;
-        padding: 0;
-        background: #ffffff;
-        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .signup_text_title {
-        font-size: 30px;
-        margin: 0 auto;
-        padding-top: 25px;
-        padding-bottom: 25px;
-        text-align: center;
-        font-weight: bolder;
-        color: black;
-    }
-
-    .thank_you_text {
-        margin-top: 80px;
-        text-align: center;
-        color: black;
-    }
-
-    .welcome,
-    .please_continue {
-        text-align: center;
-        margin: 20px;
-    }
-
-    .next_login {
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-
-.password_change_text {
-        font-size: 25px;
-        margin: 20px auto;
-        padding-top: 15px;
-        padding-bottom: 15px;
-        text-align: center;
-        font-weight: bolder;
-        color: black;
-    }
-
-    .old_password_text,
-    .new_password_text {
-        font-weight: bolder;
-        margin: 0;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .form_old_password {
-        margin-left: 20px;
-        margin-bottom: 50px;
-    }
-
-    .form_new_password {
-        margin-left: 20px;
-    }
-
-    .password_change_form_button {
-        margin-top: 30px;
-    }
-
-
-    /*password_reset_form.html*/
-    .password_reset_form_text {
-        font-size: 25px;
-        margin: 20px auto;
-        padding-top: 15px;
-        padding-bottom: 15px;
-        text-align: center;
-        font-weight: bolder;
-        color: black;
-    }
-
-    .password_reset_text {
-        font-size: 15px;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-    .password_reset_detail_text {
-        font-weight: bolder;
-        margin: 0;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .form_password_change {
-        margin-left: 20px;
-    }
-
-    .password_change_form_button {
-        margin-top: 30px;
-    }
-
-
-    /*password_reset_done.html*/
-    .password_reset_thank_you_text {
-        margin-top: 60px;
-        font-size: 22px;
-        padding-left: 10px;
-        padding-right: 10px;
-        font-weight: bolder;
-        margin-bottom: 40px;
-    }
-
-    .password_reset_done_text_weight {
-        font-weight: bold;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-    .password_reset_done_text {
-        font-size: 15px;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
- .email_change_form_text {
-        font-size: 25px;
-        margin: 20px auto;
-        padding-top: 15px;
-        padding-bottom: 15px;
-        text-align: center;
-        font-weight: bolder;
-        color: black;
-    }
-
-    .email_now_detail_text,
-    .email_new_detail_text {
-        font-weight: bolder;
-        margin: 0;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .email_change_detail_text {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .form_email_change {
-        margin-left: 20px;
-    }
-
-    .email_change_form_button {
-        margin-top: 30px;
-    }
-
-    .email_now {
-        padding-left: 20px;
-        padding-right: 20px;
-        margin-bottom: 50px;
-    }
-
-    .separate_hr {
+    .mg_t0_sub{
         margin-top: 0;
+    }
+    .mg_t10_sub{
+        margin-top:10px;
+    }
+    .mg_t20_sub{
+        margin-top:20px;
+    }
+    .mg_t30_sub{
+        margin-top:30px;
+    }
+    .mg_t40_sub{
+        margin-top:40px;
+    }
+    .mg_t60_sub{
+        margin-top: 60px;
+    }
+    .mg_t70_sub{
+        margin-top:70px;
+    }
+    .mg_t100_sub{
+        margin-top: 100px;
+    }
+    .mg_l10_sub{
+        margin-left:10px;
+    }
+    .mg_l25_sub{
+        margin-left:25px;
+    }
+    .mg_l30_sub{
+        margin-left:30px;
+    }
+    .mg_l40_sub{
+        margin-left:40px;
+    }
+    .mg_l60_sub{
+        margin-left:60px;
+    }
+    .mg_r10_sub{
+        margin-right: 10px;
+    }
+    .mg_r20_sub{
+        margin-right: 20px;
+    }
+    .mg_r30_sub{
+        margin-right: 30px;
+    }
+    .mg_r40_sub{
+        margin-right: 40px;
+    }
+    .mg_r60_sub{
+        margin-right: 60px;
+    }
+    .mg_b0_sub{
+        margin-bottom: 0;
+    }
+    .mg_b5_sub{
+        margin-bottom: 5px;
+    }
+    .mg_b10_sub{
         margin-bottom: 10px;
     }
-
-
-    /*email_change_done.html*/
-    .email_change_thank_you_text {
-        margin-top: 60px;
-        font-size: 22px;
-        padding-left: 10px;
-        padding-right: 10px;
-        font-weight: bolder;
+    .mg_b20_sub{
+        margin-bottom:20px;
+    }
+    .mg_b25_sub{
+        margin-bottom: 25px;
+    }
+    .mg_b30_sub{
+        margin-bottom: 30px;
+    }
+    .mg_b40_sub{
         margin-bottom: 40px;
     }
-
-    .email_change_done_text_weight {
-        font-weight: bold;
-        padding-left: 10px;
-        padding-right: 10px;
+    .mg_b60_sub{
+        margin-bottom: 60px;
     }
 
-    .email_change_done_text {
-        font-size: 15px;
-        padding-left: 10px;
+    .pd_0_sub{
+        padding: 0;
+    }
+    .pd_t10_sub{
+        padding-top: 10px;
+    }
+    .pd_t15_sub{
+        padding-top: 15px;
+    }
+    .pd_t20_sub{
+        padding-top: 20px;
+    }
+    .pd_t40_sub{
+        padding-top: 40px;
+    }
+    .pd_b10_sub{
+        padding-bottom:10px;
+    }
+    .pd_b15_sub{
+        padding-bottom: 15px;
+    }
+    .pd_b20_sub{
+        padding-bottom: 20px;
+    }
+    .pd_b30_sub{
+        padding-bottom: 30px;
+    }
+    .pd_b40_sub{
+        padding-bottom: 40px;
+    }
+    .pd_b60_sub{
+        padding-bottom: 60px;
+    }
+    .pd_r10_sub{
         padding-right: 10px;
     }
-
-
-
-
+    .pd_r15_sub{
+        padding-right: 15px;
+    }
+    .pd_r20_sub{
+        padding-right: 20px;
+    }
+    .pd_r40_sub{
+        padding-right: 40px;
+    }
+    .pd_r60_sub{
+        padding-right: 60px;
+    }
+    .pd_l10_sub{
+        padding-left: 10px;
+    }
+    .pd_l15_sub{
+        padding-left: 15px;
+    }
+    .pd_l20_sub{
+        padding-left: 20px;
+    }
+    .pd_l25_sub{
+        padding-left: 25px;
+    }
+    .pd_l40_sub{
+        padding-left: 40px;
+    }
+    .pd_l60_sub{
+        padding-left: 60px;
+    }
+    .text_C_sub{
+        text-align: center;
+    }
+    .width_100_sub{
+        width: 100%;
+    }
+    .width_95_sub{
+        width: 95%;
+    }
+    .width_80_sub{
+        width: 80%;
+    }
+    .width_60_sub{
+        width: 60%;
+    }
+    .width_40_sub{
+        width: 40%;
+    }
+    .height_50_sub{
+        height: 50px;
+    }
+    .line-none_sub{
+        border: none;
+        outline: none;
+        resize: none;
+    }
+    .back_base_sub{
+        background: #ffffff;
+        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
+    }
+    .font_border_sub{
+        font-weight: bolder;
+    }
+    .dp_flex_sub{
+        display: flex;
+    }
+    .j_s {
+        justify-content: space-around;
+    }
+    /*E mg/pd*/
 
 
 }
-

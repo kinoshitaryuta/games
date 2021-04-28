@@ -3,32 +3,32 @@
 {% load widget_tweaks %}
 
 {% block body %}
-    <h2 class="site_account_title mg_t70 text_C font_border">WSEH</h2>
-    <section class="login mg_t20 mg_auto">
-        <h4 class="login_text pd_t15 pd_b15 text_C">LOGIN</h4>
+    <h2 class="site_account_title mg_t70 text_C text_C_sub mg_t100_sub mg_b20_sub font_border_sub">WSEH</h2>
+    <section class="login mg_t20 mg_auto mg_auto_sub back_base_sub mg_b60_sub">
+        <h4 class="login_text pd_t15 pd_b15 text_C text_C_sub pd_t40_sub pd_b40_sub">ログイン</h4>
         <form action="{% url 'login' %}" method="POST">
         {% csrf_token %}
-            <div class="login_email text_C">
+            <div class="login_email text_C text_C_sub">
                 <table class="table">{% render_field form.username class="login_form_email" placeholder="E-mail" %}</table>
             </div>
-            <div class="login_password text_C">
+            <div class="login_password text_C text_C_sub">
                 <table class="table">{% render_field form.password class="login_form_password" placeholder="password" %}</table>
             </div>
             <div class="text-center">
-                <button type="submit" class="btn btn-success login_button text_C mg_t10" >LOGIN</button>
+                <button type="submit" class="btn btn-success login_button text_C mg_t10 mg_t30_sub" >ログイン</button>
             </div>
-            <div class="login_link_group mg_t10">
+            <div class="login_link_group mg_t10 mg_t30_sub">
                 <a class="login_link" href="{% url 'password_reset' %}">
-                    <p class="login_link_text text_C mg_0">パスワードをお忘れの方</p>
+                    <p class="login_link_text text_C mg_0 text_C_sub">パスワードをお忘れの方</p>
                 </a>
                 <a class="login_link" href="{% url 'signup' %}">
-                     <p class="login_link_text text_C mg_0">新規登録</p>
+                     <p class="login_link_text text_C mg_0 text_C_sub">新規登録</p>
                 </a>
             </div>
         </form>
-        <div class="twitter mg_t40 pd_b40">
-            <a class="btn btn-block btn-social btn-twitter mg_auto" enctype="multipart/form-data" onclick="location.href='{% url 'social:begin' 'twitter' %}?next={{ next }}'">
-            <i class="fa fa-twitter pd_r10"></i>Twitter でログイン
+        <div class="twitter mg_t40 pd_b40 mg_t30_sub pd_b40_sub">
+            <a class="btn btn-block btn-social btn-twitter mg_auto mg_auto_sub" enctype="multipart/form-data" onclick="location.href='{% url 'social:begin' 'twitter' %}?next={{ next }}'">
+            <i class="fa fa-twitter pd_r10 text_C text_C_sub"></i>Twitter でログイン
             </a>
         </div>
     </section>

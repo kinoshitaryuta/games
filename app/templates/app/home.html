@@ -2,10 +2,10 @@
 {% load static %}
 
 {% block body %}
-    <section class="home_card mg_t30">
-        <h6 class="event_detail_text">イベント一覧</h6>
-        <div class="sub_css_flex">
-            <div class="card mg_b25">
+    <section class="home_card mg_t30 mg_t60_sub mg_b40_sub">
+        <h6 class="event_detail_text mg_b20_sub mg_l40_sub">イベント一覧</h6>
+        <div class="dp_flex_sub j_s">
+            <div class="card mg_b25 mg_b40_sub ">
                 <img src="{% static 'img/FORTNITE.jpg' %}" class="card-img-top" alt="FORTNITEに関するイベント">
                 <div class="card-body">
                     <a class="card_link" href="{% url 'fortnite' %}">
@@ -14,7 +14,7 @@
                     <p class="card-text">フォートナイトに関する様々なオンライン・オフラインイベントのページです。</p>
                 </div>
             </div>
-            <div class="card mg_b25">
+            <div class="card mg_b25 mg_b40_sub ">
                 <img src="{% static 'img/Apex.jpg' %}"  class="card-img-top" alt="APEXに関するイベント">
                 <div class="card-body">
                     <a class="card_link" href="{% url 'apex' %}">
@@ -24,8 +24,8 @@
                 </div>
             </div>
         </div>
-        <div class="sub_css_flex">
-            <div class="card mg_b25">
+        <div class="dp_flex_sub j_s">
+            <div class="card mg_b25 mg_b40_sub">
                 <img src="{% static 'img/Monhan.jpg' %}"  class="card-img-top" alt="モンスターハンターライズに関するイベント">
                 <div class="card-body">
                     <a class="card_link" href="{% url 'Monhan' %}">
@@ -34,7 +34,7 @@
                     <p class="card-text">モンスターハンターライズに関する様々なオンライン・オフラインイベントのページです。</p>
                 </div>
             </div>
-            <div class="card mg_b25">
+            <div class="card mg_b25 mg_b40_sub">
                 <img src="{% static 'img/Guraburu.jpg' %}"  class="card-img-top" alt="ポケットモンスター ソード&シールド">
                 <div class="card-body">
                     <a class="card_link" href="{% url 'Guraburu' %}">
@@ -45,5 +45,10 @@
             </div>
         </div>
     </section>
-
+    <div class="sub_css">
+            <div class="sub_footer mg_b20_sub">
+                <a class="nav-link_sub pd_l40_sub" href="{% url 'terms' %}">利用規約</a>
+                <a class="nav-link_sub pd_l25_sub" href="{% url 'privacy' %}">プライバシー・ポリシー</a>
+            </div>
+    </div>
 {% endblock body %}

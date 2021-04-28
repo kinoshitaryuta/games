@@ -4,44 +4,44 @@
 
 
 {% block body %}
-    <h4 class="contact_form_text mg_t40 mg_b40 text_C font_border">お問い合わせフォーム</h4>
-    <p class="contact_detail_text mg_t10 pd_r10 pd_l10 text_C">お問い合わせの種類を選択し詳細を記入してください。</p>
-    <p class="contact_detail_text mg_t10 d_r10 pd_l10 text_C">※ご回答には3-4日頂く場合がございます。</p>
-    <section class="contact back_base">
+    <h4 class="contact_form_text mg_t40 mg_b40 text_C font_border mg_t60_sub mg_b40_sub text_C_sub font_border_sub">お問い合わせフォーム</h4>
+    <p class="contact_detail_text mg_t10 pd_r10 pd_l10 text_C mg_t20_sub pd_r20_sub pd_l20_sub text_C_sub">お問い合わせの種類を選択し詳細を記入してください。</p>
+    <p class="contact_detail_text mg_t10 d_r10 pd_l10 text_C mg_t20_sub pd_r20_sub pd_l20_sub text_C_sub">※ご回答には3-4日頂く場合がございます。</p>
+    <section class="contact back_base back_base_sub mg_b60_sub">
         <form class="contact_form" method="POST" >
             {% csrf_token %}
             <div class="contact_form mg_b40 pd_l10">
-                <p class="contact_text_title mg_b5 pd_l10 pd_t20">username</p>
-                <hr class="hr mg_t10 mg_b20 width_95">
-                <div class="contact_username mg_b40 pd_l10">
+                <p class="contact_text_title mg_b5 pd_l10 pd_t20 pd_l25_sub mg_b5_sub  pd_t40_sub">username</p>
+                <hr class="hr mg_t10 mg_b20 width_95  mg_b10_sub mg_t0_sub width_95 width_95_sub">
+                <div class="contact_username mg_b40 pd_l10 pd_l25_sub mg_b60_sub">
                     <table class="table">
-                        {% render_field form.username class="form-contact_username line-none width_80"  placeholder="ユーザー名" %}
+                        {% render_field form.username class="form-contact_username line-none width_80 line-none_sub width_80_sub"  placeholder="ユーザー名" %}
                     </table>
                 </div>
-                <p class="contact_text_title mg_b5 pd_l10 pd_t20">e-mail</p>
-                <hr class="hr mg_t10 mg_b20 width_95">
-                <div class="contact_email mg_b40 pd_l10">
+                <p class="contact_text_title mg_b5 pd_l10 pd_t20 pd_l25_sub mg_b5_sub">e-mail</p>
+                <hr class="hr mg_t10 mg_b20 width_95  mg_b10_sub mg_t0_sub width_95 width_95_sub">
+                <div class="contact_email mg_b40 pd_l10 pd_l25_sub mg_b60_sub">
                     <table class="table">
-                        {% render_field form.email class="form-contact_email line-none width_80" placeholder="メールアドレス" %}
+                        {% render_field form.email class="form-contact_email line-none width_80 line-none_sub width_80_sub" placeholder="メールアドレス" %}
                     </table>
                 </div>
-                <p class="contact_text_title mg_b5 pd_l10 pd_t20">choice Contact type</p>
-                <hr class="hr mg_t10 mg_b20 width_95">
-                <div class="contact_us">
+                <p class="contact_text_title mg_b5 pd_l10 pd_t20 pd_l25_sub mg_b5_sub">choice Contact type</p>
+                <hr class="hr mg_t10 mg_b20 width_95  mg_b10_sub mg_t0_sub width_95 width_95_sub">
+                <div class="contact_us pd_l25_sub mg_b60_sub">
                     <table class="table mg_b40 pd_l10">
                         {% render_field form.contact_us class="form-contact_us width_80"%}
                     </table>
                 </div>
-                <p class="contact_text_title mg_b5 pd_l10 pd_t20">contents</p>
-                <hr class="hr mg_t10 mg_b20 width_95">
-                <div class="contact_message mg_b40 pd_l10">
+                <p class="contact_text_title mg_b5 pd_l10 pd_t20 pd_l25_sub mg_b5_sub">contents</p>
+                <hr class="hr mg_t10 mg_b20 width_95  mg_b10_sub mg_t0_sub width_95 width_95_sub">
+                <div class="contact_message mg_b40 pd_l10 pd_l25_sub mg_b60_sub">
                     <table class="table">
-                        {% render_field form.message class="form-contact_message line-none width_80" placeholder="お問い合わせ内容" %}
+                        {% render_field form.message class="form-contact_message line-none width_80  line-none_sub width_95_sub" placeholder="お問い合わせ内容" %}
                     </table>
                 </div>
                 <div class="text-center">
                     <div class="btn-group contact_form_button" >
-                        <button type="submit" class="btn btn-success send_form_button mg_b20" >送信</button>
+                        <button type="submit" class="btn btn-success send_form_button mg_b20 mg_b40_sub" >送信</button>
                     </div>
                 </div>
             </div>
