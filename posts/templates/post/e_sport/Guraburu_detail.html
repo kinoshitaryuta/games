@@ -23,6 +23,12 @@
                          <hr class="hr mg_t10 mg_b20 width_95  mg_b10_sub mg_t0_sub width_95 width_95_sub">
                     </form>
                 </div>
+                <a class="link-twitter" href="{% url 'tweets_Guraburu' %}">
+                    <div class="search_tweet dp_flex dp_flex_sub mg_b40 mg_b60_sub">
+                        <i class="fab fa-twitter pd_r10 pd_r10_sub"></i>
+                        <p class="link-twitter_text pd_r10 pd_r20_sub ">マルチバトルTwitter救援はこちら</p>
+                    </div>
+                </a>
                 <h5 class="event_detail_text font_border mg_b20 pd_l10 pd_l40_sub font_border_sub mg_b20_sub">イベント一覧</h5>
                 <section class="post mg_b60_sub">
                         {% for Post in posts %}
@@ -63,10 +69,6 @@
                         </a>
                     </div>
                 {% endfor %}
-            </div>
-            <input id="tab03" type="radio" name="tab" class="tab-switch"><label class="tab-label" for="tab03">タブ ③</label>
-            <div class="tab-content">
-                コンテンツ 3
             </div>
         </div>
     </section>

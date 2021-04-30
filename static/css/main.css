@@ -345,6 +345,13 @@
         height: 200px;
         width: 100%;
     }
+    .search_tweet{
+        justify-content: flex-end;
+    }
+    .link-twitter_text{
+        font-size: 14px;
+        color: #838383;
+    }
     /*E post_detail*/
 
 

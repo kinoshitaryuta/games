@@ -66,7 +66,18 @@
             </div>
             <input id="tab03" type="radio" name="tab" class="tab-switch"><label class="tab-label" for="tab03">タブ ③</label>
             <div class="tab-content">
-                コンテンツ 3
+                {% for Fortnite in embed_datas %}
+                    <div class="mg_r60_sub mg_l60_sub">
+                            <div class="card-detail">
+                                <h5 class="card-header post_day_event font_border font_border_sub pd_b20_sub">{{ Fortnite.embed_params_dicts }}～{{ Fortnite.start_date }}</h5>
+                                <div class="card-body detail_body mg_0 pd_0 mg_0_sub pd_0_sub">
+                                     <img class="event_image" src="{{ MEDIA_URL }}{{ Fortnite.image }}">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+
             </div>
         </div>
     </section>

@@ -361,6 +361,13 @@
     .post_day_event{
         font-size: 26px;
     }
+    .search_tweet{
+        justify-content: flex-end;
+    }
+    .link-twitter_text{
+        font-size: 16px;
+        color: #838383;
+    }
     /*E post_detail*/
 
 
