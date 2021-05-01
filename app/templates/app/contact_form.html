@@ -11,32 +11,32 @@
         <form class="contact_form" method="POST" >
             {% csrf_token %}
             <div class="contact_form mg_b40 pd_l10">
-                <p class="contact_text_title mg_b5 pd_l10 pd_t20 pd_l25_sub mg_b5_sub  pd_t40_sub">username</p>
+                <p class="contact_text_title mg_b5 pd_l10 pd_t20 pd_l25_sub mg_b5_sub  pd_t40_sub">ユーザー名</p>
                 <hr class="hr mg_t10 mg_b20 width_95  mg_b10_sub mg_t0_sub width_95 width_95_sub">
                 <div class="contact_username mg_b40 pd_l10 pd_l25_sub mg_b60_sub">
                     <table class="table">
-                        {% render_field form.username class="form-contact_username line-none width_80 line-none_sub width_80_sub"  placeholder="ユーザー名" %}
+                        {% render_field form.username class="form-contact_username line-none width_80 line-none_sub width_80_sub" %}
                     </table>
                 </div>
-                <p class="contact_text_title mg_b5 pd_l10 pd_t20 pd_l25_sub mg_b5_sub">e-mail</p>
+                <p class="contact_text_title mg_b5 pd_l10 pd_t20 pd_l25_sub mg_b5_sub">メールアドレス</p>
                 <hr class="hr mg_t10 mg_b20 width_95  mg_b10_sub mg_t0_sub width_95 width_95_sub">
                 <div class="contact_email mg_b40 pd_l10 pd_l25_sub mg_b60_sub">
                     <table class="table">
-                        {% render_field form.email class="form-contact_email line-none width_80 line-none_sub width_80_sub" placeholder="メールアドレス" %}
+                        {% render_field form.email class="form-contact_email line-none width_80 line-none_sub width_80_sub" %}
                     </table>
                 </div>
-                <p class="contact_text_title mg_b5 pd_l10 pd_t20 pd_l25_sub mg_b5_sub">choice Contact type</p>
+                <p class="contact_text_title mg_b5 pd_l10 pd_t20 pd_l25_sub mg_b5_sub">お問い合わせの種類</p>
                 <hr class="hr mg_t10 mg_b20 width_95  mg_b10_sub mg_t0_sub width_95 width_95_sub">
                 <div class="contact_us pd_l25_sub mg_b60_sub">
                     <table class="table mg_b40 pd_l10">
                         {% render_field form.contact_us class="form-contact_us width_80"%}
                     </table>
                 </div>
-                <p class="contact_text_title mg_b5 pd_l10 pd_t20 pd_l25_sub mg_b5_sub">contents</p>
+                <p class="contact_text_title mg_b5 pd_l10 pd_t20 pd_l25_sub mg_b5_sub">お問い合わせ内容<p>
                 <hr class="hr mg_t10 mg_b20 width_95  mg_b10_sub mg_t0_sub width_95 width_95_sub">
                 <div class="contact_message mg_b40 pd_l10 pd_l25_sub mg_b60_sub">
                     <table class="table">
-                        {% render_field form.message class="form-contact_message line-none width_80  line-none_sub width_95_sub" placeholder="お問い合わせ内容" %}
+                        {% render_field form.message class="form-contact_message line-none width_80  line-none_sub width_95_sub" placeholder="お問い合わせ内容を詳しくお聞かせください。" %}
                     </table>
                 </div>
                 <div class="text-center">

@@ -1,13 +1,11 @@
 from django import forms
 from django.forms import ModelForm
-
 from accounts.models import User
 from app.models import Contact
 from django.conf import settings
 from django.core.mail import BadHeaderError, send_mail
 from django.http import HttpResponse
 
-from posts.models import Post
 
 
 class ContactForm(ModelForm):
@@ -35,5 +33,6 @@ class UserUpdateForm(forms.ModelForm):
         fields = [
             'username','self_introduction'
         ]
+
 
 

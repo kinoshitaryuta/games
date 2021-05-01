@@ -43,6 +43,25 @@ class Post(models.Model):
         return f"/posts/{self.id}"
 
 
+REPORT =(
+    ("10","不審な内容またはスパムである"),
+    ("20","不適切な画像または性的内容を含む画像動画を表示している"),
+    ("30","不適切または攻撃的な内容を含んでいる"),
+    ("40","自傷行為や自殺の意思をほのめかしている"),
+    ("50","その他"),
+)
+
+class Report(models.Model):
+    target = models.ForeignKey(Post,on_delete=models.CASCADE)
+    report_us=models.CharField(max_length=20,choices=REPORT)
+    message=models.TextField(max_length=1000,null=False, blank=True)
+
+    def __str__(self):
+        return self.message
+
+
+
+
 class EventScheduleApex(models.Model):
     image = models.ImageField(upload_to='event_apex', null=True, blank=True)
     start_date= models.DateField(blank=True,null=True)

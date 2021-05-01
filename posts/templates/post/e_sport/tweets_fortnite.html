@@ -1,0 +1,19 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+
+{% block body %}
+
+<div class="search-container text-center mg_t40 mg_t60_sub mg_b40 mg_b60_sub">
+    <form  method="post" class="">{% csrf_token %}
+        <input type='hidden' id="keyword" name="keyword" value="{{keyword}}" placeholder="keyword" class="search-box">
+        <input type='hidden' id="keyword" name="count" value="{{count}}" placeholder="count" class="search-box">
+        <input type="hidden" name="submit_token" value="{{ submit_token }}" class="search-box">
+        <button type="submit" value="search" class="search-button btn btn-primary">最新情報を読み込む</button>
+    </form>
+</div>
+{% for tweet in tweets %}
+    {{ tweet | safe }}
+{% endfor %}
+{% endblock body %}

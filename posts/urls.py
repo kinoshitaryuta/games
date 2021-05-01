@@ -4,6 +4,7 @@ from.import views
 
 urlpatterns=[
     path('create/', views.PostCreateView.as_view(), name='create'),
+    path('report//<int:pk>/', views.ReportView.as_view(), name='report'),
     path('post/<int:pk>/',views.PostDetailView.as_view(),name='post_detail'),
     path('post/update/<int:pk>/', views.PostUpdateView.as_view(), name='post_update'),
     path('post/<int:pk>/delete/', views.PostDeleteView.as_view(), name='post_delete'),
@@ -13,5 +14,7 @@ urlpatterns=[
     path('Guraburu/', views.GuraburuDetailView.as_view(), name='Guraburu'),
     path('search_tweets/Guraburu/', views.search_tweets_guraburu, name='tweets_Guraburu'),
     path('search_tweets/Monhan/', views.search_tweets_monhan, name='tweets_Monhan'),
+    path('search_tweets/Apex/', views.search_tweets_apex, name='tweets_apex'),
+    path('search_tweets/Fortnite/', views.search_tweets_fortnite, name='tweets_Fortnite'),
 
 ]

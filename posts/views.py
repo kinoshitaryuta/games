@@ -1,17 +1,17 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import resolve_url
 from django.db.models import Q
 from django.views.generic.edit import ModelFormMixin
 from social_django.models import UserSocialAuth
-
 from posts import api
-from posts.models import Post,EventScheduleApex,EventScheduleMonhan,EventScheduleFortnite,EventScheduleGuraburu
+from posts.models import Post,EventScheduleApex,EventScheduleMonhan,EventScheduleFortnite,EventScheduleGuraburu,Report
 from django.urls import reverse_lazy
 from django.views import generic
 from posts.forms import (
     PostCreateForm,
     PostUpdateForm,
+    ReportForm
 )
 
 
@@ -48,7 +48,20 @@ class PostDetailView(generic.DetailView):
     model = Post
     template_name = 'post/detail.html'
 
+class ReportView(generic.CreateView,LoginRequiredMixin):
+    template_name = 'post/report_post.html'
+    model = Report
+    form_class = ReportForm
 
+
+    def form_valid(self, form ):
+        form.instance.author = self.request.user
+        post_pk = self.kwargs['pk']
+        post = get_object_or_404(Post, pk=post_pk)
+        comment = form.save(commit=False)
+        comment.target = post
+        comment.save()
+        return redirect('post_detail',pk=post_pk)
 
 # E-スポーツ関係
 
@@ -208,3 +221,53 @@ def search_tweets_monhan(request):
         'tweets' : tweets,
     }
     return render(request, 'post/e_sport/tweets_Monhan.html', context)
+
+def search_tweets_apex(request):
+    if request.method == 'POST':
+        keyword = request.POST['keyword']
+        count   = request.POST['count']
+        tweets = ''
+        #ログインユーザーによって取得する値を変更する為、後日下記情報DBから取得出来るように変更
+        oauth_session_params = {}
+        oauth_session_params['consumer_key']    = 'EsiRDzxXVskEEjbtSwMkaaNxs'
+        oauth_session_params['consumer_secret'] = '0UX5HSEeyk3obzYnKU904aEeIkZI8Qe4AJX5eHdH4yMFMjE19z'
+        oauth_session_params['access_token']    = '1225787238224547840-5gt8RXlSr2WvH1cKZ0FlB7K286Yr4t'
+        oauth_session_params['access_secret']   = 'UmHU6m7L5zERoz6sHTy09JorsmZKNOQl3a62zu9KQRmLb'
+        #--------------------------------------
+        twitterApi = api.TwitterApi(oauth_session_params)
+        tweets = twitterApi.get_tweets(keyword, count)
+    else:
+        keyword = '#apexフレンド募集'
+        count   = 10
+        tweets  = ''
+    context = {
+        'keyword': keyword,
+        'count'  : count,
+        'tweets' : tweets,
+    }
+    return render(request, 'post/e_sport/tweets_apex.html', context)
+
+def search_tweets_fortnite(request):
+    if request.method == 'POST':
+        keyword = request.POST['keyword']
+        count   = request.POST['count']
+        tweets = ''
+        #ログインユーザーによって取得する値を変更する為、後日下記情報DBから取得出来るように変更
+        oauth_session_params = {}
+        oauth_session_params['consumer_key']    = 'EsiRDzxXVskEEjbtSwMkaaNxs'
+        oauth_session_params['consumer_secret'] = '0UX5HSEeyk3obzYnKU904aEeIkZI8Qe4AJX5eHdH4yMFMjE19z'
+        oauth_session_params['access_token']    = '1225787238224547840-5gt8RXlSr2WvH1cKZ0FlB7K286Yr4t'
+        oauth_session_params['access_secret']   = 'UmHU6m7L5zERoz6sHTy09JorsmZKNOQl3a62zu9KQRmLb'
+        #--------------------------------------
+        twitterApi = api.TwitterApi(oauth_session_params)
+        tweets = twitterApi.get_tweets(keyword, count)
+    else:
+        keyword = '#フォートナイトフレンド募集'
+        count   = 10
+        tweets  = ''
+    context = {
+        'keyword': keyword,
+        'count'  : count,
+        'tweets' : tweets,
+    }
+    return render(request, 'post/e_sport/tweets_fortnite.html', context)

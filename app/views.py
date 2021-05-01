@@ -66,4 +66,3 @@ class UserUpdateView(OnlyYouMixin, generic.UpdateView):
     def get_success_url(self):
         return resolve_url('my_page', pk=self.kwargs['pk'])
 
-
