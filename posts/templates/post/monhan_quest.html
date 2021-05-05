@@ -1,0 +1,60 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+
+{% block body %}
+    {% if user.is_authenticated %}
+        <section class="create_post mg_auto base_nav mg_auto_sub back_base_sub">
+            <form  class="post_form"  method="POST">
+                <div class="text-right">
+                    <button type="submit" class="btn btn-success post_button py-0 mg_t10 mg_r10 mg_b10  mg_t20_sub mg_r20_sub mg_b20_sub">投稿</button>
+                </div>
+                {% csrf_token %}
+                <p class="event_text_title mg_l10 font_border mg_l25_sub font_border_sub">クエスト名</p>
+               <hr class="hr mg_t10 mg_b20 width_95  mg_b10_sub mg_t0_sub width_95 width_95_sub">
+                <div class="event_post_title pd_l10 mg_b60 pd_l25_sub mg_b60_sub">
+                    <table class="table">
+                        {% render_field form.quest_name class="form_quest_name line-none width_80 line-none_sub width_80_sub"  placeholder="クエストを入力してください" %}
+                    </table>
+                </div>
+                <p class="event_text_title mg_l10 font_border mg_l25_sub font_border_sub">クエスト詳細</p>
+                <hr class="hr mg_t10 mg_b20 width_95  mg_b10_sub mg_t0_sub width_95 width_95_sub">
+                <div class="event_holding_method pd_l10 pd_b30 pd_l25_sub mg_b60_sub dp_flex dp_flex_sub pd_t20_sub">
+                    <i class="fas fa-user pd_l10 mg_l25_sub pd_r10 pd_r40_sub"></i>
+                    <table class="post_table">
+                            {% render_field form.hunter_name class="form_hunter_name line-none width_80 line-none_sub width_80_sub" placeholder="ハンター名を入力してください"  %}
+                    </table>
+                </div>
+                <div class="event_holding_method pd_l10 pd_b30 pd_l25_sub mg_b60_sub dp_flex dp_flex_sub">
+                    <i class="fab fa-buromobelexperte pd_l10 mg_l25_sub pd_r10 pd_r40_sub"></i>
+                    <table class="post_table">
+                            {% render_field form.room_id class="form_room_id line-none width_80 line-none_sub width_80_sub" placeholder="部屋番号を入力してください" %}
+                    </table>
+                </div>
+                <div class="event_holding_method pd_l10 pd_b30 pd_l25_sub mg_b60_sub dp_flex dp_flex_sub">
+                    <i class="fas fa-unlock-alt pd_l10 mg_l25_sub pd_r10 pd_r40_sub"></i>
+                    <table class="post_table">
+                            {% render_field form.password class="form_password line-none width_80 line-none_sub width_80_sub" placeholder="パスワードを入力してください" %}
+                    </table>
+                </div>
+                <div class="event_holding_method pd_l10 pd_b30 pd_l25_sub mg_b60_sub">
+                    <table class="post_table">
+                            {% render_field form.text class="form_text line-none width_80 line-none_sub width_80_sub" placeholder="自由記入欄" %}
+                    </table>
+                </div>
+            </form>
+        </section>
+    {% else %}
+        <section class="please_login">
+        <div class="login_link_div">
+            <div class="text-center">
+                <a class="nav-link" href="{% url 'login' %}">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <h6 class="login_link_post font_border">投稿するにはログインが必要です</h6>
+                </a>
+            </div>
+        </div>
+        </section>
+    {% endif %}
+{% endblock body %}
