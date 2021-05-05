@@ -23,6 +23,12 @@
                          <hr class="hr mg_t10 mg_b20 width_95  mg_b10_sub mg_t0_sub width_95 width_95_sub">
                     </form>
                 </div>
+                <div class="advertising_sub sub_css" id="click_out">
+                    <div class="text-right">
+                        <i class="fas fa-times mg_r10_sub" id="clicks"></i>
+                    </div>
+                    <p>広告</p>
+                </div>
                 <a class="link-twitter" href="{% url 'tweets_Monhan' %}">
                     <div class="search_tweet dp_flex dp_flex_sub mg_b40 mg_b60_sub">
                         <i class="fab fa-twitter pd_r10 pd_r10_sub"></i>
@@ -70,10 +76,34 @@
                     </div>
                 {% endfor %}
             </div>
-{#            <input id="tab03" type="radio" name="tab" class="tab-switch"><label class="tab-label" for="tab03">クエスト募集掲示板</label>#}
-{#            <div class="tab-content">#}
-{##}
-{#            </div>#}
+            <input id="tab03" type="radio" name="tab" class="tab-switch"><label class="tab-label" for="tab03">クエスト掲示板</label>
+            <div class="tab-content">
+                <div class="text-right">
+                    <a class="link-twitter" href="{% url 'monhan_create' %}">
+                        <button class="btn btn-success post_button py-0 mg_t10 mg_r10 mg_b10  mg_t20_sub mg_r20_sub mg_b20_sub">クエストを募集する</button>
+                    </a>
+                </div>
+            {% for quest in MonhanQuest %}
+               <div class="mg_r60_sub mg_l60_sub">
+                        <div class="card-detail">
+                            <h5 class="card-header quest text_C font_border font_border_sub text_C_sub pd_b20_sub">{{ quest.quest_name  }}</h5>
+                            <div class="card-body detail_body mg_0 pd_0 mg_0_sub pd_0_sub">
+                                <p class="pd_l10 pd_l20_sub">部屋番号: {{ quest.room_id  }}</p>
+                                <p class="pd_l10 pd_l20_sub">パスワード: {{ quest.password  }}</p>
+                                <p class="pd_l10 pd_l20_sub">ハンター名: {{ quest.hunter_name }}</p>
+                                <p class="pd_l10 pd_l20_sub">自由記入欄: {{ quest.text  }}</p>
+                                <div class="text-right">
+                                    <p class="quest_time pd_r10 pd_r20_sub">{{ quest.add_time }}</p>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            {% endfor %}
+             </div>
         </div>
     </section>
+    <div class="advertising main_css" id="click_out_main">
+        <p>広告</p>
+        <i class="fas fa-times" id="clicks_main"></i>
+    </div>
 {% endblock body %}

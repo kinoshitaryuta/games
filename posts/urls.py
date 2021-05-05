@@ -4,7 +4,9 @@ from.import views
 
 urlpatterns=[
     path('create/', views.PostCreateView.as_view(), name='create'),
-    path('report//<int:pk>/', views.ReportView.as_view(), name='report'),
+    path('create/monhan/', views.MonhanQuestView.as_view(), name='monhan_create'),
+    path('report/<int:pk>/', views.ReportView.as_view(), name='report'),
+    path('report/<int:pk>/text/', views.ReportTextView.as_view(), name='report_text'),
     path('post/<int:pk>/',views.PostDetailView.as_view(),name='post_detail'),
     path('post/update/<int:pk>/', views.PostUpdateView.as_view(), name='post_update'),
     path('post/<int:pk>/delete/', views.PostDeleteView.as_view(), name='post_delete'),

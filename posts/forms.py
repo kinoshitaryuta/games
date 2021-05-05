@@ -1,6 +1,6 @@
 import bootstrap_datepicker_plus as datetimepicker
 from django.forms import ModelForm, forms
-from posts.models import Post,Report
+from posts.models import Post,Report,MonhanQuest
 from django_summernote.widgets import SummernoteWidget
 from django import forms
 
@@ -50,4 +50,11 @@ class ReportForm(ModelForm):
         model = Report
         fields = [
             'report_us','message'
+        ]
+
+class MonhanForm(ModelForm):
+    class Meta:
+        model = MonhanQuest
+        fields = [
+            'text','quest_name','hunter_name','room_id','password'
         ]

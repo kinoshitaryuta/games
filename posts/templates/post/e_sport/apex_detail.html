@@ -29,6 +29,12 @@
                         <p class="link-twitter_text pd_r10 pd_r20_sub ">Apex Twitterフレンド募集情報はこちら</p>
                     </div>
                 </a>
+                <div class="advertising_sub sub_css" id="click_out">
+                    <div class="text-right">
+                        <i class="fas fa-times mg_r10_sub" id="clicks"></i>
+                    </div>
+                    <p>広告</p>
+                </div>
                 <h5 class="event_detail_text font_border mg_b20 pd_l10 pd_l40_sub font_border_sub mg_b20_sub">イベント一覧</h5>
                 <section class="post mg_b60_sub">
                         {% for Post in posts %}
@@ -70,10 +76,10 @@
                     </div>
                 {% endfor %}
             </div>
-            <input id="tab03" type="radio" name="tab" class="tab-switch"><label class="tab-label" for="tab03">タブ ③</label>
-            <div class="tab-content">
-                コンテンツ 3
-            </div>
         </div>
     </section>
+    <div class="advertising main_css" id="click_out_main">
+        <p>広告</p>
+        <i class="fas fa-times" id="clicks_main"></i>
+    </div>
 {% endblock body %}

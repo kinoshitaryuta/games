@@ -13,7 +13,17 @@
         <button type="submit" value="search" class="search-button btn btn-primary">最新情報を読み込む</button>
     </form>
 </div>
+<div class="advertising_sub sub_css" id="click_out">
+    <div class="text-right">
+        <i class="fas fa-times mg_r10_sub" id="clicks"></i>
+    </div>
+    <p>広告</p>
+</div>
 {% for tweet in tweets %}
     {{ tweet | safe }}
 {% endfor %}
+    <div class="advertising main_css" id="click_out_main">
+        <p>広告</p>
+        <i class="fas fa-times" id="clicks_main"></i>
+    </div>
 {% endblock body %}

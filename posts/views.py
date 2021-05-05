@@ -5,13 +5,14 @@ from django.db.models import Q
 from django.views.generic.edit import ModelFormMixin
 from social_django.models import UserSocialAuth
 from posts import api
-from posts.models import Post,EventScheduleApex,EventScheduleMonhan,EventScheduleFortnite,EventScheduleGuraburu,Report
+from posts.models import Post,EventScheduleApex,EventScheduleMonhan,EventScheduleFortnite,EventScheduleGuraburu,Report,MonhanQuest
 from django.urls import reverse_lazy
 from django.views import generic
 from posts.forms import (
     PostCreateForm,
     PostUpdateForm,
-    ReportForm
+    ReportForm,
+    MonhanForm
 )
 
 
@@ -25,8 +26,6 @@ class PostCreateView(generic.CreateView, LoginRequiredMixin):  # 投稿機能
     def form_valid(self, form):
         form.instance.master_username = self.request.user
         return super().form_valid(form)
-
-
 
 
 class PostUpdateView(generic.UpdateView):
@@ -53,7 +52,6 @@ class ReportView(generic.CreateView,LoginRequiredMixin):
     model = Report
     form_class = ReportForm
 
-
     def form_valid(self, form ):
         form.instance.author = self.request.user
         post_pk = self.kwargs['pk']
@@ -61,7 +59,23 @@ class ReportView(generic.CreateView,LoginRequiredMixin):
         comment = form.save(commit=False)
         comment.target = post
         comment.save()
-        return redirect('post_detail',pk=post_pk)
+        return redirect('report_text',pk=post_pk)
+
+
+class ReportTextView(generic.TemplateView):
+    template_name = 'post/report_post_text.html'
+
+class MonhanQuestView(generic.CreateView, LoginRequiredMixin):
+    model = MonhanQuest
+    template_name = 'post/monhan_quest.html'
+    form_class = MonhanForm
+    success_url = reverse_lazy('Monhan')
+
+    def form_valid(self, form):
+        form.instance.master_username = self.request.user
+        return super().form_valid(form)
+
+
 
 # E-スポーツ関係
 
@@ -128,6 +142,12 @@ class MonhanDetailView(generic.ListView):
             context = super().get_context_data(*args, **kwargs)
             context['EventScheduleMonhan'] = EventScheduleMonhan.objects.all
             return context
+
+        def get_context_data(self, *args, **kwargs):
+            quest = super().get_context_data(*args, **kwargs)
+            quest['MonhanQuest'] = MonhanQuest.objects.all
+            return quest
+
 
 
         def get_queryset(self):

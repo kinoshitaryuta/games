@@ -26,3 +26,18 @@ window.onload = function (){
 	var dd = ("0"+today.getDate()).slice(-2);
 	document.getElementById("date").value = yyyy + '-' + mm + '-' + dd;
 }
+
+const target = document.getElementById('click_out');
+const clicks = document.getElementById('clicks');
+
+clicks.addEventListener('click', () => {
+  target.style.display = "none";
+}, false);
+
+
+const targetMain = document.getElementById('click_out_main');
+const clicksMain = document.getElementById('clicks_main');
+
+clicksMain.addEventListener('click', () => {
+  targetMain.style.display = "none";
+}, false);

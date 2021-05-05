@@ -35,6 +35,15 @@
         font-size: 16px;
          color: #838383;
     }
+    .advertising_sub{
+        width: 100%;
+        height: 150px;
+        background: #55ACEE;
+    }
+    .fa-times{
+        margin-left: auto;
+        margin-right: 0px;
+    }
 
     /*S タブメニュー*/
     .tab-wrap {
@@ -234,7 +243,10 @@
     .fa-twitter,
     .fa-search,
     .fa-file-signature,
-    .fa-user{
+    .fa-user,
+    .fa-times,
+    .fa-unlock-alt,
+    .fa-buromobelexperte{
         font-size: 24px;
     }
     .fa-google{
@@ -369,6 +381,12 @@
         color: #838383;
     }
     /*E post_detail*/
+    /*S report.html*/
+    .report_link{
+        font-size: 16px;
+        color: #bab5b5;
+    }
+    /*E report.html*/
 
 
     /*S mg/pd*/

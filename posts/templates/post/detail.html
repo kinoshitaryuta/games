@@ -3,8 +3,11 @@
 {% block body %}
 
 <body>
-  <a class="nav-link" href="{% url 'report' post.id %}">コメント</a>
+
     <section class="post_detail back_base back_base_sub">
+        <div class="text-right">
+            <a class="report_link pd_t10 pd_r10 pd_r20_sub" href="{% url 'report' post.id %}">通報</a>
+        </div>
         <p class="detail_title_text font_border pd_l10 mg_0 pd_t20 font_border_sub pd_l25_sub mg_0_sub pd_t40_sub">イベント名</p>
          <hr class="hr mg_t10 mg_b20 width_95  mg_b10_sub mg_t0_sub width_95 width_95_sub">
         <h4 class="post_title_detail text_C pd_t20 pd_b20 mg_0 font_border text_C_sub pd_t40_sub pd_b40_sub mg_0_sub font_border_sub">{{ post.title}}</h4>
@@ -26,7 +29,7 @@
             <i class="fas fa-map-marker-alt pd_l10 pd_b15 mg_l25_sub"></i>
             <p class="event_detail_text pd_l10 pd_b15 pd_l20_sub">{{ post.address  }}</p>
         </div>
-        <div class="event_description_div dp_flex dp_flex_sub  mg_t40_sub">
+        <div class="event_description_div dp_flex dp_flex_sub mg_t40_sub">
             <i class="fas fa-user pd_l10 pd_b15 mg_l25_sub"></i>
             <p class="event_detail_text pd_l10 pd_b20 pd_l20_sub">{{ post.master_username  }}</p>
         </div>
