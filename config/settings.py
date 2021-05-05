@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '(vk(zypnu%^mr@9&wxskcglud6(7tg5q_h8u0b1#&f!%n6189i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOSTS')]
 
@@ -140,43 +140,43 @@ USE_TZ = True
 # the console (DEBUG=True) or discarded (DEBUG=False) by means of the
 # require_debug_true filter.
 #
-# LOGGING = {
-#     'version': 1,
-#     'disable_existing_loggers': False,
-#
-#     'loggers': {
-#         'django': {
-#             'handlers': ['file'],
-#             'level': 'INFO',
-#         },
-#         'WSEH': {
-#             'handlers': ['file'],
-#             'level': 'INFO',
-#
-#         },
-#     },
-#     'handlers': {
-#         'file': {
-#             'level': 'INFO',
-#             'class': 'logging.handlers.TimedRotatingFileHandler',
-#             'filename': os.path.join(BASE_DIR, 'logs/django.log'),
-#             'formatter': 'prod',
-#             'when': 'D',
-#             'interval': 1,
-#             'backupCount': 7,
-#         },
-#     },
-#     'formatters': {
-#         'prod': {
-#             'format': '\t'.join([
-#                 '%(asctime)s',
-#                 '[%(levelname)s]',
-#                 '%(pathname)s(Line:%(lineno)d)',
-#                 '%(message)s'
-#             ])
-#         }
-#     }
-# }
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'INFO',
+        },
+        'WSEH': {
+            'handlers': ['file'],
+            'level': 'INFO',
+
+        },
+    },
+    'handlers': {
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': os.path.join(BASE_DIR, 'logs/django.log'),
+            'formatter': 'prod',
+            'when': 'D',
+            'interval': 1,
+            'backupCount': 7,
+        },
+    },
+    'formatters': {
+        'prod': {
+            'format': '\t'.join([
+                '%(asctime)s',
+                '[%(levelname)s]',
+                '%(pathname)s(Line:%(lineno)d)',
+                '%(message)s'
+            ])
+        }
+    }
+}
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
@@ -214,6 +214,6 @@ SOCIAL_AUTH_URL_NAMESPACE = 'social'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-# MEDIA_ROOT = '/usr/share/nginx/html/media'
-# STATIC_ROOT = '/usr/share/nginx/html/static'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = '/usr/share/nginx/html/media'
+STATIC_ROOT = '/usr/share/nginx/html/static'
