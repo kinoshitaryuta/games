@@ -28,9 +28,10 @@
         z-index: 99;
     }
     .fa-times{
+        font-size: 20px;
         color: #100909;
         position: absolute;
-        right: 5px;
+        right: 10px;
         top: 0;
     }
     .color_white{
@@ -259,7 +260,6 @@
     .fa-search,
     .fa-file-signature,
     .fa-user,
-    .fa-times,
     .fa-unlock-alt,
     .fa-buromobelexperte{
         font-size: 18px;
