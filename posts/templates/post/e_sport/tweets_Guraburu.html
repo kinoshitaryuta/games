@@ -13,17 +13,13 @@
         <button type="submit" value="search" class="search-button btn btn-primary">最新情報を読み込む</button>
     </form>
 </div>
-<div class="advertising_sub sub_css" id="click_out">
-    <div class="text-right">
-        <i class="fas fa-times mg_r10_sub" id="clicks"></i>
-    </div>
-    <p>広告</p>
-</div>
 {% for tweet in tweets %}
     {{ tweet | safe }}
 {% endfor %}
     <div class="advertising main_css" id="click_out_main">
-        <p>広告</p>
+        <a href="https://px.a8.net/svt/ejp?a8mat=3HBWKJ+AI29WY+3X2W+614CX" rel="nofollow">
+        <img border="0" width="100%" height="60" alt="" src="https://www28.a8.net/svt/bgt?aid=210507427635&wid=001&eno=01&mid=s00000018284001013000&mc=1"></a>
+        <img border="0" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=3HBWKJ+AI29WY+3X2W+614CX" alt="">
         <i class="fas fa-times" id="clicks_main"></i>
     </div>
 {% endblock body %}

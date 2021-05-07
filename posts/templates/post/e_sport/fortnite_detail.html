@@ -23,12 +23,6 @@
                          <hr class="hr mg_t10 mg_b20 width_95  mg_b10_sub mg_t0_sub width_95 width_95_sub">
                     </form>
                 </div>
-                <div class="advertising_sub sub_css" id="click_out">
-                    <div class="text-right">
-                        <i class="fas fa-times mg_r10_sub" id="clicks"></i>
-                    </div>
-                    <p>広告</p>
-                </div>
                 <a class="link-twitter" href="{% url 'tweets_Fortnite' %}">
                     <div class="search_tweet dp_flex dp_flex_sub mg_b40 mg_b60_sub">
                         <i class="fab fa-twitter pd_r10 pd_r10_sub"></i>
@@ -76,25 +70,12 @@
                     </div>
                 {% endfor %}
             </div>
-            <input id="tab03" type="radio" name="tab" class="tab-switch"><label class="tab-label" for="tab03">タブ ③</label>
-            <div class="tab-content">
-                {% for Fortnite in embed_datas %}
-                    <div class="mg_r60_sub mg_l60_sub">
-                            <div class="card-detail">
-                                <h5 class="card-header post_day_event font_border font_border_sub pd_b20_sub">{{ Fortnite.embed_params_dicts }}～{{ Fortnite.start_date }}</h5>
-                                <div class="card-body detail_body mg_0 pd_0 mg_0_sub pd_0_sub">
-                                     <img class="event_image" src="{{ MEDIA_URL }}{{ Fortnite.image }}">
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                {% endfor %}
-
-            </div>
         </div>
     </section>
     <div class="advertising main_css" id="click_out_main">
-        <p>広告</p>
+        <a href="https://px.a8.net/svt/ejp?a8mat=3HBWKJ+51L8AA+4NYY+5Z6WX" rel="nofollow">
+        <img border="0" width="100%" height="60px" alt="" src="https://www25.a8.net/svt/bgt?aid=210507427305&wid=001&eno=01&mid=s00000021769001004000&mc=1"></a>
+        <img border="0" width="1" height="1" src="https://www18.a8.net/0.gif?a8mat=3HBWKJ+51L8AA+4NYY+5Z6WX" alt="">
         <i class="fas fa-times" id="clicks_main"></i>
     </div>
 {% endblock body %}
