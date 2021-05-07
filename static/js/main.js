@@ -27,12 +27,6 @@ window.onload = function (){
 	document.getElementById("date").value = yyyy + '-' + mm + '-' + dd;
 }
 
-const target = document.getElementById('click_out');
-const clicks = document.getElementById('clicks');
-
-clicks.addEventListener('click', () => {
-  target.style.display = "none";
-}, false);
 
 
 const targetMain = document.getElementById('click_out_main');
