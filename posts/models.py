@@ -63,12 +63,14 @@ class Report(models.Model):
 
 
 class EventScheduleApex(models.Model):
+    title=models.CharField(max_length=100, null=True)
     image = models.ImageField(upload_to='event_apex', null=True, blank=True)
     start_date= models.DateField(blank=True,null=True)
     finish_date= models.DateField(blank=True,null=True)
     link_url = models.URLField(max_length=1000, blank=True, null=True)
 
 class EventScheduleFortnite(models.Model):
+    title = models.CharField(max_length=100, null=True)
     image = models.ImageField(upload_to='event_fortnite', null=True, blank=True)
     start_date= models.DateField(blank=True,null=True)
     finish_date= models.DateField(blank=True,null=True)
@@ -76,12 +78,14 @@ class EventScheduleFortnite(models.Model):
 
 
 class EventScheduleGuraburu(models.Model):
+    title = models.CharField(max_length=100, null=True)
     image = models.ImageField(upload_to='event_guraburu', null=True, blank=True)
     start_date= models.DateField(blank=True,null=True)
     finish_date= models.DateField(blank=True,null=True)
     link_url = models.URLField(max_length=1000, blank=True, null=True)
 
 class EventScheduleMonhan(models.Model):
+    title = models.CharField(max_length=100, null=True)
     image = models.ImageField(upload_to='event_monhan', null=True, blank=True)
     start_date= models.DateField(blank=True,null=True)
     finish_date= models.DateField(blank=True,null=True)
@@ -89,6 +93,7 @@ class EventScheduleMonhan(models.Model):
 
 
 class MonhanQuest(models.Model):
+    title = models.CharField(max_length=100)
     master_username = models.ForeignKey(User,on_delete=models.CASCADE)
     text = models.TextField(max_length=200, blank=False, null=False)
     quest_name = models.CharField(max_length=100, blank=False, null=False)
