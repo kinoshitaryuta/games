@@ -30,8 +30,6 @@ DEBUG = True
 # Application definition
 
 INSTALLED_APPS = [
-    'app.apps.AppConfig',
-    'posts.apps.PostsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    'accounts.apps.AccountsConfig',
     'social_django',
     'bootstrap4',
     'widget_tweaks',
@@ -93,8 +90,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'myapp',
-        'USER': os.environ.get('DB_USER'),
-        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'USER':'ryuta',
+        'PASSWORD':'05ryuta59',
         'HOST': '',
         'PORT': '',
     }
@@ -141,78 +138,6 @@ USE_TZ = True
 # require_debug_true filter.
 
 
-
-# LOGGING = {
-#     'version': 1,
-#     'disable_existing_loggers': False,
-#
-#     'loggers': {
-#         'django': {
-#             'handlers': ['file'],
-#             'level': 'INFO',
-#         },
-#         'WSEH': {
-#             'handlers': ['file'],
-#             'level': 'INFO',
-#
-#         },
-#     },
-#     'handlers': {
-#         'file': {
-#             'level': 'INFO',
-#             'class': 'logging.handlers.TimedRotatingFileHandler',
-#             'filename': os.path.join(BASE_DIR, 'logs/django.log'),
-#             'formatter': 'prod',
-#             'when': 'D',
-#             'interval': 1,
-#             'backupCount': 7,
-#         },
-#     },
-#     'formatters': {
-#         'prod': {
-#             'format': '\t'.join([
-#                 '%(asctime)s',
-#                 '[%(levelname)s]',
-#                 '%(pathname)s(Line:%(lineno)d)',
-#                 '%(message)s'
-#             ])
-#         }
-#     }
-# }
-
-AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',
-    'social_core.backends.twitter.TwitterOAuth',
-]
-
-AUTH_USER_MODEL = 'accounts.User'
-SITE_ID = 1
-
-AWS_SES_ACCESS_KEY_ID = os.environ.get('AWS_SES_ACCESS_KEY_ID')
-AWS_SES_SECRET_KEY_ID = os.environ.get('AWS_SES_SECRET_KEY_ID')
-EMAIL_BACKEND = 'django_ses.SES.Backend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = "kinoshitaryuta@gmail.com"
-EMAIL_HOST_PASSWORD = "05ryuta59"
-DEFAULT_FROM_EMAIL = "kinoshitaryuta@gmail.com"
-
-SUMMERNOTE_THEME = 'bs4'
-X_FRAME_OPTIONS = "SAMEORIGIN"
-SUMMERNOTE_CONFIG = {
-    'summernote': {
-        'height': '1500px',
-        'width': '100%'
-    },
-}
-
-LOGIN_REDIRECT_URL = 'home'
-ACCOUNT_LOGOUT_REDIRECT_URL = 'login'
-SOCIAL_AUTH_TWITTER_KEY = 'EsiRDzxXVskEEjbtSwMkaaNxs'
-SOCIAL_AUTH_TWITTER_SECRET ='0UX5HSEeyk3obzYnKU904aEeIkZI8Qe4AJX5eHdH4yMFMjE19z'
-SOCIAL_AUTH_LOGIN_REDIRECT_URL = 'home'
-SOCIAL_AUTH_URL_NAMESPACE = 'social'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 MEDIA_URL = '/media/'

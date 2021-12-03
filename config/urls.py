@@ -22,12 +22,4 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('app.urls')),
-    path('posts/',include('posts.urls')),
-    path('account/', include('accounts.urls')),
-    path('', include('social_django.urls')),
-    path('summernote/', include('django_summernote.urls')),
-
 ]
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
